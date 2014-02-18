@@ -1,7 +1,7 @@
 Package: Peptides
 Type: Package
 Title: Calculate indices and theoretical physicochemical properties of peptides and proteins sequences
-Version: 0.01
+Version: 0.1
 Date: 2014-02-06
 Author: Daniel Osorio, Paola Rondón-Villarreal, Rodrigo Torres
 Maintainer: Daniel Osorio <daniel.osorio@correo.uis.edu.co>
@@ -9,4 +9,4 @@ Depends: seqinr
 Description: The physicochemical properties and calculable indices from aminoacid sequences of peptides 
 and proteins are important descriptors that allow the generation of information for the study, design, 
 and classification of new amino acid sequences. 
-License: GPL ≥ 2
+License: GPL
