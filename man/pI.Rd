@@ -39,7 +39,7 @@ pI(seq)
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-computePI
+\code{\link{computePI}}
 }
 \examples{
 pI("KLKLLLLLKLK")
