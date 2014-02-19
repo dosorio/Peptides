@@ -18,7 +18,7 @@ License: \tab GPL\cr
 }
 }
 \author{
-Daniel Osorio, Paola Rondón-Villarreal and Rodrigo Torres PhD.
+Daniel Osorio, Paola Rondon - Villarreal and Rodrigo Torres PhD.
 
 Maintainer: Daniel Osorio <daniel.osorio@correo.uis.edu.co>
 }
