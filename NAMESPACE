@@ -1,1 +1,6 @@
 exportPattern("^[[:alpha:]]+")
+export(
+s2c,
+c2s
+)
+#importFrom( seqinr )
