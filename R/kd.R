@@ -1,4 +1,4 @@
-kd<-function(seq){
+KD<-function(seq){
   require(seqinr)
   pep<-s2c(seq)
   AA<-matrix(nrow=1,ncol=20)
