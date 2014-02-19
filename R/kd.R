@@ -1,5 +1,4 @@
 KD<-function(seq){
-  require(seqinr)
   pep<-s2c(seq)
   AA<-matrix(nrow=1,ncol=20)
   colnames(AA)<-c("I","L","W","F","V","M","Y","A","P","T","S","C","G","N","D","Q","E","H","K","R")
