@@ -42,7 +42,14 @@ Pronk, S., Páll, S., Schulz, R., Larsson, P., Bjelkmar, P., Apostolov, R., ... 
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
+## Plot one file
 plot.xvg(system.file("xvg-files/epot.xvg",package="Peptides"))
+
+## Plotting multiple files
+par(mfcol=c(1,3))
+plot.xvg(system.file("xvg-files/POPG.xvg",package="Peptides"))
+plot.xvg(system.file("xvg-files/POPE.xvg",package="Peptides"))
+plot.xvg(system.file("xvg-files/POPC.xvg",package="Peptides"))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
