@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+The instability index provides an estimate of the stability of your protein in a test tube. Statistical analysis of 12 unstable and 32 stable proteins has revealed [7] that there are certain dipeptides, the occurence of which is significantly different in the unstable proteins compared with those in the stable ones.A protein whose instability index is smaller than 40 is predicted as stable, a value above 40 predicts that the protein may be unstable.
 }
 \usage{
 instaindex(seq)
@@ -17,7 +17,7 @@ instaindex(seq)
 }
 }
 \details{
-The instability index provides an estimate of the stability of your protein in a test tube. Statistical analysis of 12 unstable and 32 stable proteins has revealed [7] that there are certain dipeptides, the occurence of which is significantly different in the unstable proteins compared with those in the stable ones.A protein whose instability index is smaller than 40 is predicted as stable, a value above 40 predicts that the protein may be unstable.
+
 }
 \value{
 %%  ~Describe the value returned
