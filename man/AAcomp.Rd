@@ -12,9 +12,8 @@ AAcomp(seq)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{seq}{AA sequence string in upper case
+  \item{seq}{AA sequence string in upper case}
 %%     ~~Describe \code{x} here~~
-}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
