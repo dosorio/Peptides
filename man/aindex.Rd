@@ -1,21 +1,18 @@
-\name{aindex}
-\alias{aindex}
+\name{AI}
+\alias{AI}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{ To calculate the Aliphatic index
+\title{To compute the Aliphatic index of a protein sequence
 %%  ~~function to do ... ~~
 }
 \description{
 The aliphatic index of a protein is defined as the relative volume occupied by aliphatic side chains (alanine, valine, isoleucine, and leucine). It may be regarded as a positive factor for the increase of thermostability of globular proteins.
 }
 \usage{
-aindex(seq)
+AI(seq)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{seq}{AA sequence string in upper case
-
-
-%%     ~~Describe \code{x} here~~
 }
 }
 
@@ -25,6 +22,6 @@ ISO 690
 }
 
 \examples{
-aindex("KLKLLLLLKLK")
-aindex("FLPLLLPLFLP")
+AI("KLKLLLLLKLK")
+AI("FLPLLLPLFLP")
 }

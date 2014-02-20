@@ -1,4 +1,4 @@
-aindex<-function(seq){
+AI<-function(seq){
   if (missing(seq)){
     "No sequence was read" }
   else if (seq==""){
