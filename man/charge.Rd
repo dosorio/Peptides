@@ -26,12 +26,11 @@ pp. 571-607
 Modified from \code{\link{computePI}} \code{\link{seqinr}} function.
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
-\code{\link{SEQINR:UTIL}}, \code{\link{computePI}}
+\code{\link{computePI}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
 charge(seq="ILGKIWEGIKSLF",pH=5)
 charge(seq="ILGKIWEGIKSLF",pH=9)
+}
