@@ -5,6 +5,6 @@ Title: Calculate indices and theoretical physicochemical properties of peptides 
 Author: Daniel Osorio, Paola Rondon-Villarreal and Rodrigo Torres PhD.
 Maintainer: Daniel Osorio <daniel.osorio@correo.uis.edu.co>
 URL: https://github.com/dosorio/Peptides/
-Depends: seqinr
+Depends: seqinr , R (>= 2.10.0)
 Description: Calculate physicochemical properties and indices from aminoacid sequences of peptides and proteins. Include also utilities for read and plot GROMACS output files .XVG.
 License: GPL (>= 2)
