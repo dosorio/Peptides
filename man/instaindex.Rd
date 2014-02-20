@@ -1,5 +1,5 @@
-\name{instaindex}
-\alias{instaindex}
+\name{II}
+\alias{II}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{ To compute the Guruprasad (1990) instability index
 %%  ~~function to do ... ~~
@@ -8,7 +8,7 @@
 The instability index provides an estimate of the stability of your protein in a test tube. Statistical analysis of 12 unstable and 32 stable proteins has revealed that there are certain dipeptides, the occurence of which is significantly different in the unstable proteins compared with those in the stable ones.A protein whose instability index is smaller than 40 is predicted as stable, a value above 40 predicts that the protein may be unstable.
 }
 \usage{
-instaindex(seq)
+II(seq)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -22,6 +22,6 @@ Guruprasad K, Reddy BV, Pandit MW (1990). "Correlation between stability of a pr
 }
 
 \examples{
-instaindex("KLKLLLLLKLK")
-instaindex("FLPLLLPLFLP")
+II("KLKLLLLLKLK")
+II("FLPLLLPLFLP")
 }
