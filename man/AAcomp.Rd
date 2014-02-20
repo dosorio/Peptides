@@ -1,7 +1,7 @@
 \name{AAcomp}
 \alias{AAcomp}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{To calculate the amino acid composition of a sequence
+\title{To compute the Amino-acid composition of a protein sequence
 %%  ~~function to do ... ~~
 }
 \description{

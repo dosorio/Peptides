@@ -1,7 +1,7 @@
 \name{charge}
 \alias{charge}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{To Compute the Theoretical Net Charge
+\title{To compute the theoretical Net charge of a protein sequence
 %%  ~~function to do ... ~~
 }
 \description{

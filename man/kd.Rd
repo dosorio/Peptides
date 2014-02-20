@@ -1,7 +1,7 @@
 \name{KD}
 \alias{KD}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{To calculate Kyte-Doolittle hydrophobicity index
+\title{To compute the Kyte-Doolittle hydrophobicity index
 %%  ~~function to do ... ~~
 }
 \description{
