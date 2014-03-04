@@ -5,4 +5,4 @@ R package to calculate indices and theoretical physicochemical properties of pep
 
 Install
 -------
-install.packages("Peptides",dependencies=TRUE)
+```install.packages("Peptides",dependencies=TRUE)```
