@@ -29,11 +29,11 @@ hmoment<-function(seq,structure){
     return(H)
   }
   Pep=uH=0
-  if (length(s2c(seq))<10){
+  if (length(s2c(seq))<11){
     return(moment(seq,structure))
   }else{
-    for (i in 1: (length(s2c(seq))-9)){
-      Pep[i]<-c2s(s2c(seq)[i:(i+9)])
+    for (i in 1: (length(s2c(seq))-10)){
+      Pep[i]<-c2s(s2c(seq)[i:(i+10)])
     }
     for (i in 1: length(Pep)){
       uH[i]<-moment(Pep[i],structure)
