@@ -9,5 +9,5 @@ h<-function(seq){
       }
     }
   }
-  return(sum(H,na.rm=TRUE))
+  return(sum(H,na.rm=TRUE)/length(H))
 }
