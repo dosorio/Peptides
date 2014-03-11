@@ -30,34 +30,36 @@ MembranePos<-function(seq,structure){
   }
   Pep=uH=H=0
   if (length(s2c(seq))<11){
-    return(moment(seq,structure))
-  }else{
+    Pep[1]<-(seq)
+  } 
+  else{
     for (i in 1: (length(s2c(seq))-10)){
       Pep[i]<-c2s(s2c(seq)[i:(i+10)])
     }
-    for (i in 1: length(Pep)){
-      uH[i]<-moment(Pep[i],structure)
-    }
-    for (i in 1: length(Pep)){
-      H[i]<-round(h(Pep[i]),2)
-    }
-    data<-as.data.frame(Pep)
-    data$uH<-as.vector(uH)
-    data$H<-as.vector(H)
-    for (i in 1: length(Pep)){
-      if(data$uH[i]<((-0.421*data$H[i])+0.579) & data$H[i]>0.5){
-        data$MemPos[i]<-"Transmembrane"
-      }else{
-        if (data$uH[i]<((-0.421*data$H[i])+0.579) & data$H[i]<0.5){
-          data$MemPos[i]<-"Globular"
-        }
-        else{
-          if(data$uH[i]>((-0.421*data$H[i])+0.579)){
-            data$MemPos[i]<-"Surface"
-          }
+  }
+  for (i in 1: length(Pep)){
+    uH[i]<-moment(Pep[i],structure)
+  }
+  for (i in 1: length(Pep)){
+    H[i]<-round(h(Pep[i]),2)
+  }
+  data<-as.data.frame(Pep)
+  data$uH<-as.vector(uH)
+  data$H<-as.vector(H)
+  for (i in 1: length(Pep)){
+    if(data$uH[i]<((-0.421*data$H[i])+0.579) & data$H[i]>0.5){
+      data$MemPos[i]<-"Transmembrane"
+    }else{
+      if (data$uH[i]<((-0.421*data$H[i])+0.579) & data$H[i]<0.5){
+        data$MemPos[i]<-"Globular"
+      }
+      else{
+        if(data$uH[i]>((-0.421*data$H[i])+0.579)){
+          data$MemPos[i]<-"Surface"
         }
       }
     }
-    return(data)
   }
+  return(data)
 }
+
