@@ -47,14 +47,14 @@ MembranePos<-function(seq,structure){
   data$uH<-as.vector(uH)
   data$H<-as.vector(H)
   for (i in 1: length(Pep)){
-    if(data$uH[i]<((-0.421*data$H[i])+0.579) & data$H[i]>0.5){
+    if(data$uH[i]<=((-0.421*data$H[i])+0.579) & data$H[i]>=0.5){
       data$MemPos[i]<-"Transmembrane"
     }else{
-      if (data$uH[i]<((-0.421*data$H[i])+0.579) & data$H[i]<0.5){
+      if (data$uH[i]<=((-0.421*data$H[i])+0.579) & data$H[i]<=0.5){
         data$MemPos[i]<-"Globular"
       }
       else{
-        if(data$uH[i]>((-0.421*data$H[i])+0.579)){
+        if(data$uH[i]>=((-0.421*data$H[i])+0.579)){
           data$MemPos[i]<-"Surface"
         }
       }
