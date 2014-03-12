@@ -26,6 +26,7 @@ Available functions
 |hmoment  |	To compute the hydrophobic moment of a protein sequence |
 |instaindex	| To compute the Instability Index of a protein sequence |
 |KD	| To compute the Kyte-Doolittle hydrophobicity index |
+|lengthpep|To calculate the aminoacid length of a protein sequence|
 |membpos |	To theoretically calculate the position of a protein sequence |
 |mw	| To compute the molecular weight of a protein sequence |
 |pI	| To compute the isoelectic point (pI) of a protein sequence |
