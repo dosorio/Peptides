@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{
-The isoelectric point (pI), sometimes abbreviated to IEP, is the pH at which a particular molecule or surface carries no net electrical charge.
+The isoelectric point (pI), sometimes abbreviated to IEP, is the pH at which a particular molecule or surface carries no net electrical charge. It is the same function \code{\link{computePI}} include in \code{\link{seqinr}} package modified to read strings directly
 }
 \usage{
 pI(seq)
@@ -20,6 +20,8 @@ pI(seq)
 \code{\link{computePI}}
 }
 \examples{
-pI("KLKLLLLLKLK")
-pI("FLPLLLPLFLP")
+pI("HPETLVKVKDAEDQLGARVGYIELDLNSGKILESFRPEERFPMMSTFKVLLCGAVLSRVDAGQEQLGRRIHYSQNDLVEY
+SPVTEKHLTDGMTVRELCSAAITMSDNTAANLLLTTIGGPKELTDFLRQIGDKETRLDRIEPDLNEGKLGDLRDTTTPKA
+IASTLRKLLTGELLTLASRQQLIDWMEADKVAGPLLRSALPAGWFIADKSGAGERGSRGIIAALGPDGKPSRIVVIYTTG
+SQATMDERNRQIAEIGASLIKHW")
 }

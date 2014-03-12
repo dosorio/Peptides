@@ -1,5 +1,5 @@
-\name{MW}
-\alias{MW}
+\name{mw}
+\alias{mw}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{To compute the molecular weight of a protein sequence
 %%  ~~function to do ... ~~
@@ -8,7 +8,7 @@
 Molecular mass or molecular weight refers to the mass of a molecule. It is calculated as the sum of the mass of each constituent atom multiplied by the number of atoms of that element in the molecular formula.
 }
 \usage{
-MW(seq)
+mw(seq)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -17,6 +17,5 @@ MW(seq)
 }
 }
 \examples{
-MW("KLKLLLLLKLK")
-MW("FLPLLLPLFLP")
+mw("KLKLLLLLKLK")
 }

@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{
-Hydriphobic moment is a quantitative measure of the amphiphilicity perpendicular to the axis of any periodic peptide structure, such as the a-helix or b-sheet. It can be calculated for an amino acid sequence of N residues and their associated hydrophobicities Hn. If the secuence length is < 10 AA, the window length is equal to the AA sequence length, if it is > 10, windows of 10 residues are evaluated}
+Hydriphobic moment is a quantitative measure of the amphiphilicity perpendicular to the axis of any periodic peptide structure, such as the a-helix or b-sheet. It can be calculated for an amino acid sequence of N residues and their associated hydrophobicities Hn. If the secuence length is < 11 AA, the window length is equal to the AA sequence length, if it is > 11, windows of 11 residues are evaluated}
 \usage{
 hmoment(seq,structure)
 }

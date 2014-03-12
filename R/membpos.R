@@ -1,4 +1,4 @@
-MembranePos<-function(seq,structure){ 
+membpos<-function(seq,structure){ 
   moment<-function(seq,structure){
     S=C=0
     Eisenberg<-matrix(nrow=21,ncol=1)
@@ -48,14 +48,14 @@ MembranePos<-function(seq,structure){
   data$H<-as.vector(H)
   for (i in 1: length(Pep)){
     if(data$uH[i]<=((-0.421*data$H[i])+0.579) & data$H[i]>=0.5){
-      data$MemPos[i]<-"Transmembrane"
+      data$MembPos[i]<-"Transmembrane"
     }else{
       if (data$uH[i]<=((-0.421*data$H[i])+0.579) & data$H[i]<=0.5){
-        data$MemPos[i]<-"Globular"
+        data$MembPos[i]<-"Globular"
       }
       else{
         if(data$uH[i]>=((-0.421*data$H[i])+0.579)){
-          data$MemPos[i]<-"Surface"
+          data$MembPos[i]<-"Surface"
         }
       }
     }

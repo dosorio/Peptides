@@ -12,9 +12,9 @@ and proteins. Include also utilities for read and plot GROMACS output files .XVG
 \tabular{ll}{
 Package: \tab Peptides\cr
 Type: \tab Package\cr
-Version: \tab 0.1\cr
-Date: \tab 2014-02-06\cr
-License: \tab GPL\cr
+Version: \tab 0.4\cr
+Date: \tab 2014-03-15\cr
+License: \tab GPL2\cr
 }
 }
 \author{

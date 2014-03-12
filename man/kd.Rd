@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{
-Hydrophobicity scales are values that define relative hydrophobicity of amino acid residues. The more positive the value, the more hydrophobic are the amino acids located in that region of the protein. These scales are commonly used to predict the transmembrane alpha-helices of membrane proteins. When consecutively measuring amino acids of a protein, changes in value indicate attraction of specific protein regions towards the hydrophobic region inside lipid bilayer.
+Hydrophobicity scales are values that define relative hydrophobicity of amino acid residues. These scales are commonly used to predict the transmembrane alpha-helices of membrane proteins. When consecutively measuring amino acids of a protein, changes in value indicate attraction of specific protein regions towards the hydrophobic region inside lipid bilayer. This index is calculated using the scale proposed by Kyte and Dollitle in 1982.
 }
 \usage{
 KD(seq)
@@ -22,6 +22,6 @@ Kyte, J., & Doolittle, R. F. (1982). A simple method for displaying the hydropat
 }
 
 \examples{
-KD("KLKLLLLLKLK")
-KD("FLPLLLPLFLP")
+# KD index of Urocortin 1
+KD("DNPSLSIDLTFHLLRTLLELARTQSQRERAEQNRIIFDSV")
 }

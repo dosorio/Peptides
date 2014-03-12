@@ -1,5 +1,5 @@
-\name{AI}
-\alias{AI}
+\name{aindex}
+\alias{aindex}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{To compute the Aliphatic index of a protein sequence
 %%  ~~function to do ... ~~
@@ -8,7 +8,7 @@
 The aliphatic index of a protein is defined as the relative volume occupied by aliphatic side chains (alanine, valine, isoleucine, and leucine). It may be regarded as a positive factor for the increase of thermostability of globular proteins.
 }
 \usage{
-AI(seq)
+aindex(seq)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -22,6 +22,7 @@ ISO 690
 }
 
 \examples{
-AI("KLKLLLLLKLK")
-AI("FLPLLLPLFLP")
+# Aliphatic index of a Globular Miniprotein PDB: 2JOF
+
+aindex("DAYAQWLKDGGPSSGRPPPS")
 }
