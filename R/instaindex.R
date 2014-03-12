@@ -20,5 +20,5 @@ instaindex<-function(seq){
     }
   }
   Guruprasad[,3]<-Guruprasad[,1]*Guruprasad[,2]
-  (10/length(seq))*sum(Guruprasad[,3],na.rm=T)
+  round((10/length(seq))*sum(Guruprasad[,3],na.rm=T),2)
 }

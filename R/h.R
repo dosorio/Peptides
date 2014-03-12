@@ -9,5 +9,6 @@ h<-function(seq){
       }
     }
   }
-  return(sum(H,na.rm=TRUE)/length(H))
+  h<-(round(sum(H,na.rm=TRUE)/length(H),2))
+  return(h)
 }

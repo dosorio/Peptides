@@ -26,5 +26,5 @@ pI<-function (seq){
     nlmres <- nlm(critere, runif(1, 0, 14), p2 = compoAA, 
                   p3 = SEQINR.UTIL$pk, p4 = nTermR, p5 = cTermR)
   }
-  return(nlmres$estimate)
+  return(round(nlmres$estimate,2))
 }
