@@ -10,7 +10,7 @@ install.packages("Peptides", dependencies=TRUE)
 ```
 **New version 0.4** Not available on CRAN yet.
 ```
-Download file from: https://github.com/dosorio/Peptides/blob/master/archive/Peptides_0.4.tar.gz
+Download file from: https://github.com/dosorio/Peptides/blob/master/archive/Peptides_0.4.tar.gz?raw=true
 R CMD install Peptides_0.4.tar.gz
 ```
 
@@ -34,4 +34,4 @@ Available functions
 
 Citation
 --------
-D. Osorio, P. Rondón-Villarreal and R. Torres. **Peptides: *Calculate indices and theoretical physicochemical properties of peptides and protein sequences*.**, 2014. URL: http: //CRAN.R-project.org/package=Peptides. R Package Version 0.2. License:GPL≥2.
+D. Osorio, P. Rondón-Villarreal and R. Torres. **Peptides: *Calculate indices and theoretical physicochemical properties of peptides and protein sequences*.**, 2014. URL: http: //CRAN.R-project.org/package=Peptides. R Package Version 0.2.
