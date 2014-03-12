@@ -28,7 +28,6 @@ Available functions
 |KD	| To compute the Kyte-Doolittle hydrophobicity index |
 |membpos |	To theoretically calculate the position of a protein sequence |
 |mw	| To compute the molecular weight of a protein sequence |
-|Peptides | 	Calculate indices and theoretical physicochemical properties of peptides and proteins sequences. |
 |pI	| To compute the isoelectic point (pI) of a protein sequence |
 |plot.xvg	| Plot time series from GROMACS XVG files | 
 |read.xvg |	Read XVG files from GROMACS Molecular Dynamics package |
