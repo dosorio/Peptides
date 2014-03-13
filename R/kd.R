@@ -11,5 +11,5 @@ KD<-function(seq){
     KDi[i,1]<-length(which(pep==colnames(AA)[i])==TRUE)
   }
   KDi[,3]<-KDi[,1]*KDi[,2]
-  sum(KDi[,3],na.rm=TRUE)/length(pep)
+  round(sum(KDi[,3],na.rm=TRUE)/length(pep),2)
 }
