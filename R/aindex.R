@@ -15,5 +15,6 @@ aindex<-function(seq){
       Ile<-100*(as.numeric(AA)[i]/length(s2c(seq)))
     }
   }
-  return(Ala+(2.9*Val)+(3.9*(Leu+Ile)))
+  ai<-round((Ala+(2.9*Val)+(3.9*(Leu+Ile))),2)
+  return(ai)
 }
