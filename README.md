@@ -4,14 +4,9 @@ R package to calculate indices and theoretical physicochemical properties of pep
 
 Install
 -------
-Peptides package v.0.2 is available on CRAN, for install just type:
+Peptides package v.0.4 is now available on CRAN, for install just type:
 ```
 install.packages("Peptides", dependencies=TRUE)
-```
-**New version 0.4** Not available on CRAN yet.
-```
-Download file from: https://github.com/dosorio/Peptides/blob/master/archive/Peptides_0.4.tar.gz?raw=true
-R CMD install Peptides_0.4.tar.gz
 ```
 
 Available functions
@@ -35,4 +30,4 @@ Available functions
 
 Citation
 --------
-D. Osorio, P. Rondón-Villarreal and R. Torres. **Peptides: *Calculate indices and theoretical physicochemical properties of peptides and protein sequences*.**, 2014. URL: http: //CRAN.R-project.org/package=Peptides. R Package Version 0.2.
+D. Osorio, P. Rondón-Villarreal and R. Torres. **Peptides: *Calculate indices and theoretical physicochemical properties of peptides and protein sequences*.**, 2014. URL: http: //CRAN.R-project.org/package=Peptides. R Package Version 0.4.
