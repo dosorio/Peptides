@@ -5,6 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{
+Compute the hydophobicity index of peptides using the available ExPASy scales
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
