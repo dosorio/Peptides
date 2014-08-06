@@ -13,20 +13,19 @@ Available functions
 -------------------
 | Code        | Function |
 | :------------- |:-------------|
-|AAcomp  |	To compute the Amino-acid composition of a protein sequence|
-|aindex  |	To compute the Aliphatic index of a protein sequence |
-|boman   |	To calculate the Boman (Potential Protein Interaction) Index |
-|charge  |	To compute the theoretical Net charge of a protein sequence |
-|h	| To compute the Eisenberg (1984) hydrophobicity index |
-|hmoment  |	To compute the hydrophobic moment of a protein sequence |
-|instaindex	| To compute the Instability Index of a protein sequence |
-|KD	| To compute the Kyte-Doolittle hydrophobicity index |
-|lengthpep|To calculate the aminoacid length of a protein sequence|
-|membpos |	To theoretically calculate the position of a protein sequence |
-|mw	| To compute the molecular weight of a protein sequence |
-|pI	| To compute the isoelectic point (pI) of a protein sequence |
+|aacomp  |	Compute the amino-acid composition of a protein sequence|
+|aindex  |	Compute the aliphatic index of a protein sequence |
+|boman   |	Compute the Boman (Potential Protein Interaction) index |
+|charge  |	Compute the theoretical net charge of a protein sequence |
+|hydrophobicity	| Compute the hydrophobicity index |
+|hmoment  |	Compute the hydrophobic moment of a protein sequence |
+|instaindex	| Compute the instability index of a protein sequence |
+|lengthpep| Compute the aminoacid length of a protein sequence |
+|membpos |	Compute theoretically the position of a protein |
+|mw	| Compute the molecular weight of a protein sequence |
+|pI	| Compute the isoelectic point (pI) of a protein sequence |
 |plot.xvg	| Plot time series from GROMACS XVG files | 
-|read.xvg |	Read XVG files from GROMACS Molecular Dynamics package |
+|read.xvg |	Read XVG files from GROMACS molecular dynamics package |
 
 Citation
 --------
