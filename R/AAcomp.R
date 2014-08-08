@@ -1,4 +1,10 @@
-AAcomp<-function(seq){
+# AACOMP
+# Compute the amount of amino acids of a particular class and reported as:
+# Tiny, Small, Aliphatic, Aromatic, Non Polar, Polar, Charged, Basic and Acid
+# This function is the same implemented in EMBOSS "pepstat"
+# EMBOSS function: Copyright (C) Alan Bleasby (ajb@ebi.ac.uk)
+
+aacomp<-function(seq){
   AA<-matrix(ncol = 2,nrow = 9)
   seq1<-table(s2c(seq))
   AA[1,1]<-round(sum(seq1[c("A","C","G","S","T")],na.rm = TRUE),2)

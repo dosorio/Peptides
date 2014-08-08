@@ -5,14 +5,14 @@
 %%  ~~function to do ... ~~
 }
 \description{
-Calculate the percentage of Amino acid in a sequence and categorized as: Tiny, Small, Aliphatic, Aromatic, Non Polar, Polar, Charged, Basic and Acid.  
+Calculate the amount of amino acids of a particular class and reported as: tiny (A+C+G+S+T), small (A+B+C+D+G+N+P+S+T+V), aliphatic (A+I+L+V), aromatic (F+H+W+Y), non-polar (A+C+F+G+I+L+M+P+V+W+Y), polar (D+E+H+K+N+Q+R+S+T+Z), charged (B+D+E+H+K+R+Z), basic (H+K+R) and acidic (B+D+E+Z) using same function implemented in EMBOSS "pepstat".  
 }
 \usage{
-AAcomp(seq)
+aacomp(seq)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{seq}{AA sequence string in upper case}
+  \item{seq}{amino acid sequence string in upper case}
 %%     ~~Describe \code{x} here~~
 }
 \value{
@@ -27,6 +27,10 @@ The output is an array with the number and percentage of amino acids of a partic
 \item{Basic}{(H+K+R)}
 \item{Acidic}{(B+D+E+Z)}
 }
+\note{
+%%  ~~further notes~~
+This function was originally written in \code{C} by Alan Bleasby (ajb@ebi.ac.uk) for EMBOSS package. Further information: http://emboss.sourceforge.net/apps/cvs/emboss/apps/pepstats.html
+}
 \references{
 Roger G. Harrison "Expression of soluble heterologous proteins via fusion with NusA protein" in inNovations 11, June 2000, p 4 - 7.
 }
@@ -34,7 +38,7 @@ Roger G. Harrison "Expression of soluble heterologous proteins via fusion with N
 \examples{
 ## AA composition of PDB: 1D9J Cecropin Peptide
 
-AAcomp("KWKLFKKIGIGKFLHSAKKFX")
+aacomp("KWKLFKKIGIGKFLHSAKKFX")
 
 ## Output
 #          Number Mole\%
@@ -46,5 +50,5 @@ AAcomp("KWKLFKKIGIGKFLHSAKKFX")
 # Polar          9 42.86
 # Charged        8 38.10
 # Basic          8 38.10
-# Acid           0  0.00
+# Acidic         0  0.00
 }
