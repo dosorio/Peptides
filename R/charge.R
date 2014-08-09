@@ -5,6 +5,7 @@
 # The algorithm is the same as the one which is implemented at the following url: 
 # http://www.expasy.org/tools/pi_tool-doc.html
 
+
 charge <- function(seq,pH,pKa){
   computeCharge <- function(pH, compoAA, pK, nTermResidue, cTermResidue){
     cter <- 10^(-SEQINR.UTIL$pk[cTermResidue,1]) / 
