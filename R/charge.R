@@ -1,5 +1,5 @@
 # CHARGE
-# This function is the same include inside "computePI" function of "seqinr" package
+# This function is the same include inside "computePI" function of "seqinr 3.0-7" package
 # Charif, D. and Lobry, J.R. (2007)
 # The function was modify to use diferent pKa scales and an amino acid string as input
 # The algorithm is the same as the one which is implemented at the following url: 
