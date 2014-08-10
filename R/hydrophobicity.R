@@ -1,3 +1,6 @@
+# HYDROPHOBICITY
+# This function compute the hydrophobicity using 24 different hydrophobicity scales.
+# The hydrophobicity scales are the same implemented in ExPASy "ProtScale"
 hydrophobicity<-function(seq,method){
   M<-c("KyteDoolittle","AbrahamLeo",   "BullBreese",   "Guy",          "Miyazawa",     "Roseman",      "Wolfenden",   
        "Wilson",       "Cowan3.4",     "Aboderin",     "Sweet",        "Eisenberg",    "HoppWoods",    "Manavalan",   
