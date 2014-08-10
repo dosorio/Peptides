@@ -8,5 +8,5 @@ hydrophobicity<-function(seq,method){
        "Cowan7.5",     "Chothia",      "Rose")
   method<-pmatch(method,M)
   data(H, envir = environment())
-  round(sum(as.array(H[[method]])[s2c(seq)])/nchar(seq),2)
+  round(sum(as.array(H[[method]])[s2c(seq)],na.rm = TRUE)/nchar(seq),2)
 }
