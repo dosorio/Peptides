@@ -1,4 +1,4 @@
-hmoment1<-function(seq,angle){
+hmoment<-function(seq,angle){
  data(H, envir = environment())
   cos<-sin<-uH<-NULL
   moment<-function(seq,angle){
