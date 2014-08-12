@@ -1,4 +1,4 @@
-instaindex1<-function(seq){
+instaindex<-function(seq){
   guruprasad<-c(WW=1,WC=1,WM=24.68,WH=24.68,WY=1,WF=1,WQ=1,WN=13.34,WI=1,WR=1,WD=1,WP=1,WT=-14.03,WK=1,WE=1,WV=-7.49,
                 WS=1,WG=-9.37,WA=-14.03,WL=13.34,CW=24.68,CC=1,CM=33.6,CH=33.6,CY=1,CF=1,CQ=-6.54,CN=1,CI=1,CR=1,CD=20.26,
                 CP=20.26,CT=33.6,CK=1,CE=1,CV=-6.54,CS=1,CG=1,CA=1,CL=20.26,MW=1,MC=1,MM=-1.88,MH=58.28,MY=24.68,MF=1,
