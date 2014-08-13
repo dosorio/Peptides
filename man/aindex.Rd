@@ -5,8 +5,8 @@
 %%  ~~function to do ... ~~
 }
 \description{
-The aliphatic index of a protein is defined as the relative volume occupied by aliphatic side chains (alanine, valine, isoleucine, and leucine). It may be regarded as a positive factor for the increase of thermostability of globular proteins. This function calculates the percentage of each of the aliphatic amino acids and multiplies it by the values suggested by Ikai (1980)
-}
+This function calculates the Ikai (1980) aliphatic index of a protein. The aindex is defined as the relative volume occupied by aliphatic side chains (alanine, valine, isoleucine, and leucine). It may be regarded as a positive factor for the increase of thermostability of globular proteins.  
+} 
 \usage{
 aindex(seq)
 }
@@ -21,8 +21,6 @@ Ikai (1980). Thermostability and aliphatic index of globular proteins. Journal o
 }
 
 \examples{
-# Aliphatic index of a Globular Miniprotein PDB: 2JOF
-
 aindex("DAYAQWLKDGGPSSGRPPPS")
 # 29.5
 
