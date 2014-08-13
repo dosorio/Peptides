@@ -1,20 +1,21 @@
-\name{AAcomp}
-\alias{AAcomp}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{To compute the Amino-acid composition of a protein sequence
-%%  ~~function to do ... ~~
+\name{aacomp}
+\alias{aacomp}
+
+\title{Compute the amino-acid composition of a protein sequence
 }
+
 \description{
-Calculate the amount of amino acids of a particular class and reported as: tiny (A+C+G+S+T), small (A+B+C+D+G+N+P+S+T+V), aliphatic (A+I+L+V), aromatic (F+H+W+Y), non-polar (A+C+F+G+I+L+M+P+V+W+Y), polar (D+E+H+K+N+Q+R+S+T+Z), charged (B+D+E+H+K+R+Z), basic (H+K+R) and acidic (B+D+E+Z) using same function implemented in EMBOSS "pepstat".  
+Compute the amount of amino-acids of a particular class and reported as: Tiny (A+C+G+S+T), Small (A+B+C+D+G+N+P+S+T+V), Aliphatic (A+I+L+V), Aromatic (F+H+W+Y), Non-polar (A+C+F+G+I+L+M+P+V+W+Y), Polar (D+E+H+K+N+Q+R+S+T+Z), Charged (B+D+E+H+K+R+Z), Basic (H+K+R) and Acidic (B+D+E+Z) using same function implemented in EMBOSS "pepstat".  
 }
+
 \usage{
 aacomp(seq)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
-  \item{seq}{amino acid sequence string in upper case}
-%%     ~~Describe \code{x} here~~
+  \item{seq}{amino-acid sequence string in upper case}
 }
+
 \value{
 The output is an array with the number and percentage of amino acids of a particular class
 \item{Tiny}{(A+C+G+S+T)}
@@ -29,7 +30,7 @@ The output is an array with the number and percentage of amino acids of a partic
 }
 \note{
 %%  ~~further notes~~
-This function was originally written in \code{C} by Alan Bleasby (ajb@ebi.ac.uk) for EMBOSS package. Further information: http://emboss.sourceforge.net/apps/cvs/emboss/apps/pepstats.html
+This function was originally written by Alan Bleasby (ajb@ebi.ac.uk) for EMBOSS package. Further information: http://emboss.sourceforge.net/apps/cvs/emboss/apps/pepstats.html
 }
 \references{
 Roger G. Harrison "Expression of soluble heterologous proteins via fusion with NusA protein" in inNovations 11, June 2000, p 4 - 7.
