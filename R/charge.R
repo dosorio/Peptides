@@ -6,7 +6,7 @@
 # http://www.expasy.org/tools/pi_tool-doc.html
 
 
-charge <- function(seq,pH,pKa){
+charge <- function(seq,pH,pKscale){
   computeCharge <- function(pH, compoAA, pK, nTermResidue, cTermResidue){
     cter <- 10^(-SEQINR.UTIL$pk[cTermResidue,1]) / 
       (10^(-SEQINR.UTIL$pk[cTermResidue,1]) + 10^(-pH))
@@ -26,7 +26,7 @@ charge <- function(seq,pH,pKa){
   nTermR <- which(LETTERS == prot[1])
   cTermR <- which(LETTERS == prot[length(seq)])
   pHseq <- pH
-  M<-pmatch(pKa,names(pK))
+  M<-pmatch(pKscale,names(pK))
   pKm<-pK[,M]
   names(pKm) <- rownames(pK)
   round(computeCharge(pHseq, compoAA, pKm, nTermR, cTermR),1)

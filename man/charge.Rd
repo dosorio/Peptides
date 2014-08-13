@@ -8,12 +8,13 @@
 This function calculates the theoretical net charge of a protein at defined pH.
 }
 \usage{
-charge(seq, pH)
+charge(seq, pH, pK)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{seq}{Protein sequence as string in upper case}
-  \item{pH}{pH value}
+  \item{seq}{ amino-acid sequence as string in upper case}
+  \item{pH}{ pH value}
+  \item{pK}{ amino-acid pK scale}
 }
 
 \references{
@@ -31,6 +32,8 @@ Modified from \code{\link{computePI}} \code{\link{seqinr}} function.
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-charge(seq="ILGKIWEGIKSLF",pH=5)
-charge(seq="ILGKIWEGIKSLF",pH=9)
+charge(seq="ILGKIWEGIKSLF",pH=5, pK="Bje")
+charge(seq="ILGKIWEGIKSLF",pH=7, pK="Bje")
+charge(seq="ILGKIWEGIKSLF",pH=5, pK="EMB")
+
 }
