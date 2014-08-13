@@ -18,9 +18,7 @@ membpos(seq,structure)
 \references{
 Eisenberg, David. "Three-dimensional structure of membrane and surface proteins." Annual review of biochemistry 53.1 (1984): 595-623.
 }
-\seealso{
-\code{\link{hmoment}}, \code{\link{h}}
 }
 \examples{
-membpos("MDKVQYLTRSAIRRASTIEMPQQARQNLQNLFINFCLILIFLLLICIIVMLL","a")
+membpos("MDKVQYLTRSAIRRASTIEMPQQARQNLQNLFINFCLILIFLLLICIIVMLL",100)
 }
