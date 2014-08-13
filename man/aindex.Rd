@@ -23,7 +23,7 @@ Ikai (1980). Thermostability and aliphatic index of globular proteins. Journal o
 \examples{
 # Aliphatic index of a Globular Miniprotein PDB: 2JOF
 
-# aindex("DAYAQWLKDGGPSSGRPPPS")
+aindex("DAYAQWLKDGGPSSGRPPPS")
 # 29.5
 
 }
