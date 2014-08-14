@@ -32,7 +32,7 @@ Available datasets
 | Code        | Description |
 | :------------- |:-------------|
 |H  | A list with 24 hydrophobicity scales form ExPASy "protscale"  |
-|Pepdata | Physicochemical properties and indices from 100 amino-acid sequences (50 antimicrobial and 50 non antimicrobial)  |
+|Pepdata | A data frame with physicochemical properties and indices from 100 amino-acid sequences (50 antimicrobial and 50 non antimicrobial)  |
 Citation
 --------
 D. Osorio, P. Rondón-Villarreal and R. Torres. **Peptides: *Calculate indices and theoretical physicochemical properties of peptides and protein sequences*.**, 2014. URL: http: //CRAN.R-project.org/package=Peptides. R Package Version 0.4.
