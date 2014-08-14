@@ -21,7 +21,7 @@ Available functions
 |hmoment  |	Compute the hydrophobic moment of a protein sequence |
 |instaindex	| Compute the instability index of a protein sequence |
 |lengthpep| Compute the aminoacid length of a protein sequence |
-|membpos |	Compute theoretically the position of a protein |
+|membpos |	Compute theoretically class of a protein |
 |mw	| Compute the molecular weight of a protein sequence |
 |pI	| Compute the isoelectic point (pI) of a protein sequence |
 |plot.xvg	| Plot time series from GROMACS XVG files | 
