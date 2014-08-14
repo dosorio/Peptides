@@ -1,5 +1,5 @@
-\name{Pepdata}
-\alias{Pepdata}
+\name{pepdata}
+\alias{pepdata}
 \docType{data}
 \title{
 Physicochemical properties and indices from 100 aminoacid sequences
@@ -7,7 +7,7 @@ Physicochemical properties and indices from 100 aminoacid sequences
 \description{
 Physicochemical properties and indices from 100 aminoacid sequences (50 antimicrobial and 50 non antimicrobial)
 }
-\usage{data(Pepdata)}
+\usage{data(pepdata)}
 \format{
   A data frame with 100 observations on the following 23 variables.
   \describe{
@@ -38,6 +38,6 @@ Physicochemical properties and indices from 100 aminoacid sequences (50 antimicr
 }
 
 \examples{
-data(Pepdata)
+data(pepdata)
 }
 \keyword{datasets}

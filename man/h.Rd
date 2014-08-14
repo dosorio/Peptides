@@ -1,10 +1,10 @@
 \name{H}
 \alias{H}
 \docType{data}
-\title{Hydrophobicity scales
+\title{24 Hydrophobicity scales form ExPASy "protscale"
 %%   ~~ data name/kind ... ~~
 }
-\description{24 Hydrophobicity scales
+\description{A list with 24 hydrophobicity scales form ExPASy "protscale"
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
 }
 \usage{data(H)}
