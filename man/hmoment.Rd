@@ -1,7 +1,7 @@
 \name{hmoment}
 \alias{hmoment}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{To compute the hydrophobic moment of a protein sequence
+\title{Compute the hydrophobic moment of a protein sequence
 %%  ~~function to do ... ~~
 }
 \description{

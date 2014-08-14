@@ -1,7 +1,7 @@
 \name{pI}
 \alias{pI}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{To compute the isoelectic point (pI) of a protein sequence
+\title{Compute the isoelectic point (pI) of a protein sequence
 %%  ~~function to do ... ~~
 }
 \description{

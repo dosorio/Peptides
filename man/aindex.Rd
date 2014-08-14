@@ -1,7 +1,7 @@
 \name{aindex}
 \alias{aindex}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Compute the aliphatic index (Ikai, 1980) of a protein sequence
+\title{Compute the aliphatic index of a protein sequence
 %%  ~~function to do ... ~~
 }
 \description{

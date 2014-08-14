@@ -1,7 +1,7 @@
 \name{mw}
 \alias{mw}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{To compute the molecular weight of a protein sequence
+\title{Compute the molecular weight of a protein sequence
 %%  ~~function to do ... ~~
 }
 \description{
