@@ -1,7 +1,7 @@
 \name{lengthpep}
 \alias{lengthpep}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{ To calculate the aminoacid length of a protein sequence
+\title{ Compute the aminoacid length of a protein sequence
 %%  ~~function to do ... ~~
 }
 \description{This function counts the number of amino acids making up the input protein sequence 

@@ -5,6 +5,7 @@
 
 hmoment<-function(seq,angle){
   data(H, envir = environment())
+  H<-H
   cos<-sin<-uH<-NULL
   moment<-function(seq,angle){
     aa<-s2c(seq)
