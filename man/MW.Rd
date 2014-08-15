@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{
-Molecular mass or molecular weight refers to the mass of a molecule. It is calculated as the sum of the mass of each constituent atom multiplied by the number of atoms of that element in the molecular formula.
+This function calculates the molecular weight of a protein sequence. It is calculated as the sum of the mass of each amino-acid using the scale available on ExPASy MWtool.
 }
 \usage{
 mw(seq)
@@ -15,6 +15,13 @@ mw(seq)
   \item{seq}{AA sequence string in upper case
 %%     ~~Describe \code{x} here~~
 }
+}
+\source{
+The formula and amino-acid scale are the same available on ExPASy MWtool http://web.expasy.org/compute_pi/
+}
+\references{
+Gasteiger, E., Hoogland, C., Gattiker, A., Wilkins, M. R., Appel, R. D., & Bairoch, A. (2005). Protein identification and analysis tools on the ExPASy server. In The proteomics protocols handbook (pp. 571-607). Humana Press.
+Chicago  
 }
 \examples{
 mw("KLKLLLLLKLK")
