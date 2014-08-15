@@ -31,7 +31,7 @@ Available datasets
 -------------------
 | Code        | Description |
 | :------------- |:-------------|
-|H  | A list with 24 hydrophobicity scales form ExPASy "protscale"  |
+|H  |Hydrophobicity scales form ExPASy "protscale"  |
 |Pepdata | A data frame with physicochemical properties and indices from 100 amino-acid sequences (50 antimicrobial and 50 non antimicrobial)  |
 Citation
 --------
