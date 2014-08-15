@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{
-The isoelectric point (pI), sometimes abbreviated to IEP, is the pH at which a particular molecule or surface carries no net electrical charge. It is the same function \code{\link{computePI}} include in \code{\link{seqinr}} package modified to read strings directly
+The isoelectric point (pI), is the pH at which a particular molecule or surface carries no net electrical charge. It is the same function \code{\link{computePI}} include in \code{\link{seqinr 3.0-7}} R package modified to read strings directly.
 }
 \usage{
 pI(seq)
@@ -19,9 +19,14 @@ pI(seq)
 \seealso{
 \code{\link{computePI}}
 }
+\references{
+Charif, D., & Lobry, J. R. (2007). SeqinR 1.0-2: a contributed package to the R project for statistical computing devoted to biological sequences retrieval and analysis. In Structural approaches to sequence evolution (pp. 207-232). Springer Berlin Heidelberg.
+Chicago  
+
+}
 \examples{
-pI("HPETLVKVKDAEDQLGARVGYIELDLNSGKILESFRPEERFPMMSTFKVLLCGAVLSRVDAGQEQLGRRIHYSQNDLVEY
-SPVTEKHLTDGMTVRELCSAAITMSDNTAANLLLTTIGGPKELTDFLRQIGDKETRLDRIEPDLNEGKLGDLRDTTTPKA
-IASTLRKLLTGELLTLASRQQLIDWMEADKVAGPLLRSALPAGWFIADKSGAGERGSRGIIAALGPDGKPSRIVVIYTTG
-SQATMDERNRQIAEIGASLIKHW")
+pI("HPETLVKVKDAEDQLGARVGYIELDLNSGKILESFRPEERFPMMSTFKVLLCGAVLSRVDAGQEQ
+LGRRIHYSQNDLVEYSPVTEKHLTDGMTVRELCSAAITMSDNTAANLLLTTIGGPKELTDFLRQIGDKE
+TRLDRIEPDLNEGKLGDLRDTTTPKAIASTLRKLLTGELLTLASRQQLIDWMEADKVAGPLLRSALPAG
+WFIADKSGAGERGSRGIIAALGPDGKPSRIVVIYTTGSQATMDERNRQIAEIGASLIKHW")
 }
