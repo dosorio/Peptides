@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{
-The isoelectric point (pI), is the pH at which a particular molecule or surface carries no net electrical charge. It is the same function \code{\link{computePI}} include in \code{\link{seqinr 3.0-7}} R package modified to read strings directly.
+The isoelectric point (pI), is the pH at which a particular molecule or surface carries no net electrical charge. It is the same function \code{\link{computePI}} include in \code{\link{seqinr} 3.0-7} R package modified to read strings directly.
 }
 \usage{
 pI(seq)

@@ -5,4 +5,4 @@
 # statistical computing devoted to biological sequences retrieval and analysis.
 # In Structural approaches to sequence evolution (pp. 207-232). Springer Berlin Heidelberg.
 
-pI<-function(seq)computePI(s2c(seq))
+pI<-function(seq)round(computePI(s2c(seq)),2)
