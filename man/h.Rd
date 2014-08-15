@@ -92,4 +92,5 @@ Rose G.D., Geselowitz A.R., Lesser G.J., Lee R.H., Zehfus M.H. Mean fractional a
 }
 \examples{
 data(H)
+}
 \keyword{datasets}
