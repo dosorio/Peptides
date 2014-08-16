@@ -2,10 +2,10 @@
 \alias{pepdata}
 \docType{data}
 \title{
-Physicochemical properties and indices from 100 aminoacid sequences
+Physicochemical properties and indices from 100 amino acid sequences
 }
 \description{
-Physicochemical properties and indices from 100 aminoacid sequences (50 antimicrobial and 50 non antimicrobial)
+Physicochemical properties and indices from 100 amino acid sequences (50 antimicrobial and 50 non antimicrobial)
 }
 \usage{data(pepdata)}
 \format{

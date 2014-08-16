@@ -5,19 +5,19 @@
 %%  ~~function to do ... ~~
 }
 \description{
-This function calculates the molecular weight of a protein sequence. It is calculated as the sum of the mass of each amino-acid using the scale available on ExPASy MWtool.
+This function calculates the molecular weight of a protein sequence. It is calculated as the sum of the mass of each amino acid using the scale available on ExPASy MWtool.
 }
 \usage{
 mw(seq)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{seq}{AA sequence string in upper case
+  \item{seq}{amino acid sequence string in upper case
 %%     ~~Describe \code{x} here~~
 }
 }
 \source{
-The formula and amino-acid scale are the same available on ExPASy MWtool http://web.expasy.org/compute_pi/
+The formula and amino acid scale are the same available on ExPASy MWtool http://web.expasy.org/compute_pi/
 }
 \references{
 Gasteiger, E., Hoogland, C., Gattiker, A., Wilkins, M. R., Appel, R. D., & Bairoch, A. (2005). Protein identification and analysis tools on the ExPASy server. In The proteomics protocols handbook (pp. 571-607). Humana Press.

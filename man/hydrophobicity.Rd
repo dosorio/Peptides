@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{
-This function calculates the hydrophobicity index of an amino-acids sequence using one of the 24 scales availables on ExPASy "protscale"
+This function calculates the hydrophobicity index of an amino acids sequence using one of the 24 scales availables on ExPASy "protscale"
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -13,7 +13,7 @@ hydrophobicity(seq,method)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{seq}{string}
+  \item{seq}{amino acid sequence string in upper case}
   \item{method}{a character string specifying the hydophobicity scale to be used; must be one of \code{"KyteDoolittle"}, \code{"AbrahamLeo"}, \code{"BullBreese"},\code{"Guy"}, \code{"Miyazawa"}, \code{"Roseman"}, \code{"Wolfenden"}, \code{"Wilson"}, \code{"Cowan3.4"}, \code{"Aboderin"}, \code{"Sweet"}, \code{"Eisenberg"}, \code{"HoppWoods"}, \code{"Manavalan"}, \code{"BlackMould"}, \code{"Fauchere"}, \code{"Janin"}, \code{"Rao"}, \code{"Tanford"}, \code{"Welling"}, \code{"Parker"}, \code{"Cowan7.5"}, \code{"Chothia"} or \code{"Rose"}.
 }
 }

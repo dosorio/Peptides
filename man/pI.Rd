@@ -12,7 +12,7 @@ pI(seq)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{seq}{AA sequence string in upper case
+  \item{seq}{amino acid sequence string in upper case
 %%     ~~Describe \code{x} here~~
 }
 }

@@ -12,7 +12,7 @@ hmoment(seq,angle)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{seq}{amino-acid sequence as string in upper case}
+  \item{seq}{amino acid sequence as string in upper case}
   \item{angle}{Protein rotational angle}
 }
 \value{

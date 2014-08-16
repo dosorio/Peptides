@@ -12,7 +12,7 @@ aindex(seq)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{seq}{amino-acid sequence string in upper case
+  \item{seq}{amino acid sequence string in upper case
 }
 }
 
