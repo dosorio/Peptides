@@ -1,6 +1,8 @@
 # PROTEIN-PROTEIN INTERACTION INDEX
 # This function compute the potential protein-protein interaction index proposed by Boman (2003) 
 # based in the amino acid sequence of a protein. 
+# Boman, H. G. (2003). Antibacterial peptides: basic facts and emerging concepts. 
+# Journal of Internal Medicine, 254(3), 197–215.
 
 boman<-function(seq){
   # Create the Boman scale vector
