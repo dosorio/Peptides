@@ -4,24 +4,27 @@
 # Proceedings of the National Academy of Sciences of the United States of America, 81(1), 140–4.
 
 hmoment<-function(seq,angle){
+  # Loading Hydrophobicity scales
   data(H, envir = environment())
+  # Setting global variables
   H<-H
-  cos<-sin<-uH<-NULL
+  # Setting input length
+  if(nchar(seq)>10){
+    Pep<-NULL
+    for (i in 1: (nchar(seq)-9)){
+      Pep[i]<-paste(s2c(seq)[i:(i+9)],collapse ="")}
+  }else{
+    Pep<-seq
+  }
+  # Defining the moment function
   moment<-function(seq,angle){
+    vcos<-vsin<-uH<-NULL
     aa<-s2c(seq)
     for (i in 1: nchar(seq)){
-      cos[i]<-(as.array(H[[12]])[aa[i]]*(cos((angle*(pi/180))*i)))
-      sin[i]<-(as.array(H[[12]])[aa[i]]*(sin((angle*(pi/180))*i)))}
-    round(sqrt(sum(cos,na.rm=TRUE)^2+sum(sin,na.rm=TRUE)^2)/nchar(seq),2)
+      vcos[i]<-(as.array(H[[12]])[aa[i]]*(cos((angle*(pi/180))*i)))
+      vsin[i]<-(as.array(H[[12]])[aa[i]]*(sin((angle*(pi/180))*i)))}
+    round(sqrt(sum(vcos,na.rm=TRUE)^2+sum(vsin,na.rm=TRUE)^2)/nchar(seq),3)
   }
-  if (nchar(seq)<=10){
-    moment(seq,angle) 
-  }else{
-    if (nchar(seq)>10){
-      for(j in 1: (nchar(seq)-9)){
-        uH[j]<-(moment(paste(s2c(seq)[j:(j+9)],collapse=""),angle))
-      }
-      return(max(uH))
-    }
-  }
+  # Applying the moment function to each 10 amino acids window
+  max(sapply(Pep,function(x)moment(x,angle)))
 }
