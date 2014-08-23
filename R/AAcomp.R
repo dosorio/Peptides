@@ -5,8 +5,13 @@
 # EMBOSS function: Copyright (C) Alan Bleasby (ajb@ebi.ac.uk)
 
 aacomp<-function(seq){
+  # Create data matrix output
   AA<-matrix(ncol = 2,nrow = 9)
+  rownames(AA)<-c("Tiny","Small","Aliphatic","Aromatic","NonPolar","Polar","Charged","Basic","Acidic")
+  colnames(AA)<-c("Number","Mole%")
+  # Divide the sequence of amino acids and makes a frequencies table
   seq1<-table(s2c(seq))
+  # Classify amino acids in a particular class and sum the absolute frequencies
   AA[1,1]<-sum(seq1[c("A","C","G","S","T")],na.rm = TRUE)
   AA[2,1]<-sum(seq1[c("A","B","C","D","G","N","P","S","T","V")],na.rm = TRUE)
   AA[3,1]<-sum(seq1[c("A","I","L","V")],na.rm = TRUE)
@@ -16,8 +21,8 @@ aacomp<-function(seq){
   AA[7,1]<-sum(seq1[c("B","D","E","H","K","R","Z")],na.rm = TRUE)
   AA[8,1]<-sum(seq1[c("H","K","R")],na.rm = TRUE)
   AA[9,1]<-sum(seq1[c("B","D","E","Z")],na.rm = TRUE)
+  # Compute the relative frequencies for each class in percentage
   AA[,2]<-(AA[,1]/nchar(seq)*100)
-  rownames(AA)<-c("Tiny","Small","Aliphatic","Aromatic","NonPolar","Polar","Charged","Basic","Acidic")
-  colnames(AA)<-c("Number","Mole%")
+  # Return output matrix rounded to 2 decimals
   return(round(AA,2))
 }
