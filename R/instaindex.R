@@ -1,4 +1,10 @@
+# INSTAINDEX
+# This function compute the instability index proposed by Guruprasad, K., Reddy, B. V, & Pandit, M. W. (1990). 
+# Correlation between stability of a protein and its dipeptide composition: a novel approach for predicting in vivo stability of a protein from its primary sequence. 
+# Protein Engineering, 4(2), 155–61.
+
 instaindex<-function(seq){
+  # Setting the Guruprasad scale
   guruprasad<-c(WW=1,WC=1,WM=24.68,WH=24.68,WY=1,WF=1,WQ=1,WN=13.34,WI=1,WR=1,WD=1,WP=1,WT=-14.03,WK=1,WE=1,WV=-7.49,
                 WS=1,WG=-9.37,WA=-14.03,WL=13.34,CW=24.68,CC=1,CM=33.6,CH=33.6,CY=1,CF=1,CQ=-6.54,CN=1,CI=1,CR=1,CD=20.26,
                 CP=20.26,CT=33.6,CK=1,CE=1,CV=-6.54,CS=1,CG=1,CA=1,CL=20.26,MW=1,MC=1,MM=-1.88,MH=58.28,MY=24.68,MF=1,
@@ -26,8 +32,12 @@ instaindex<-function(seq){
                 AG=1,AA=1,AL=1,LW=24.68,LC=1,LM=1,LH=1,LY=1,LF=1,LQ=33.6,LN=1,LI=1,LR=20.26,LD=1,LP=20.26,LT=1,LK=-7.49,
                 LE=1,LV=1,LS=1,LG=1,LA=1,LL=1,"NA"=1)
   dp<-NULL
+  # Divide the amino acid sequence in dipeptides
   for (i in 1: (nchar(seq)-1)){
     dp[i]<-paste(s2c(seq)[i:(i+1)],collapse = "")
   }
+  # Apply the formula:
+  # (10/L)*sum(DIWV(XiYi+1) for each dipeptide)
+  # Return the index value rounded to 2 decimals
   round((10/nchar(seq))*sum(guruprasad[dp],na.rm = TRUE),2)
 }
