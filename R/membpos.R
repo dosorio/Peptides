@@ -1,16 +1,25 @@
+# MEMBPOS
+# This function compute the class of a protein based in their Hydrophobicity and Hydrophobic moment
+# Eisenberg, D. (1984). Three-dimensional structure of membrane and surface proteins. 
+# Annual Review of Biochemistry, 53, 595–623. doi:10.1146/annurev.bi.53.070184.003115
+
 membpos<-function(seq,angle){ 
-  Pep<-data<-NULL
+  # Setting input length
   if(nchar(seq)>11){
+    Pep<-NULL
     for (i in 1: (nchar(seq)-10)){
       Pep[i]<-paste(s2c(seq)[i:(i+10)],collapse ="")}
   }else{
     Pep<-seq
   }
+  # Compute the hmoment and hydrophobicity for each amino acid window
+  data<-NULL
   data$Pep<-as.vector(Pep)
   data$H<-as.vector(sapply(Pep,function(x)hydrophobicity(x,"Eisenberg")))
   data$uH<-as.vector(sapply(Pep,function(x)hmoment(x,angle)))
   data$m<-((-0.421*data$H)+0.579)
   
+  # Assigns a class depending on the hydrophobicity and hmoment
   for (i in 1: length(Pep)){
     if(data$uH[i]<=data$m[i] & data$H[i]>=0.5){
       data$MembPos[i]<-"Transmembrane"
