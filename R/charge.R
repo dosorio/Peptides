@@ -7,6 +7,19 @@
 
 
 charge <- function(seq,pH,pKscale){
+  # Divide the amino acid sequence and makes an absolute frequencies table
+  compoAA <- table(factor(prot<-s2c(seq), levels = LETTERS))
+  # Stablish the N-terminus and C-terminus
+  nTermR <- which(LETTERS == prot[1])
+  cTermR <- which(LETTERS == prot[length(seq)])
+  # Stablish the pH value
+  pHvalue <- pH
+  # Stablish the pK scale
+  M<-pmatch(pKscale,names(pK))
+  pKm<-pK[,M]
+  names(pKm) <- rownames(pK)
+  # The charge is computed using the computeCharge function:
+  # sum((10^pK)/((10^pH)+(10^pK)) for (R, H, L, nterm)) - sum ((10^pH/((10^pH)+(10^pK))) for (D, E, C, Y, cter))
   computeCharge <- function(pH, compoAA, pK, nTermResidue, cTermResidue){
     charge <-NULL
     charge$cter <- -1*(10^(-SEQINR.UTIL$pk[cTermResidue,1]) / 
@@ -21,13 +34,6 @@ charge <- function(seq,pH,pKscale){
     charge$ctyr <- -1*as.vector(compoAA['Y'] * 10^(-pK['Y']) / (10^(-pK['Y']) + 10^(-pH)))
     return(sum(as.numeric(charge)))
   }
-  prot <- s2c(seq)
-  compoAA <- table(factor(prot, levels = LETTERS))
-  nTermR <- which(LETTERS == prot[1])
-  cTermR <- which(LETTERS == prot[length(seq)])
-  pHseq <- pH
-  M<-pmatch(pKscale,names(pK))
-  pKm<-pK[,M]
-  names(pKm) <- rownames(pK)
-  round(computeCharge(pHseq, compoAA, pKm, nTermR, cTermR),0)
+  # Compute the charge and return the value rounded to 2 decimals
+  round(computeCharge(pHvalue, compoAA, pKm, nTermR, cTermR),0)
 }
