@@ -8,18 +8,18 @@
 
 charge <- function(seq,pH,pKscale){
   computeCharge <- function(pH, compoAA, pK, nTermResidue, cTermResidue){
-    cter <- 10^(-SEQINR.UTIL$pk[cTermResidue,1]) / 
-      (10^(-SEQINR.UTIL$pk[cTermResidue,1]) + 10^(-pH))
-    nter <- 10^(-pH) / (10^(-SEQINR.UTIL$pk[nTermResidue,2]) + 10^(-pH))
-    carg <- as.vector(compoAA['R'] * 10^(-pH) / (10^(-pK['R']) + 10^(-pH)))
-    chis <- as.vector(compoAA['H'] * 10^(-pH) / (10^(-pK['H']) + 10^(-pH)))
-    clys <- as.vector(compoAA['K'] * 10^(-pH) / (10^(-pK['K']) + 10^(-pH)))
-    casp <- as.vector(compoAA['D'] * 10^(-pK['D']) /(10^(-pK['D']) + 10^(-pH)))
-    cglu <- as.vector(compoAA['E'] * 10^(-pK['E']) / (10^(-pK['E']) + 10^(-pH)))
-    ccys <- as.vector(compoAA['C'] * 10^(-pK['C']) / (10^(-pK['C']) + 10^(-pH)))
-    ctyr <- as.vector(compoAA['Y'] * 10^(-pK['Y']) / (10^(-pK['Y']) + 10^(-pH)))
-    charge <- carg + clys + chis + nter - (casp + cglu + ctyr + ccys + cter)
-    return(charge)
+    charge <-NULL
+    charge$cter <- -1*(10^(-SEQINR.UTIL$pk[cTermResidue,1]) / 
+                         (10^(-SEQINR.UTIL$pk[cTermResidue,1]) + 10^(-pH)))
+    charge$nter <- 10^(-pH) / (10^(-SEQINR.UTIL$pk[nTermResidue,2]) + 10^(-pH))
+    charge$carg <- as.vector(compoAA['R'] * 10^(-pH) / (10^(-pK['R']) + 10^(-pH)))
+    charge$chis <- as.vector(compoAA['H'] * 10^(-pH) / (10^(-pK['H']) + 10^(-pH)))
+    charge$clys <- as.vector(compoAA['K'] * 10^(-pH) / (10^(-pK['K']) + 10^(-pH)))
+    charge$casp <- -1*as.vector(compoAA['D'] * 10^(-pK['D']) /(10^(-pK['D']) + 10^(-pH)))
+    charge$cglu <- -1*as.vector(compoAA['E'] * 10^(-pK['E']) / (10^(-pK['E']) + 10^(-pH)))
+    charge$ccys <- -1*as.vector(compoAA['C'] * 10^(-pK['C']) / (10^(-pK['C']) + 10^(-pH)))
+    charge$ctyr <- -1*as.vector(compoAA['Y'] * 10^(-pK['Y']) / (10^(-pK['Y']) + 10^(-pH)))
+    return(sum(as.numeric(charge)))
   }
   prot <- s2c(seq)
   compoAA <- table(factor(prot, levels = LETTERS))
@@ -29,5 +29,5 @@ charge <- function(seq,pH,pKscale){
   M<-pmatch(pKscale,names(pK))
   pKm<-pK[,M]
   names(pKm) <- rownames(pK)
-  round(computeCharge(pHseq, compoAA, pKm, nTermR, cTermR),1)
+  round(computeCharge(pHseq, compoAA, pKm, nTermR, cTermR),0)
 }
