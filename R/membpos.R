@@ -16,7 +16,7 @@ membpos<-function(seq,angle){
   data<-NULL
   data$Pep<-as.vector(Pep)
   data$H<-as.vector(sapply(Pep,function(x)hydrophobicity(x,"Eisenberg")))
-  data$uH<-as.vector(sapply(Pep,function(x)hmoment(x,angle)))
+  data$uH<-round(as.vector(sapply(Pep,function(x)hmoment(x,angle))),2)
   data$m<-((-0.421*data$H)+0.579)
   
   # Assigns a class depending on the hydrophobicity and hmoment
