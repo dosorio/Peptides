@@ -23,7 +23,7 @@ hmoment<-function(seq,angle){
     for (i in 1: nchar(seq)){
       vcos[i]<-(as.array(H[[12]])[aa[i]]*(cos((angle*(pi/180))*i)))
       vsin[i]<-(as.array(H[[12]])[aa[i]]*(sin((angle*(pi/180))*i)))}
-    round(sqrt(sum(vcos,na.rm=TRUE)^2+sum(vsin,na.rm=TRUE)^2)/nchar(seq),3)
+    round(sqrt(sum(vcos,na.rm=TRUE)^2+sum(vsin,na.rm=TRUE)^2)/nchar(seq),2)
   }
   # Applying the moment function to each 10 amino acids window
   # Return the max value rounded to 3 decimals
