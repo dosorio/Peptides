@@ -15,7 +15,7 @@ charge(seq, pH, pKscale)
 \arguments{
   \item{seq}{amino acid sequence as string in upper case}
   \item{pH}{pH value}
-  \item{pKscale}{a character string specifying the pK scale to be used; must be one of \code{"Bjellqvist"}, \code{"EMBOSS"}, \code{"Murray"}, \code{"Sillero"}, \code{"Solomon"} or \code{"Stryer"}}
+  \item{pKscale}{a character string specifying the pK scale to be used; must be one of \code{"Bjellqvist"}, \code{"EMBOSS"}, \code{"Murray"}, \code{"Sillero"}, \code{"Solomon"}, \code{"Stryer"}, \code{"Lehninger"}, \code{"Dawson"} or \code{"Rodwell"}}
 }
 
 \references{
