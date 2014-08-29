@@ -9,6 +9,7 @@ charge <- function(seq,pH,pKscale){
   aa<-table(factor(prot<-s2c(seq),levels = LETTERS))
   # Set pKscale
   data(pKscales, envir = environment())
+  pKscales<-pKscales
   pKs<-pKscales[,pmatch(pKscale,names(pKscales))]
   names(pKs) <- rownames(pKscales)
   # Charge
