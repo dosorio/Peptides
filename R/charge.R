@@ -12,16 +12,17 @@ charge <- function(seq,pH,pKscale){
   pKs<-pKscales[,pmatch(pKscale,names(pKscales))]
   names(pKs) <- rownames(pKscales)
   # Charge
-  charge<-NULL
-  charge$cterm <- (-1 /(1+10^(-1*(pH-pKs["cTer"]))))
-  charge$nterm <- ( 1 /(1+10^(1*(pH-pKs["nTer"]))))
-  charge$carg  <- aa["R"]* ( 1 /(1+10^(1*(pH-pKs["R"]))))
-  charge$chis  <- aa["H"]* ( 1 /(1+10^(1*(pH-pKs["H"]))))
-  charge$clys  <- aa["K"]* ( 1 /(1+10^(1*(pH-pKs["K"]))))
-  charge$casp  <- aa["D"]* (-1 /(1+10^(-1*(pH-pKs["D"]))))
-  charge$cglu  <- aa["E"]* (-1 /(1+10^(-1*(pH-pKs["E"]))))
-  charge$ccys  <- aa["C"]* (-1 /(1+10^(-1*(pH-pKs["C"]))))
-  charge$ctyr  <- aa["Y"]* (-1 /(1+10^(-1*(pH-pKs["Y"]))))
-  # Compute the charge and return the value rounded to 2 decimals
-  round(sum(as.numeric(charge)),2)
+  #charge<-NULL
+  cterm <- (-1 /(1+10^(-1*(pH-pKs["cTer"]))))
+  nterm <- ( 1 /(1+10^(1*(pH-pKs["nTer"]))))
+  carg  <- aa["R"]* ( 1 /(1+10^(1*(pH-pKs["R"]))))
+  chis  <- aa["H"]* ( 1 /(1+10^(1*(pH-pKs["H"]))))
+  clys  <- aa["K"]* ( 1 /(1+10^(1*(pH-pKs["K"]))))
+  casp  <- aa["D"]* (-1 /(1+10^(-1*(pH-pKs["D"]))))
+  cglu  <- aa["E"]* (-1 /(1+10^(-1*(pH-pKs["E"]))))
+  ccys  <- aa["C"]* (-1 /(1+10^(-1*(pH-pKs["C"]))))
+  ctyr  <- aa["Y"]* (-1 /(1+10^(-1*(pH-pKs["Y"]))))
+  charge <- round(as.numeric(carg + clys + chis + nterm + casp + cglu + ctyr + ccys + cterm),3)
+  # Compute the charge and return the value rounded to 3 decimals
+  return(charge)
 }
