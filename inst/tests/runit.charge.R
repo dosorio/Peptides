@@ -1,5 +1,6 @@
 test.charge <- function(){
   # COMPARED TO EMBOSS PEPSTATS
+  # http://emboss.bioinformatics.nl/cgi-bin/emboss/pepstats
   # SEQUENCE: FLPVLAGLTPSIVPKLVCLLTKKC
   # Charge   = 3.0
   checkEquals(round(charge("FLPVLAGLTPSIVPKLVCLLTKKC",7,pKscale = "EMBOSS")),3)
