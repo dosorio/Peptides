@@ -32,10 +32,24 @@ The output is a matrix with the number and percentage of amino acids of a partic
 %%  ~~further notes~~
 This function was originally written by Alan Bleasby (ajb@ebi.ac.uk) for EMBOSS package. Further information: http://emboss.sourceforge.net/apps/cvs/emboss/apps/pepstats.html
 }
-
+\references{
+Rice, Peter, Ian Longden, and Alan Bleasby. "EMBOSS: the European molecular biology open software suite." Trends in genetics 16.6 (2000): 276-277.
+}
 \examples{
-## AA composition of PDB: 1D9J Cecropin Peptide
+# COMPARED TO PEPSTATS
+# http://emboss.bioinformatics.nl/cgi-bin/emboss/pepstats
+# Property  Residues		Number		Mole%
+Tiny		(A+C+G+S+T)		4		19.048
+Small		(A+B+C+D+G+N+P+S+T+V)	4		19.048
+Aliphatic	(A+I+L+V)		5		23.810
+Aromatic	(F+H+W+Y)		5		23.810
+Non-polar	(A+C+F+G+I+L+M+P+V+W+Y)	11		52.381
+Polar		(D+E+H+K+N+Q+R+S+T+Z)	9		42.857
+Charged		(B+D+E+H+K+R+Z)		8		38.095
+Basic		(H+K+R)			8		38.095
+Acidic		(B+D+E+Z)		0		 0.000
 
+## AA composition of PDB: 1D9J Cecropin Peptide
 aacomp("KWKLFKKIGIGKFLHSAKKFX")
 
 ## Output
