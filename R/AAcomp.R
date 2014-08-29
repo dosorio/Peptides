@@ -10,7 +10,7 @@ aacomp<-function(seq){
   rownames(AA)<-c("Tiny","Small","Aliphatic","Aromatic","NonPolar","Polar","Charged","Basic","Acidic")
   colnames(AA)<-c("Number","Mole%")
   # Divide the amino acid sequence and makes a frequencies table
-  seq1<-table(s2c(seq))
+  seq1<-table(s2c(toupper(seq)))
   # Classify amino acids in a particular class and sum the absolute frequencies
   AA[1,1]<-sum(seq1[c("A","C","G","S","T")],na.rm = TRUE)
   AA[2,1]<-sum(seq1[c("A","B","C","D","G","N","P","S","T","V")],na.rm = TRUE)

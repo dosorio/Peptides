@@ -5,7 +5,7 @@
 }
 
 \description{
-This function calculates the amount of amino acids of a particular class and reported as: Tiny (A + C + G + S + T), Small (A + B + C + D + G + N + P + S + T + V), Aliphatic (A + I + L + V), Aromatic (F + H + W + Y), Non-polar (A + C + F + G + I + L + M + P + V + W + Y), Polar (D + E + H + K + N + Q + R + S + T + Z), Charged (B + D + E + H + K + R + Z), Basic (H + K + R) and Acidic (B + D + E + Z) using same function implemented in EMBOSS "pepstat".  
+This function calculates the amount of amino acids of a particular class and classified as: Tiny, Small, Aliphatic, Aromatic, Non-polar, Polar, Charged, Basic and Acidic based on their size and R-groups using same function implemented in EMBOSS "pepstat". The output is a matrix with the number and percentage of amino acids of a particular class 
 }
 
 \usage{
@@ -13,27 +13,24 @@ aacomp(seq)
 }
 
 \arguments{
-  \item{seq}{amino acid sequence string in upper case}
+  \item{seq}{amino acid sequence string}
 }
 
 \value{
-The output is an array with the number and percentage of amino acids of a particular class
-\item{Tiny}{(A+C+G+S+T)}
-\item{Small}{(A+B+C+D+G+N+P+S+T+V)}
-\item{Aliphatic}{(A+I+L+V)}
-\item{Aromatic}{(F+H+W+Y)}
-\item{Non-polar}{(A+C+F+G+I+L+M+P+V+W+Y)}
-\item{Polar}{(D+E+H+K+N+Q+R+S+T+Z)}
-\item{Charged}{(B+D+E+H+K+R+Z)}
-\item{Basic}{(H+K+R)}
-\item{Acidic}{(B+D+E+Z)}
+The output is a matrix with the number and percentage of amino acids of a particular class
+\item{Tiny}{(A + C + G + S + T)}
+\item{Small}{(A + B + C + D + G + N + P + S + T + V)}
+\item{Aliphatic}{(A + I + L + V)}
+\item{Aromatic}{(F + H + W + Y)}
+\item{Non-polar}{(A + C + F + G + I + L + M + P + V + W + Y)}
+\item{Polar}{(D + E + H + K + N + Q + R + S + T + Z)}
+\item{Charged}{(B + D + E + H + K + R + Z)}
+\item{Basic}{(H + K + R)}
+\item{Acidic}{(B + D + E + Z)}
 }
 \note{
 %%  ~~further notes~~
 This function was originally written by Alan Bleasby (ajb@ebi.ac.uk) for EMBOSS package. Further information: http://emboss.sourceforge.net/apps/cvs/emboss/apps/pepstats.html
-}
-\references{
-Roger G. Harrison "Expression of soluble heterologous proteins via fusion with NusA protein" in inNovations 11, June 2000, p 4 - 7.
 }
 
 \examples{
