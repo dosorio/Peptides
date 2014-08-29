@@ -5,7 +5,7 @@
 }
 
 \description{
-This function calculates the amount of amino acids of a particular class and reported as: Tiny (A+C+G+S+T), Small (A+B+C+D+G+N+P+S+T+V), Aliphatic (A+I+L+V), Aromatic (F+H+W+Y), Non-polar (A+C+F+G+I+L+M+P+V+W+Y), Polar (D+E+H+K+N+Q+R+S+T+Z), Charged (B+D+E+H+K+R+Z), Basic (H+K+R) and Acidic (B+D+E+Z) using same function implemented in EMBOSS "pepstat".  
+This function calculates the amount of amino acids of a particular class and reported as: Tiny (A + C + G + S + T), Small (A + B + C + D + G + N + P + S + T + V), Aliphatic (A + I + L + V), Aromatic (F + H + W + Y), Non-polar (A + C + F + G + I + L + M + P + V + W + Y), Polar (D + E + H + K + N + Q + R + S + T + Z), Charged (B + D + E + H + K + R + Z), Basic (H + K + R) and Acidic (B + D + E + Z) using same function implemented in EMBOSS "pepstat".  
 }
 
 \usage{
