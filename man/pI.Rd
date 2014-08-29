@@ -5,24 +5,15 @@
 %%  ~~function to do ... ~~
 }
 \description{
-The isoelectric point (pI), is the pH at which a particular molecule or surface carries no net electrical charge. It is the same function \code{\link{computePI}} include in \code{\link{seqinr} 3.0-7} R package modified to read strings directly.
+The isoelectric point (pI), is the pH at which a particular molecule or surface carries no net electrical charge. 
 }
 \usage{
-pI(seq)
+pI(seq,pKscale)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{seq}{amino acid sequence string in upper case
-%%     ~~Describe \code{x} here~~
-}
-}
-\seealso{
-\code{\link{computePI}}
-}
-\references{
-Charif, D., & Lobry, J. R. (2007). SeqinR 1.0-2: a contributed package to the R project for statistical computing devoted to biological sequences retrieval and analysis. In Structural approaches to sequence evolution (pp. 207-232). Springer Berlin Heidelberg.
-Chicago  
-
+  \item{seq}{amino acid sequence string in upper case}
+  \item{pKscale}{a character string specifying the pK scale to be used; must be one of \code{"Bjellqvist"}, \code{"EMBOSS"}, \code{"Murray"}, \code{"Sillero"}, \code{"Solomon"}, \code{"Stryer"}, \code{"Lehninger"}, \code{"Dawson"} or \code{"Rodwell"} }
 }
 \examples{
 pI("HPETLVKVKDAEDQLGARVGYIELDLNSGKILESFRPEERFPMMSTFKVLLCGAVLSRVDAGQEQ
