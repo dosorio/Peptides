@@ -27,6 +27,6 @@ Ikai (1980). Thermostability and aliphatic index of globular proteins. Journal o
 # Aliphatic index: 117.00
   
 aindex("SDKEVDEVDAALSDLEITLE")
-# 117
+# [1] 117
 
 }
