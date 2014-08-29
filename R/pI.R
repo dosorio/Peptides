@@ -10,7 +10,7 @@ pI<-function (seq,pKscale)
     charge(pH = p1, seq = p2, pKscale = p3)^2
   }
   # Non-Linear Minimization
-  nlmres <- nlm(I, 7, p2 = seq, p3 = pKscale)$minimum
+  nlmres <- nlm(I, 7, p2 = seq, p3 = pKscale)
   while (!identical(all.equal(nlmres$minimum, 0), TRUE)) {
     nlmres <- nlm(I, runif(1, 0, 14), p2 = seq, p3 = pKscale)
   }
