@@ -1,7 +1,7 @@
 \name{pKscales}
 \alias{pKscales}
 \docType{data}
-\title{pKscales
+\title{9 pKa scales for the side chain of charged amino acids from various sources
 }
 \description{
 9 pKa scales for the side chain of charged amino acids from various sources
