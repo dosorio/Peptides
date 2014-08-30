@@ -26,6 +26,15 @@ Pronk, S., Pall, S., Schulz, R., Larsson, P., Bjelkmar, P., Apostolov, R., ... &
 }
 
 \examples{
-MD <- read.xvg(system.file("xvg-files/epot.xvg",package="Peptides"))
-MD
+# READING FILE
+file <- system.file("xvg-files/epot.xvg",package="Peptides")
+read.xvg(file)
+
+#    Time (ps)  Potential
+#  1         1 6672471040
+#  2         2 6516461568
+#  3         3 6351947264
+#  4         4 6183133184
+#  5         5 6015310336
+#  6         6 5854271488
 }
