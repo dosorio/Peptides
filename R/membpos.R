@@ -5,12 +5,13 @@
 
 membpos<-function(seq,angle){ 
   # Setting input length
+  AA<-s2c(toupper(seq))
   if(nchar(seq)>11){
     Pep<-NULL
     for (i in 1: (nchar(seq)-10)){
-      Pep[i]<-paste(s2c(seq)[i:(i+10)],collapse ="")}
+      Pep[i]<-paste(AA[i:(i+10)],collapse ="")}
   }else{
-    Pep<-seq
+    Pep<-toupper(seq)
   }
   # Compute the hmoment and hydrophobicity for each amino acid window
   data<-NULL
