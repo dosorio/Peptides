@@ -4,7 +4,7 @@ R package to calculate indices and theoretical physicochemical properties of pep
 
 Install
 -------
-Peptides package v.0.4 is now available on CRAN, for install just type:
+Peptides package v.0.1 is now available on CRAN, for install just type:
 ```
 install.packages("Peptides", dependencies=TRUE)
 ```
