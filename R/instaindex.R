@@ -31,10 +31,11 @@ instaindex<-function(seq){
                 GL=1,AW=1,AC=44.94,AM=1,AH=-7.49,AY=1,AF=1,AQ=1,AN=1,AI=1,AR=1,AD=-7.49,AP=20.26,AT=1,AK=1,AE=1,AV=1,AS=1,
                 AG=1,AA=1,AL=1,LW=24.68,LC=1,LM=1,LH=1,LY=1,LF=1,LQ=33.6,LN=1,LI=1,LR=20.26,LD=1,LP=20.26,LT=1,LK=-7.49,
                 LE=1,LV=1,LS=1,LG=1,LA=1,LL=1,"NA"=1)
-  dp<-NULL
   # Divide the amino acid sequence in dipeptides
+  dp<-NULL
+  AA<-s2c(toupper(seq))
   for (i in 1: (nchar(seq)-1)){
-    dp[i]<-paste(s2c(seq)[i:(i+1)],collapse = "")
+    dp[i]<-paste(AA[i:(i+1)],collapse = "")
   }
   # Apply the formula:
   # (10/L)*sum(DIWV(XiYi+1) for each dipeptide)
