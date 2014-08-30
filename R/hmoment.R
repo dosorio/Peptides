@@ -8,18 +8,19 @@ hmoment<-function(seq,angle){
   data(H, envir = environment())
   # Setting global variables
   H<-H
+  AA<-s2c(toupper(seq))
   # Setting input length
   if(nchar(seq)>10){
     Pep<-NULL
     for (i in 1: (nchar(seq)-9)){
-      Pep[i]<-paste(s2c(seq)[i:(i+9)],collapse ="")}
+      Pep[i]<-paste(AA[i:(i+9)],collapse ="")}
   }else{
     Pep<-seq
   }
   # Defining the moment function
   moment<-function(seq,angle){
     vcos<-vsin<-uH<-NULL
-    aa<-s2c(seq)
+    aa<-s2c(toupper(seq))
     for (i in 1: nchar(seq)){
       vcos[i]<-(as.array(H[[12]])[aa[i]]*(cos((angle*(pi/180))*i)))
       vsin[i]<-(as.array(H[[12]])[aa[i]]*(sin((angle*(pi/180))*i)))}

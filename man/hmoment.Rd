@@ -12,7 +12,7 @@ hmoment(seq,angle)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{seq}{amino acid sequence as string in upper case}
+  \item{seq}{amino acid sequence as string}
   \item{angle}{Protein rotational angle}
 }
 \value{
@@ -21,11 +21,17 @@ The max hydrophobic moment (uH) as a numerical vector of length one}
 Eisenberg, D., Weiss, R. M., & Terwilliger, T. C. (1984). The hydrophobic moment detects periodicity in protein hydrophobicity. Proceedings of the National Academy of Sciences, 81(1), 140-144.
 }
 \examples{
-# Hydrophobic moment of PDB: 1MP6 M2 protein 
-
-hmoment("SSDPLVVAASIIGILHLILWILDRL",100) 
-
-## Output
-# [1] 0.51
-
+# COMPARED TO EMBOSS:HMOMENT
+# http://emboss.bioinformatics.nl/cgi-bin/emboss/hmoment
+# SEQUENCE: FLPVLAGLTPSIVPKLVCLLTKKC
+# ALPHA-HELIX ANGLE=100 : 0.56
+# BETA-SHEET  ANGLE=160 : 0.25
+  
+# ALPHA HELIX VALUE
+hmoment("FLPVLAGLTPSIVPKLVCLLTKKC",100)
+# [1] 0.56
+  
+# BETA SHEET VALUE
+hmoment("FLPVLAGLTPSIVPKLVCLLTKKC",160)
+# [1] 0.25
 }
