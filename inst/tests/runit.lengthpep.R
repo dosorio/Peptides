@@ -1,6 +1,6 @@
 test.lengthpep <- function(){
   # COMPARED TO ExPASy ProtParam
-  # http://web.expasy.org/cgi-bin/protparam/protparam
+  # http://web.expasy.org/protparam
   # SEQUENCE: QWGRRCCGWGPGRRYCVRWC
   # Number of amino acids: 20
   
