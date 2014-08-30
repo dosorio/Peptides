@@ -1,7 +1,7 @@
 \name{H}
 \alias{H}
 \docType{data}
-\title{Hydrophobicity scales form ExPASy "protscale"
+\title{24 Hydrophobicity values for amino acids form ExPASy "protscale"
 %%   ~~ data name/kind ... ~~
 }
 \description{A list with 24 hydrophobicity scales form ExPASy "protscale"
