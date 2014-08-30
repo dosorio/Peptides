@@ -1,5 +1,5 @@
 test.hydrophobicity <- function(){
-  # COMPATED TO GRAVY Grand average of hydropathicity (GRAVY) ExPASy
+  # COMPARED TO GRAVY Grand average of hydropathicity (GRAVY) ExPASy
   # http://web.expasy.org/cgi-bin/protparam/protparam
   # SEQUENCE: QWGRRCCGWGPGRRYCVRWC
   # GRAVY: -0.950

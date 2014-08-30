@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{
-This function calculates the hydrophobicity index of an amino acids sequence using one of the 24 scales availables on ExPASy "protscale"
+This function calculates the GRAVY hydrophobicity index of an amino acids sequence using one of the 24 scales availables on ExPASy "protscale"
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -68,5 +68,57 @@ Cowan R., Whittaker R.G. Hydrophobicity indices at ph 7.5 determined by HPLC. Pe
 Rose G.D., Geselowitz A.R., Lesser G.J., Lee R.H., Zehfus M.H. Mean fractional area loss (f) [average area buried/standard state area]. Science 229:834-838(1985)
 }
 \examples{
-hydrophobicity("KLKLLLLLLKLK","KyteDoolittle")
+# COMPARED TO GRAVY Grand average of hydropathicity (GRAVY) ExPASy
+# http://web.expasy.org/cgi-bin/protparam/protparam
+# SEQUENCE: QWGRRCCGWGPGRRYCVRWC
+# GRAVY: -0.950
+
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","KyteDoolittle")
+# [1] -0.95
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","AbrahamLeo")
+# [1] 0.09
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","BullBreese")
+# [1] 0.16
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Guy")
+# [1] 0.19
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Miyazawa")
+# [1] 5.74
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Roseman")
+# [1] -0.5
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Wolfenden")
+# [1] -6.31
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Wilson")
+# [1] 3.16
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Cowan3.4")
+# [1] 0.08
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Aboderin")
+# [1] 3.84
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Sweet")
+# [1] -0.11
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Eisenberg")
+# [1] -0.33
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","HoppWoods")
+# [1] -0.14
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Manavalan")
+# [1] 13.04
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","BlackMould")
+# [1] 0.5
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Fauchere")
+# [1] 0.53
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Janin")
+# [1] -0.1
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Rao")
+# [1] 0.81
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Tanford")
+# [1] -0.29
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Welling")
+# [1] -0.67
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Parker")
+# [1] 1.1
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Cowan7.5")
+# [1] 0.06
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Chothia")
+# [1] 0.26
+hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Rose")
+# [1] 0.76
 }

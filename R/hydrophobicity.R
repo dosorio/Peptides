@@ -17,5 +17,5 @@ hydrophobicity<-function(seq,method){
   H<-H
   # Sum the hydrophobicity of each amino acid and divide them between the sequence length
   # Return the GRAVY value rounded to 2 decimals
-  round(sum(as.array(H[[method]])[s2c(seq)],na.rm = TRUE)/nchar(seq),2)
+  round(sum(as.array(H[[method]])[s2c(toupper(seq))],na.rm = TRUE)/nchar(seq),2)
 }
