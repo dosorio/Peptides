@@ -4,16 +4,30 @@ R package to calculate indices and theoretical physicochemical properties of pep
 
 Install
 -------
-Peptides package v.1.0 is now available on CRAN, for install just type:
+This package required R version 2.10 or higher. If you are using an older version of R you will be prompted to upgrade when you try to install the package.
+
+The official release of Peptides is available on CRAN. To install from CRAN, use the following command:
 ```
 install.packages("Peptides", dependencies=TRUE)
 ```
+If you have devtools installed, install the latest stable version this package directly from GitHub:
+
+```
+library(devtools)
+install_github("Peptides", "dosorio")
+library(Peptides)
+```
+You can install the development version:
+```
+install_github("Peptides", "dosorio", "develop")
+```
+although it may not always work.
 
 Available functions
 -------------------
 | Code        | Function |
 | :------------- |:-------------|
-|aacomp  |	Compute the amino-acid composition of a protein sequence|
+|aacomp  |  Compute the amino-acid composition of a protein sequence|
 |aindex  |	Compute the aliphatic index of a protein sequence |
 |boman   |	Compute the Boman (Potential Protein Interaction) index |
 |charge  |	Compute the theoretical net charge of a protein sequence |
@@ -30,10 +44,11 @@ Available functions
 Available datasets
 -------------------
 | Code        | Description |
-| :------------- |:-------------|
-|H  |24 Hydrophobicity values for amino acids form ExPASy "protscale"  |
+|:----------- |:------------|
+|H  | 24 Hydrophobicity values for amino acids form ExPASy "protscale"  |
 |Pepdata | A data frame with physicochemical properties and indices from 100 amino-acid sequences (50 antimicrobial and 50 non antimicrobial)  |
-|pKscales | 9 pKa scales for the side chain of charged amino acids from various sources
+|pKscales | 9 pKa scales for the side chain of charged amino acids from various sources |
+
 Citation
 --------
 D. Osorio, P. Rondón-Villarreal and R. Torres. **Peptides: *Calculate indices and theoretical physicochemical properties of peptides and protein sequences*.**, 2014. URL: http: //CRAN.R-project.org/package=Peptides. R Package Version 1.0.
