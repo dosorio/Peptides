@@ -4,7 +4,7 @@ R package to calculate indices and theoretical physicochemical properties of pep
 
 Install
 -------
-Peptides package v.0.1 is now available on CRAN, for install just type:
+Peptides package v.1.0 is now available on CRAN, for install just type:
 ```
 install.packages("Peptides", dependencies=TRUE)
 ```
@@ -36,4 +36,4 @@ Available datasets
 |pKscales | 9 pKa scales for the side chain of charged amino acids from various sources
 Citation
 --------
-D. Osorio, P. Rondón-Villarreal and R. Torres. **Peptides: *Calculate indices and theoretical physicochemical properties of peptides and protein sequences*.**, 2014. URL: http: //CRAN.R-project.org/package=Peptides. R Package Version 0.4.
+D. Osorio, P. Rondón-Villarreal and R. Torres. **Peptides: *Calculate indices and theoretical physicochemical properties of peptides and protein sequences*.**, 2014. URL: http: //CRAN.R-project.org/package=Peptides. R Package Version 1.0.
