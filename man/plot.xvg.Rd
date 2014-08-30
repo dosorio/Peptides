@@ -24,12 +24,16 @@ Pronk, S., Pall, S., Schulz, R., Larsson, P., Bjelkmar, P., Apostolov, R., ... &
 }
 
 \examples{
-## Plot one file
-plot.xvg(system.file("xvg-files/epot.xvg",package="Peptides"))
+# PLOT ONE FILE
+file <- system.file("xvg-files/epot.xvg",package="Peptides")
+plot.xvg(file)
 
-## Plotting multiple files
+# PLOTTING MULTIPLE FILES
+POPG <- system.file("xvg-files/POPG.xvg",package="Peptides")
+POPE <- system.file("xvg-files/POPE.xvg",package="Peptides")
+POPC <- system.file("xvg-files/POPC.xvg",package="Peptides")
 par(mfcol=c(1,3))
-plot.xvg(system.file("xvg-files/POPG.xvg",package="Peptides"))
-plot.xvg(system.file("xvg-files/POPE.xvg",package="Peptides"))
-plot.xvg(system.file("xvg-files/POPC.xvg",package="Peptides"))
+plot.xvg(POPG)
+plot.xvg(POPE)
+plot.xvg(POPC)
 }
