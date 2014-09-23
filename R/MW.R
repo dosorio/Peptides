@@ -12,5 +12,5 @@ mw<-function(seq){
             O=237.3018)
   # Sum the weight of each amino acid and add 18,2
   # Return the MW rounded to 2 decimals
-  round(sum(weight[s2c(toupper(seq))],na.rm=TRUE)+18,2)
+  round(sum(weight[s2c(toupper(seq))],na.rm=TRUE)+18.0153,2)
 }
