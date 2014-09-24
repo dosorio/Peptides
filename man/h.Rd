@@ -1,15 +1,15 @@
 \name{H}
 \alias{H}
 \docType{data}
-\title{24 Hydrophobicity values for amino acids form ExPASy "protscale"
+\title{22 Hydrophobicity values for amino acids form ExPASy "protscale"
 %%   ~~ data name/kind ... ~~
 }
-\description{A list with 24 hydrophobicity scales form ExPASy "protscale"
+\description{A list with 22 hydrophobicity scales form ExPASy "protscale"
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
 }
 \usage{data(H)}
 \format{
-  A list with 24 Hydrophobicity scales.
+  A list with 22 Hydrophobicity scales.
 }
 \details{
 Hydrophobicity scales are values that define relative hydrophobicity of amino acid residues.
@@ -51,8 +51,6 @@ Tanford C. Hydrophobicity scale (Contribution of hydrophobic interactions to the
 
 Wolfenden R.V., Andersson L., Cullis P.M., Southgate C.C.F. Hydration potential (kcal/mole) at 25C. Biochemistry 20:849-855(1981).
 
-Welling G.W., Weijer W.J., Van der Zee R., Welling-Wester S. Antigenicity value X 10. FEBS Lett. 188:215-218(1985).
-
 Wilson K.J., Honegger A., Stotzel R.P., Hughes G.J. Hydrophobic constants derived from HPLC peptide retention times. Biochem. J. 199:31-41(1981).
 
 Parker J.M.R., Guo D., Hodges R.S. Hydrophilicity scale derived from HPLC peptide retention times. Biochemistry 25:5425-5431(1986).
@@ -61,7 +59,6 @@ Cowan R., Whittaker R.G. Hydrophobicity indices at ph 3.4 determined by HPLC. Pe
 
 Cowan R., Whittaker R.G. Hydrophobicity indices at ph 7.5 determined by HPLC. Peptide Research 3:75-80(1990).
 
-Rose G.D., Geselowitz A.R., Lesser G.J., Lee R.H., Zehfus M.H. Mean fractional area loss (f) [average area buried/standard state area]. Science 229:834-838(1985)
 %%  ~~ possibly secondary sources and usages ~~
 }
 \examples{
