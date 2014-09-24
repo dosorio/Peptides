@@ -4,7 +4,7 @@ mw.membpos <- function(){
   # SEQUENCE: QWGRRCCGWGPGRRYCVRWC 
   
   # CHECK MW VALUE
-  checkEquals(mw("QWGRRCCGWGPGRRYCVRWC"), 2485.9)
+  checkEquals(mw("QWGRRCCGWGPGRRYCVRWC"), 2485.91)
   
   # CHECK OUTPUT CLASS
   checkTrue(is.numeric(mw("QWGRRCCGWGPGRRYCVRWC")))
