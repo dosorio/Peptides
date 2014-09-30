@@ -9,7 +9,7 @@ pI<-function (seq,pKscale)
   # Evaluate the net charge for defined pHs
   charges <- charge(seq,pHs,pKscale)
   # Computes the pI and returns the value rounded to 3 decimals
-  I <- round(pHs[which(abs(charges)==min(abs(charges))]),3)
+  I <- round(pHs[which(abs(charges)==min(abs(charges)))]),3)
   return(I)
 }
 
