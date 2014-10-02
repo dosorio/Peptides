@@ -11,11 +11,11 @@ hydrophobicity<-function(seq,scale){
        "Wilson",       "Cowan3.4",     "Aboderin",     "Sweet",        "Eisenberg",    "HoppWoods",    "Manavalan",   
        "BlackMould",   "Fauchere",     "Janin",        "Rao",          "Tanford",      "Welling",      "Parker",      
        "Cowan7.5",     "Chothia",      "Rose")
-  method<-pmatch(scale,M)
+  scale<-pmatch(scale,M)
   # Loading hydrophobicity scales
   data(H, envir = environment())
   H<-H
   # Sum the hydrophobicity of each amino acid and divide them between the sequence length
   # Return the GRAVY value rounded to 2 decimals
-  round(sum(as.array(H[[scale]])[s2c(toupper(seq))],na.rm = TRUE)/nchar(seq),2)
+  round(sum(H[[scale]][s2c(toupper(seq))],na.rm = TRUE)/nchar(seq),2)
 }
