@@ -111,10 +111,6 @@ hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Rao")
 # [1] 0.81
 hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Tanford")
 # [1] -0.29
-hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Welling")
-# [1] -0.67
-hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Parker")
-# [1] 1.1
 hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Cowan7.5")
 # [1] 0.06
 hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Chothia")
