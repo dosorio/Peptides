@@ -1,5 +1,5 @@
 # HYDROPHOBICITY
-# This function compute the GRAVY hydrophobicity index using 24 different hydrophobicity scales.
+# This function compute the GRAVY hydrophobicity index using 22 different hydrophobicity scales.
 # The hydrophobicity scales are the same implemented in ExPASy "ProtScale"
 # The function is the reported in Kyte, J., & Doolittle, R. F. (1982). 
 # A simple method for displaying the hydropathic character of a protein. 
@@ -9,8 +9,8 @@ hydrophobicity<-function(seq,scale){
   # Setting the hydrophobicity scale
   M<-c("KyteDoolittle","AbrahamLeo",   "BullBreese",   "Guy",          "Miyazawa",     "Roseman",      "Wolfenden",   
        "Wilson",       "Cowan3.4",     "Aboderin",     "Sweet",        "Eisenberg",    "HoppWoods",    "Manavalan",   
-       "BlackMould",   "Fauchere",     "Janin",        "Rao",          "Tanford",      "Welling",      "Parker",      
-       "Cowan7.5",     "Chothia",      "Rose")
+       "BlackMould",   "Fauchere",     "Janin",        "Rao",          "Tanford",      "Cowan7.5",     "Chothia",
+       "Rose")
   scale<-pmatch(scale,M)
   # Loading hydrophobicity scales
   data(H, envir = environment())
