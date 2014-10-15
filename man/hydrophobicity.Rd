@@ -9,12 +9,12 @@ This function calculates the GRAVY hydrophobicity index of an amino acids sequen
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-hydrophobicity(seq,method)
+hydrophobicity(seq,scale)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{seq}{amino acid sequence string in upper case}
-  \item{method}{a character string specifying the hydophobicity scale to be used; must be one of \code{"KyteDoolittle"}, \code{"AbrahamLeo"}, \code{"BullBreese"},\code{"Guy"}, \code{"Miyazawa"}, \code{"Roseman"}, \code{"Wolfenden"}, \code{"Wilson"}, \code{"Cowan3.4"}, \code{"Aboderin"}, \code{"Sweet"}, \code{"Eisenberg"}, \code{"HoppWoods"}, \code{"Manavalan"}, \code{"BlackMould"}, \code{"Fauchere"}, \code{"Janin"}, \code{"Rao"}, \code{"Tanford"}, \code{"Welling"}, \code{"Parker"}, \code{"Cowan7.5"}, \code{"Chothia"} or \code{"Rose"}.
+  \item{scale}{a character string specifying the hydophobicity scale to be used; must be one of \code{"KyteDoolittle"}, \code{"AbrahamLeo"}, \code{"BullBreese"},\code{"Guy"}, \code{"Miyazawa"}, \code{"Roseman"}, \code{"Wolfenden"}, \code{"Wilson"}, \code{"Cowan3.4"}, \code{"Aboderin"}, \code{"Sweet"}, \code{"Eisenberg"}, \code{"HoppWoods"}, \code{"Manavalan"}, \code{"BlackMould"}, \code{"Fauchere"}, \code{"Janin"}, \code{"Rao"}, \code{"Tanford"}, \code{"Cowan7.5"}, \code{"Chothia"} or \code{"Rose"}.
 }
 }
 \source{
@@ -111,10 +111,6 @@ hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Rao")
 # [1] 0.81
 hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Tanford")
 # [1] -0.29
-hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Welling")
-# [1] -0.67
-hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Parker")
-# [1] 1.1
 hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Cowan7.5")
 # [1] 0.06
 hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Chothia")
