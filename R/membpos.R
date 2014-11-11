@@ -3,18 +3,13 @@
 # Eisenberg, D. (1984). Three-dimensional structure of membrane and surface proteins. 
 # Annual Review of Biochemistry, 53, 595–623. doi:10.1146/annurev.bi.53.070184.003115
 
-membpos<-function(seq,angle){ 
+membpos<-function(seq,angle,window=11){ 
   # Setting input length
-  AA<-s2c(toupper(seq))
-  if(nchar(seq)>11){
-    Pep<-NULL
-    for (i in 1: (nchar(seq)-10)){
-      Pep[i]<-paste(AA[i:(i+10)],collapse ="")}
-  }else{
-    Pep<-toupper(seq)
-  }
+  aa<-strsplit(toupper(seq),"")[[1]]
+  window<-min(length(aa),window)
+  pep<-embed(aa,window)
   # Compute the hmoment and hydrophobicity for each amino acid window
-  data<-NULL
+  data<-character(dim(pep)[[1]])
   data$Pep<-as.vector(Pep)
   data$H<-as.vector(sapply(Pep,function(x)hydrophobicity(x,"Eisenberg")))
   data$uH<-round(as.vector(sapply(Pep,function(x)hmoment(x,angle))),2)
