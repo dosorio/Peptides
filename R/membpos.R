@@ -15,7 +15,7 @@ membpos<-function(seq,angle=100){
   data<-as.data.frame(matrix(nrow = length(pep),ncol = 5))
   data[,1]<-pep
   data[,2]<-round(as.vector(sapply(pep,function(x)hydrophobicity(x,"Eisenberg"))),3)
-  data[,3]<-round(as.vector(sapply(pep,function(x)hmoment(x,angle,window = 10))),3)
+  data[,3]<-round(as.vector(sapply(pep,function(x)hmoment(x,angle,window))),3)
   data[,4]<-(data[,2]*-0.421)+0.579
   colnames(data)<-c("Pep","H","uH","m","MembPos")
   # Assigns a class depending on the hydrophobicity and hmoment
