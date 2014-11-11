@@ -5,7 +5,7 @@
 # A simple method for displaying the hydropathic character of a protein. 
 # Journal of Molecular Biology, 157(1), 105–32.
 
-hydrophobicity<-function(seq,scale="Kyte"){
+hydrophobicity<-function(seq,scale="KyteDoolittle"){
   # Setting the hydrophobicity scale
   M<-c("KyteDoolittle","AbrahamLeo",   "BullBreese",   "Guy",          "Miyazawa",     "Roseman",      "Wolfenden",   
        "Wilson",       "Cowan3.4",     "Aboderin",     "Sweet",        "Eisenberg",    "HoppWoods",    "Manavalan",   
