@@ -5,7 +5,7 @@ test.pI<- function(){
   # Theoretical pI: 9.88
   
   # CHECK pI VALUE
-  checkEquals(round(pI("QWGRRCCGWGPGRRYCVRWC","Bje"),2),9.88)
+  checkEquals(pI("QWGRRCCGWGPGRRYCVRWC","Bje"),9.88)
   
   # CHECK OUTPUT CLASS
   checkTrue(is.numeric(pI("QWGRRCCGWGPGRRYCVRWC","Bje")))
