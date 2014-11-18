@@ -5,8 +5,8 @@ test.pI<- function(){
   # Theoretical pI: 9.88
   
   # CHECK pI VALUE
-  checkEquals(pI("QWGRRCCGWGPGRRYCVRWC","Bjellqvist"),9.88,tolerance = 0.01)
+  checkEquals(pI("QWGRRCCGWGPGRRYCVRWC","Bje"),9.88)
   
   # CHECK OUTPUT CLASS
-  checkTrue(is.numeric(pI("QWGRRCCGWGPGRRYCVRWC","Bjellqvist")))
+  checkTrue(is.numeric(pI("QWGRRCCGWGPGRRYCVRWC","Bje")))
 }

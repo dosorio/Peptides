@@ -14,5 +14,5 @@ aindex<-function(seq){
   # and of Leu/Ile side chains (b = 3.9) to the side chain of alanine. 
   
   # Return the result as percentage rounded to 2 decimals
-  sum(c(p["A"],(2.9*p["V"]),3.9*p[c("L","I")]),na.rm=T)*100
+  round(sum(c(p["A"],(2.9*p["V"]),3.9*p[c("L","I")]),na.rm=T)*100,2)
 }
