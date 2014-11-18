@@ -5,14 +5,14 @@
 %%  ~~function to do ... ~~
 }
 \description{
-This function calculates the Ikai (1980) aliphatic index of a protein. The aindex is defined as the relative volume occupied by aliphatic side chains (Alanine, Valine, Isoleucine, and Leucine). It may be regarded as a positive factor for the increase of thermostability of globular proteins.  
+This function calculates the Ikai (1980) aliphatic index of a protein. The \code{aindex} is defined as the relative volume occupied by aliphatic side chains (Alanine, Valine, Isoleucine, and Leucine). It may be regarded as a positive factor for the increase of thermostability of globular proteins.  
 } 
 \usage{
 aindex(seq)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{seq}{amino acid sequence string in upper case}
+  \item{seq}{amino acid sequence string}
 }
 
 \references{
@@ -22,7 +22,6 @@ Ikai (1980). Thermostability and aliphatic index of globular proteins. Journal o
 \examples{
 # COMPARED TO ExPASy ALIPHATIC INDEX
 # http://web.expasy.org/protparam/
-  
 # SEQUENCE: SDKEVDEVDAALSDLEITLE
 # Aliphatic index: 117.00
   

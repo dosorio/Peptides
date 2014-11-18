@@ -7,7 +7,7 @@ membpos<-function(seq,angle=100){
   # Setting input length
   aa<-strsplit(toupper(seq),"")[[1]]
   window<-min(length(aa),11)
-  pep<-character(nchar(seq)-window)
+  pep<-rep(NA,nchar(seq)-window)
   for (i in 1: (nchar(seq)-window)){
     pep[i]<-paste(aa[i:(i+window)],collapse = "")
   }

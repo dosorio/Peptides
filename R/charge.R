@@ -23,6 +23,6 @@ charge <- function(seq,pH=7,pKscale="EMBOSS"){
   ccys  <- aa["C"]* (-1 /(1+10^(-1*(pH-pKs["C"]))))
   ctyr  <- aa["Y"]* (-1 /(1+10^(-1*(pH-pKs["Y"]))))
   # Compute the charge and return the value rounded to 3 decimals
-  charge <- round(as.numeric(carg + clys + chis + nterm + casp + cglu + ctyr + ccys + cterm),3)
+  charge <- as.numeric(carg + clys + chis + nterm + casp + cglu + ctyr + ccys + cterm)
   return(charge)
 }
