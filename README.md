@@ -1,6 +1,6 @@
 Peptides
 ========
-R package to calculate indices and theoretical physicochemical properties of peptides and protein sequences. Include also the option to read and plot XVG output files from GROMACS molecular dynamics package.
+R package to calculate indices and theoretical physicochemical properties of peptides and protein sequences. Include also the option to read and plot XVG output files from the GROMACS molecular dynamics package.
 
 Install
 -------
