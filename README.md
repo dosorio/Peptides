@@ -1,10 +1,10 @@
 Peptides
 ========
-R package to calculate indices and theoretical physicochemical properties of peptides and protein sequences. Include also utilities for read and plot GROMACS output files .XVG
+R package to calculate indices and theoretical physicochemical properties of peptides and protein sequences. Include also the option to read and plot XVG output files from GROMACS molecular dynamics package.
 
 Install
 -------
-This package required R version 2.10 or higher. If you are using an older version of R you will be prompted to upgrade when you try to install the package.
+This package required R version 1.2.2 or higher. If you are using an older version of R you will be prompted to upgrade when you try to install the package.
 
 The official release of Peptides is available on CRAN. To install from CRAN, use the following command:
 ```
@@ -38,17 +38,17 @@ Available functions
 |membpos |	Compute theoretically the class of a protein sequence |
 |mw	| Compute the molecular weight of a protein sequence |
 |pI	| Compute the isoelectic point (pI) of a protein sequence |
-|plot.xvg	| Plot time series from GROMACS XVG files | 
+|plot.xvg	| Plot time series from GROMACS XVG files |
 |read.xvg |	Read XVG files from GROMACS molecular dynamics package |
 
 Available datasets
 -------------------
 | Code        | Description |
 |:----------- |:------------|
-|H  | 22 Hydrophobicity values for amino acids form ExPASy "protscale"  |
-|Pepdata | A data frame with physicochemical properties and indices from 100 amino-acid sequences (50 antimicrobial and 50 non antimicrobial)  |
+|H  | 38 Hydrophobicity values for amino acids form ExPASy "protscale"  |
+|pepdata | A data frame with physicochemical properties and indices from 100 amino-acid sequences (50 antimicrobial and 50 non antimicrobial)  |
 |pKscales | 9 pKa scales for the side chain of charged amino acids from various sources |
 
 Citation
 --------
-D. Osorio, P. Rondón-Villarreal and R. Torres. **Peptides: *Calculate indices and theoretical physicochemical properties of peptides and protein sequences*.**, 2014. URL: http: //CRAN.R-project.org/package=Peptides. R Package Version 1.0.
+D. Osorio, P. Rondón-Villarreal and R. Torres. **Peptides: *Calculate indices and theoretical physicochemical properties of peptides and protein sequences*.**, 2014. URL: http: //CRAN.R-project.org/package=Peptides. R Package Version 1.0.3.
