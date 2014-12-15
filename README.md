@@ -45,7 +45,7 @@ Available datasets
 -------------------
 | Code        | Description |
 |:----------- |:------------|
-|H  | 38 Hydrophobicity values for amino acids form ExPASy "protscale"  |
+|H  | 38 Hydrophobicity values for amino acids form various sources |
 |pepdata | A data frame with physicochemical properties and indices from 100 amino-acid sequences (50 antimicrobial and 50 non antimicrobial)  |
 |pKscales | 9 pKa scales for the side chain of charged amino acids from various sources |
 
