@@ -31,5 +31,5 @@ Chicago
 # Theoretical pI/Mw: 9.88 / 2485.91 
   
 mw("QWGRRCCGWGPGRRYCVRWC")
-# [1] 2485.9
+# [1] 2485.911
 }

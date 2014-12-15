@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{
-This function computes the net charge of a protein sequence based on the Henderson-Hasselbalch equation described by Moore, D. S. (1985). The net charge can be calculated at defined pH using one of the 9 pKa scales availables: Bjellqvist, EMBOSS, Murray, Sillero, Solomon, Stryer, Lehninger, Dawson or Rodwell
+This function computes the net charge of a protein sequence based on the Henderson-Hasselbalch equation described by Moore, D. S. (1985). The net charge can be calculated at defined pH using one of the 9 pKa scales availables: \code{Bjellqvist}, \code{Dawson}, \code{EMBOSS}, \code{Lehninger}, \code{Murray}, \code{Rodwell}, \code{Sillero}, \code{Solomon} or \code{Stryer}.
 }
 \usage{
 charge(seq, pH, pKscale)
@@ -14,7 +14,7 @@ charge(seq, pH, pKscale)
 \arguments{
   \item{seq}{amino acid sequence as string}
   \item{pH}{pH value}
-  \item{pKscale}{a character string specifying the pKa scale to be used; must be one of \code{"Bjellqvist"}, \code{"EMBOSS"}, \code{"Murray"}, \code{"Sillero"}, \code{"Solomon"}, \code{"Stryer"}, \code{"Lehninger"}, \code{"Dawson"} or \code{"Rodwell"}}
+  \item{pKscale}{a character string specifying the pKa scale to be used; must be one of \code{"Bjellqvist"}, \code{"Dawson"}, \code{"EMBOSS"}, \code{"Lehninger"}, \code{"Murray"}, \code{"Rodwell"}, \code{"Sillero"}, \code{"Solomon"} or \code{"Stryer"}}
 }
 
 \references{
@@ -22,9 +22,15 @@ Kiraga, J. (2008) Analysis and computer simulations of variability of isoelectri
 
 Bjellqvist, B., Hughes, G.J., Pasquali, Ch., Paquet, N., Ravier, F., Sanchez, J.Ch., Frutige,r S., Hochstrasser D. (1993) The focusing positions of polypeptides in immobilized pH gradients can be predicted from their amino acid sequences. Electrophoresis, 14:1023-1031.
 
+Dawson, R. M. C.; Elliot, D. C.; Elliot, W. H.; Jones, K. M. Data for biochemical research. Oxford University Press, 1989; p. 592.
+
 EMBOSS data are from http://emboss.sourceforge.net/apps/release/5.0/emboss/apps/iep.html.
 
+Nelson, D. L.; Cox, M. M. Lehninger Principles of Biochemistry, Fourth Edition; W. H. Freeman, 2004; p. 1100.
+   
 Murray, R.K., Granner, D.K., Rodwell, V.W. (2006) Harper's illustrated Biochemistry. 27th edition. Published by The McGraw-Hill Companies.
+
+Rodwell, J. Heterogeneity of component bands in isoelectric focusing patterns. Analytical Biochemistry, 1982, 119 (2), 440-449.
 
 Sillero, A., Maldonado, A. (2006) Isoelectric point determination of proteins and other macromolecules: oscillating method. Comput Biol Med., 36:157-166.
 
@@ -40,23 +46,23 @@ Stryer L. (1999) Biochemia. czwarta edycja. Wydawnictwo Naukowe PWN.
 # Charge   = 3.0
 
 charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Bjellqvist")
-# [1] 2.737
+# [1] 2.737303
 charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="EMBOSS")
-# [1] 2.914
+# [1] 2.914112
 charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Murray")
-# [1] 2.908
+# [1] 2.907541
 charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Sillero")
-# [1] 2.920
+# [1] 2.919812
 charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Solomon")
-# [1] 2.844
+# [1] 2.844406
 charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Stryer")
-# [1] 2.877
+# [1] 2.876504
 charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Lehninger")
-# [1] 2.873
+# [1] 2.87315
 charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Dawson")
-# [1] 2.844
+# [1] 2.844406
 charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Rodwell")
-# [1] 2.820
+# [1] 2.819755
 
 # COMPARED TO YADAMP
 # http://yadamp.unisa.it/showItem.aspx?yadampid=845&x=0,7055475
@@ -66,13 +72,13 @@ charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Rodwell")
 # CHARGE pH9: 1.09  
 
 charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=5, pKscale="EMBOSS")
-# [1] 3.037
+# [1] 3.037398
 charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="EMBOSS")
-# [1] 2.914
+# [1] 2.914112
 charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=9, pKscale="EMBOSS")
-# [1] 0.718
+# [1] 0.7184524
 
 # JUST ONE COMMAND
 charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=seq(from = 5,to = 9,by = 2), pKscale="EMBOSS")
-# [1] 3.037 2.914 0.718
+# [1] 3.0373984 2.9141123 0.7184524
 }
