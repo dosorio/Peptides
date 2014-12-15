@@ -22,28 +22,26 @@ Eisenberg, David. "Three-dimensional structure of membrane and surface proteins.
 membpos("ARQQNLFINFCLILIFLLLI",100)
 
 #             Pep     H   uH       MembPos
-#  1  ARQQNLFINFC -0.01 0.40      Globular
-#  2  RQQNLFINFCL  0.03 0.40      Globular
-#  3  QQNLFINFCLI  0.39 0.21      Globular
-#  4  QNLFINFCLIL  0.56 0.29 Transmembrane
-#  5  NLFINFCLILI  0.77 0.29       Surface
-#  6  LFINFCLILIF  0.95 0.21       Surface
-#  7  FINFCLILIFL  0.95 0.16 Transmembrane
-#  8  INFCLILIFLL  0.93 0.15 Transmembrane
-#  9  NFCLILIFLLL  0.90 0.15 Transmembrane
-#  10 FCLILIFLLLI  1.10 0.16       Surface
+# 1 ARQQNLFINFCL 0.083 0.353      Globular
+# 2 RQQNLFINFCLI 0.147 0.317      Globular
+# 3 QQNLFINFCLIL 0.446 0.274      Globular
+# 4 QNLFINFCLILI 0.632 0.274 Transmembrane
+# 5 NLFINFCLILIF 0.802 0.253       Surface
+# 6 LFINFCLILIFL 0.955 0.113 Transmembrane
+# 7 FINFCLILIFLL 0.955 0.113 Transmembrane
+# 8 INFCLILIFLLL 0.944 0.108 Transmembrane
+# 9 NFCLILIFLLLI 0.944 0.132 Transmembrane
 
 membpos("ARQQNLFINFCLILIFLLLI",160)
 
 #             Pep     H   uH       MembPos
-#  1  ARQQNLFINFC -0.01 0.53      Globular
-#  2  RQQNLFINFCL  0.03 0.44      Globular
-#  3  QQNLFINFCLI  0.39 0.33      Globular
-#  4  QNLFINFCLIL  0.56 0.33 Transmembrane
-#  5  NLFINFCLILI  0.77 0.35       Surface
-#  6  LFINFCLILIF  0.95 0.35       Surface
-#  7  FINFCLILIFL  0.95 0.39       Surface
-#  8  INFCLILIFLL  0.93 0.39       Surface
-#  9  NFCLILIFLLL  0.90 0.18 Transmembrane
-#  10 FCLILIFLLLI  1.10 0.18       Surface
+# 1 ARQQNLFINFCL 0.083 0.467  Globular
+# 2 RQQNLFINFCLI 0.147 0.467  Globular
+# 3 QQNLFINFCLIL 0.446 0.285  Globular
+# 4 QNLFINFCLILI 0.632 0.358  Surface
+# 5 NLFINFCLILIF 0.802 0.358  Surface
+# 6 LFINFCLILIFL 0.955 0.269  Surface
+# 7 FINFCLILIFLL 0.955 0.269  Surface
+# 8 INFCLILIFLLL 0.944 0.257  Surface
+# 9 NFCLILIFLLLI 0.944 0.229  Surface
 }

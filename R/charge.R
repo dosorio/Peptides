@@ -4,13 +4,17 @@
 # The net charge can be calculated using one of the 9 pKa scales availables Bjellqvist, EMBOSS, Murray, Sillero, Solomon, 
 # Stryer, Lehninger, Dawson or Rodwell
 
+<<<<<<< HEAD
 charge <- function(seq,pH=7,pKscale= "Lehninger"){
+=======
+charge <- function(seq,pH=7,pKscale="EMBOSS"){
+>>>>>>> develop
   # # Divide the amino acid sequence and makes an absolute frequencies table
-  aa<-table(factor(prot<-s2c(toupper(seq)),levels = LETTERS))
+  aa<-table(factor(prot<-strsplit(toupper(seq),"")[[1]],levels = LETTERS))
   # Set pKscale
   data(pKscales, envir = environment())
   pKscales<-pKscales
-  pKs<-pKscales[,pmatch(pKscale,names(pKscales))]
+  pKs<-pKscales[,match.arg(pKscale,names(pKscales))]
   names(pKs) <- rownames(pKscales)
   # Charge
   cterm <- (-1 /(1+10^(-1*(pH-pKs["cTer"]))))

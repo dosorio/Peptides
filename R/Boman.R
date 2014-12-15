@@ -10,5 +10,5 @@ boman<-function(seq){
            H=-4.66, Q=-5.54, K=-5.55, N=-6.64, E=-6.81, D=-8.72, R=-14.92)
   # Asign a value to each amino acids in the sequence, sum the values and divide on amino acid sequence length
   # Report the index rounded to 2 decimals
-  round(-1*sum(boman[s2c(toupper(seq))],na.rm=T)/nchar(seq),2)
+  return(-1*sum(boman[strsplit(toupper(seq),"")[[1]]],na.rm=T)/nchar(seq))
 }

@@ -3,30 +3,23 @@
 # The hydrophobic moment detects periodicity in protein hydrophobicity. 
 # Proceedings of the National Academy of Sciences of the United States of America, 81(1), 140–4.
 
-hmoment<-function(seq,angle){
-  # Loading Hydrophobicity scales
-  data(H, envir = environment())
-  # Setting global variables
-  H<-H
-  AA<-s2c(toupper(seq))
-  # Setting input length
-  if(nchar(seq)>10){
-    Pep<-NULL
-    for (i in 1: (nchar(seq)-9)){
-      Pep[i]<-paste(AA[i:(i+9)],collapse ="")}
-  }else{
-    Pep<-seq
-  }
-  # Defining the moment function
-  moment<-function(seq,angle){
-    vcos<-vsin<-uH<-NULL
-    aa<-s2c(toupper(seq))
-    for (i in 1: nchar(seq)){
-      vcos[i]<-(as.array(H[[12]])[aa[i]]*(cos((angle*(pi/180))*i)))
-      vsin[i]<-(as.array(H[[12]])[aa[i]]*(sin((angle*(pi/180))*i)))}
-    round(sqrt(sum(vcos,na.rm=TRUE)^2+sum(vsin,na.rm=TRUE)^2)/nchar(seq),2)
-  }
+hmoment<-function(seq,angle=100,window=11){
+  # Load hydrophobicity scale
+  data(H,envir = environment())
+  h<-H[["Eisenberg"]]
+  # Spliting the sequence
+  aa<-strsplit(toupper(seq),"")[[1]]
+  window<-min(length(aa),window)
+  # Setting the sequences
+  pep<-embed(aa,window)
+  # Evaluating angles and functions
+  angle<- angle*(pi/180)*1:window
+  vcos<-h[t(pep)]*cos(angle)
+  vsin<-h[t(pep)]*sin(angle)
+  dim(vcos)<-dim(vsin)<-dim(t(pep))
+  vcos<-colSums(vcos)
+  vsin<-colSums(vsin)
   # Applying the moment function to each 10 amino acids window
-  # Return the max value rounded to 3 decimals
-  max(sapply(Pep,function(x)moment(x,angle)))
+  # Return the max value
+  max(sqrt(vsin*vsin + vcos*vcos)/window)
 }

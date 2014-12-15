@@ -8,12 +8,13 @@
 This function compute the hmoment based on Eisenberg, D., Weiss, R. M., & Terwilliger, T. C. (1984). Hydriphobic moment is a quantitative measure of the amphiphilicity perpendicular to the axis of any periodic peptide structure, such as the a-helix or b-sheet. It can be calculated for an amino acid sequence of N residues and their associated hydrophobicities Hn. If the secuence length is < 11 AA, the window length is equal to the AA sequence length, if it is > 11, windows of 11 residues are evaluated}
 
 \usage{
-hmoment(seq,angle)
+hmoment(seq,angle,window)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{seq}{amino acid sequence as string}
+  \item{seq}{Amino acid sequence as string}
   \item{angle}{Protein rotational angle}
+  \item{window}{Sequence fraction length}
 }
 \value{
 The max hydrophobic moment (uH) as a numerical vector of length one}
@@ -24,14 +25,14 @@ Eisenberg, D., Weiss, R. M., & Terwilliger, T. C. (1984). The hydrophobic moment
 # COMPARED TO EMBOSS:HMOMENT
 # http://emboss.bioinformatics.nl/cgi-bin/emboss/hmoment
 # SEQUENCE: FLPVLAGLTPSIVPKLVCLLTKKC
-# ALPHA-HELIX ANGLE=100 : 0.56
-# BETA-SHEET  ANGLE=160 : 0.25
+# ALPHA-HELIX ANGLE=100 : 0.52
+# BETA-SHEET  ANGLE=160 : 0.271
   
 # ALPHA HELIX VALUE
-hmoment("FLPVLAGLTPSIVPKLVCLLTKKC",100)
-# [1] 0.56
+hmoment(seq = "FLPVLAGLTPSIVPKLVCLLTKKC",angle = 100, window = 11)
+# [1] 0.5199226
   
 # BETA SHEET VALUE
-hmoment("FLPVLAGLTPSIVPKLVCLLTKKC",160)
-# [1] 0.25
+hmoment(seq = "FLPVLAGLTPSIVPKLVCLLTKKC",angle = 160, window = 11)
+# [1] 0.2705906
 }

@@ -6,7 +6,7 @@ test.boman <- function(){
   # BOMAN INDEX  -1.24  
   
   # CHECK VALUES
-  checkEquals(boman("FLPVLAGLTPSIVPKLVCLLTKKC"),-1.24)
+  checkEquals(boman("FLPVLAGLTPSIVPKLVCLLTKKC"),-1.24,tolerance = 0.01)
   
   # CHECK OUTPUT CLASS
   checkTrue(is.numeric(boman("FLPVLAGLTPSIVPKLVCLLTKKC")))

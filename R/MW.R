@@ -10,7 +10,7 @@ mw<-function(seq){
             G=57.0519, H=137.1411, I=113.1594, L=113.1594, K=128.1741, M=131.1926, F=147.1766, 
             P=97.1167, S=87.0782,  T=101.1051, W=186.2132, Y=163.1760, V=99.1326,  U=150.0388, 
             O=237.3018)
-  # Sum the weight of each amino acid and add 18,2
+  # Sum the weight of each amino acid and add 18,02
   # Return the MW rounded to 2 decimals
-  round(sum(weight[s2c(toupper(seq))],na.rm=TRUE)+18.0153,2)
+  sum(weight[strsplit(toupper(seq),split = "")[[1]]],na.rm=TRUE)+18.0153
 }
