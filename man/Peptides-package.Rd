@@ -2,18 +2,18 @@
 \alias{Peptides}
 \docType{package}
 \title{
-Calculate indices and theoretical physicochemical properties of peptides and proteins sequences.
+Calculate Indices and Theoretical Properties of Protein Sequences
 }
 \description{
-Calculate physicochemical properties and indices from amino acid sequences of peptides 
-and proteins. Include also utilities for read and plot GROMACS output files .XVG.
+Calculate physicochemical properties and indices from amino-acid sequences of peptides 
+and proteins. Include also the option to read and plot XVG output files from GROMACS molecular dynamics package.
 }
 \details{
 \tabular{ll}{
 Package: \tab Peptides\cr
 Type: \tab Package\cr
-Version: \tab 1.0.2\cr
-Date: \tab 2014-11-11\cr
+Version: \tab 1.0.3\cr
+Date: \tab 2014-12-12\cr
 License: \tab GPL-2\cr
 }
 }

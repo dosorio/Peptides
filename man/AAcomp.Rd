@@ -54,13 +54,13 @@ aacomp("KWKLFKKIGIGKFLHSAKKFX")
 
 ## Output
 #          Number Mole\%
-# Tiny           4 19.05
-# Small          4 19.05
-# Aliphatic      5 23.81
-# Aromatic       5 23.81
-# Non Polar     11 52.38
-# Polar          9 42.86
-# Charged        8 38.10
-# Basic          8 38.10
-# Acidic         0  0.00
+# Tiny           4 19.048
+# Small          4 19.048
+# Aliphatic      5 23.810
+# Aromatic       5 23.810
+# NonPolar      11 52.381
+# Polar          9 42.857
+# Charged        8 38.095
+# Basic          8 38.095
+# Acidic         0  0.000
 }
