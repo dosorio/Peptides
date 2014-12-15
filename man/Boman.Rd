@@ -28,5 +28,5 @@ Radzicka, A., & Wolfenden, R. (1988). Comparing the polarities of the amino acid
 # BOMAN INDEX  -1.24  
 
 boman("FLPVLAGLTPSIVPKLVCLLTKKC")
-# [1] -1.24
+# [1] -1.235833
 }
