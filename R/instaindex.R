@@ -1,7 +1,7 @@
 # INSTAINDEX
 # This function compute the instability index proposed by Guruprasad, K., Reddy, B. V, & Pandit, M. W. (1990). 
 # Correlation between stability of a protein and its dipeptide composition: a novel approach for predicting in vivo stability of a protein from its primary sequence. 
-# Protein Engineering, 4(2), 155–61.
+# Protein Engineering, 4(2), 155-61.
 
 instaindex<-function(seq){
   # Setting the Guruprasad scale
@@ -24,7 +24,7 @@ instaindex<-function(seq){
                 TQ=-6.54,TN=-14.03,TI=1,TR=1,TD=1,TP=1,TT=1,TK=1,TE=20.26,TV=1,TS=1,TG=-7.49,TA=1,TL=1,KW=1,KC=1,KM=33.6,
                 KH=1,KY=1,KF=1,KQ=24.68,KN=1,KI=-7.49,KR=33.6,KD=1,KP=-6.54,KT=1,KK=1,KE=1,KV=-7.49,KS=1,KG=-7.49,KA=1,
                 KL=-7.49,EW=-14.03,EC=44.94,EM=1,EH=-6.54,EY=1,EF=1,EQ=20.26,EN=1,EI=20.26,ER=1,ED=20.26,EP=20.26,ET=1,
-                EK=1,EE=33.6,EV=1,ES=20.26,EG=1,EA=1,EL=1,VW=1,VC=1,VM=1,VH=1,VY=-6.54,VF=1,VQ=1,VN=1,VI=1,VR=1,VD=14.03,
+                EK=1,EE=33.6,EV=1,ES=20.26,EG=1,EA=1,EL=1,VW=1,VC=1,VM=1,VH=1,VY=-6.54,VF=1,VQ=1,VN=1,VI=1,VR=1,VD=-14.03,
                 VP=20.26,VT=-7.49,VK=-1.88,VE=1,VV=1,VS=1,VG=-7.49,VA=1,VL=1,SW=1,SC=33.6,SM=1,SH=1,SY=1,SF=1,SQ=20.26,
                 SN=1,SI=1,SR=20.26,SD=1,SP=44.94,ST=1,SK=1,SE=20.26,SV=1,SS=20.26,SG=1,SA=1,SL=1,GW=13.34,GC=1,GM=1,GH=1,
                 GY=-7.49,GF=1,GQ=1,GN=-7.49,GI=-7.49,GR=1,GD=1,GP=1,GT=-7.49,GK=-7.49,GE=-6.54,GV=1,GS=1,GG=13.34,GA=-7.49,
@@ -32,11 +32,9 @@ instaindex<-function(seq){
                 AG=1,AA=1,AL=1,LW=24.68,LC=1,LM=1,LH=1,LY=1,LF=1,LQ=33.6,LN=1,LI=1,LR=20.26,LD=1,LP=20.26,LT=1,LK=-7.49,
                 LE=1,LV=1,LS=1,LG=1,LA=1,LL=1,"NA"=1)
   # Divide the amino acid sequence in dipeptides
-  dp<-character(nchar(seq)-1)
-  AA<-strsplit(toupper(seq),"")[[1]]
-  for (i in 1: (nchar(seq)-1)){
-    dp[i]<-paste(AA[i:(i+1)],collapse = "")
-  }
+  seq<-gsub("[\r\n]","",seq)
+  aa<-strsplit(toupper(seq),"")[[1]]
+  dp<-apply(embed(aa, 2)[, 2:1], 1, paste0, collapse = "")
   # Apply the formula:
   # (10/L)*sum(DIWV(XiYi+1) for each dipeptide)
   # Return the index value rounded to 2 decimals

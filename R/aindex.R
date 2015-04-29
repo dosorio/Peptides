@@ -4,6 +4,7 @@
 # Journal of Biochemistry, 88(6), 1895-1898.
 
 aindex<-function(seq){
+  seq<-gsub("[\r\n]","",seq)
   # Divide the amino acid sequence and extracts the relative frequency of Alanine, Valine, Leucine and Isoleucine
   p<-table(strsplit(toupper(seq),"")[[1]])/nchar(seq)
   

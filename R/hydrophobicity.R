@@ -3,9 +3,10 @@
 # The hydrophobicity scales are the same implemented in ExPASy "ProtScale"
 # The function is the reported in Kyte, J., & Doolittle, R. F. (1982). 
 # A simple method for displaying the hydropathic character of a protein. 
-# Journal of Molecular Biology, 157(1), 105–32.
+# Journal of Molecular Biology, 157(1), 105-32.
 
 hydrophobicity<-function(seq,scale="KyteDoolittle"){
+  seq<-gsub("[\r\n]","",seq)
   # Loading hydrophobicity scales
   data(H, envir = environment())
   H<-H

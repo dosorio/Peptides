@@ -4,6 +4,7 @@
 
 pI<-function (seq,pKscale="EMBOSS") 
 {
+  seq<-gsub("[\r\n]","",seq)
   # Define pH values
   pHs <- seq(0 , 14 , 0.001)
   # Evaluate the net charge for defined pHs

@@ -1,15 +1,12 @@
 # CHARGE
 # This function computes the net charge of a protein sequence based on the Henderson-Hasselbalch equation described in
-# Moore, D. S. (1985). Amino acid and peptide net charges: A simple calculational procedure. Biochemical Education, 13(1), 10–11.
+# Moore, D. S. (1985). Amino acid and peptide net charges: A simple calculational procedure. Biochemical Education, 13(1), 10-11.
 # The net charge can be calculated using one of the 9 pKa scales availables Bjellqvist, EMBOSS, Murray, Sillero, Solomon, 
 # Stryer, Lehninger, Dawson or Rodwell
 
-<<<<<<< HEAD
 charge <- function(seq,pH=7,pKscale= "Lehninger"){
-=======
-charge <- function(seq,pH=7,pKscale="EMBOSS"){
->>>>>>> develop
   # # Divide the amino acid sequence and makes an absolute frequencies table
+  seq<-gsub("[\r\n]","",seq)
   aa<-table(factor(prot<-strsplit(toupper(seq),"")[[1]],levels = LETTERS))
   # Set pKscale
   data(pKscales, envir = environment())
