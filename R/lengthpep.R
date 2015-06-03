@@ -1,4 +1,4 @@
-# LENGTHPEP
+# lengthpep
 # This function counts the amino acids of a protein sequence
 
 lengthpep<-function(seq){

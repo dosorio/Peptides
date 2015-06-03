@@ -1,4 +1,4 @@
-# READ.XVG
+# read.xvg
 # This function reads the .XVG output files from GROMACS molecular dynamics package
 
 read.xvg<-function(file){

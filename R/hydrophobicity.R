@@ -1,8 +1,8 @@
-# HYDROPHOBICITY
+# hydrophobicity
 # This function compute the GRAVY hydrophobicity index using 22 different hydrophobicity scales.
 # The hydrophobicity scales are the same implemented in ExPASy "ProtScale"
-# The function is the reported in Kyte, J., & Doolittle, R. F. (1982). 
-# A simple method for displaying the hydropathic character of a protein. 
+# The function is the reported in Kyte, J., & Doolittle, R. F. (1982).
+# A simple method for displaying the hydropathic character of a protein.
 # Journal of Molecular Biology, 157(1), 105-32.
 
 hydrophobicity<-function(seq,scale="KyteDoolittle"){

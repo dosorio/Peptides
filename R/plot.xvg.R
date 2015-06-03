@@ -1,4 +1,4 @@
-# PLOT.XVG
+# plot.xvg
 # This function plot the XVG output file from GROMACS molecular dynamics package
 
 plot.xvg<-function(x, ...){

@@ -1,6 +1,6 @@
-# INSTAINDEX
-# This function compute the instability index proposed by Guruprasad, K., Reddy, B. V, & Pandit, M. W. (1990). 
-# Correlation between stability of a protein and its dipeptide composition: a novel approach for predicting in vivo stability of a protein from its primary sequence. 
+# instaindex
+# This function compute the instability index proposed by Guruprasad, K., Reddy, B. V, & Pandit, M. W. (1990).
+# Correlation between stability of a protein and its dipeptide composition: a novel approach for predicting in vivo stability of a protein from its primary sequence.
 # Protein Engineering, 4(2), 155-61.
 
 instaindex<-function(seq){

@@ -1,4 +1,4 @@
-# AACOMP
+# aacomp
 # Compute the amount of amino acids of a particular class and reported as:
 # Tiny, Small, Aliphatic, Aromatic, Non Polar, Polar, Charged, Basic and Acid
 # This function is the same implemented in EMBOSS "pepstat"
