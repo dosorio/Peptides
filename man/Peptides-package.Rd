@@ -12,7 +12,7 @@ Calculate physicochemical properties and indices from amino-acid sequences of pe
 Package: \tab Peptides\cr
 Type: \tab Package\cr
 Version: \tab 1.1.0\cr
-Date: \tab 2015-05-03\cr
+Date: \tab 2015-06-03\cr
 License: \tab GPL-2\cr
 }
 }
