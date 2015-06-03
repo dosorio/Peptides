@@ -5,8 +5,7 @@
 Calculate Indices and Theoretical Properties of Protein Sequences
 }
 \description{
-Calculate physicochemical properties and indices from amino-acid sequences of peptides 
-and proteins. Include also the option to read and plot output files from the 'GROMACS' molecular dynamics package.
+Calculate physicochemical properties and indices from amino-acid sequences of peptides and proteins. Include also the option to read and plot output files from the 'GROMACS' molecular dynamics package.
 }
 \details{
 \tabular{ll}{

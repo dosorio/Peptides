@@ -1,3 +1,2 @@
 exportPattern("^[[:alpha:]]+")
-
 S3method(plot,xvg)
