@@ -32,7 +32,7 @@ instaindex<-function(seq){
                 AG=1,AA=1,AL=1,LW=24.68,LC=1,LM=1,LH=1,LY=1,LF=1,LQ=33.6,LN=1,LI=1,LR=20.26,LD=1,LP=20.26,LT=1,LK=-7.49,
                 LE=1,LV=1,LS=1,LG=1,LA=1,LL=1,"NA"=1)
   # Divide the amino acid sequence in dipeptides
-  seq<-gsub("[\r\n]","",seq)
+  seq<-gsub("[\r\n ]","",seq)
   aa<-strsplit(toupper(seq),"")[[1]]
   dp<-apply(embed(aa, 2)[, 2:1], 1, paste0, collapse = "")
   # Apply the formula:

@@ -6,7 +6,7 @@
 
 aacomp<-function(seq){
   # Create data matrix output
-  seq<-gsub("[\r\n]","",seq)
+  seq<-gsub("[\r\n ]","",seq)
   AA<-matrix(ncol = 2,nrow = 9)
   rownames(AA)<-c("Tiny","Small","Aliphatic","Aromatic","NonPolar","Polar","Charged","Basic","Acidic")
   colnames(AA)<-c("Number","Mole%")

@@ -6,7 +6,7 @@
 
 charge <- function(seq,pH=7,pKscale= "Lehninger"){
   # # Divide the amino acid sequence and makes an absolute frequencies table
-  seq<-gsub("[\r\n]","",seq)
+  seq<-gsub("[\r\n ]","",seq)
   aa<-table(factor(prot<-strsplit(toupper(seq),"")[[1]],levels = LETTERS))
   # Set pKscale
   data(pKscales, envir = environment())

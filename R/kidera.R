@@ -6,7 +6,7 @@
 
 kidera <- function (seq, factor=""){
   # Remove the break lines from the sequence
-  seq <- gsub("[\r\n]", "", seq)
+  seq <- gsub("[\r\n ]", "", seq)
   # Load the KFactors data
   data(Kfactors, envir = environment())
   Kfactors <- Kfactors

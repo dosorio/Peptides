@@ -6,7 +6,7 @@
 # Journal of Molecular Biology, 157(1), 105-32.
 
 hydrophobicity<-function(seq,scale="KyteDoolittle"){
-  seq<-gsub("[\r\n]","",seq)
+  seq<-gsub("[\r\n ]","",seq)
   # Loading hydrophobicity scales
   data(H, envir = environment())
   H<-H

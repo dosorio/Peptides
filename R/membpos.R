@@ -5,7 +5,7 @@
 
 membpos<-function(seq,angle=100){
   # Setting input length
-  seq<-gsub("[\r\n]","",seq)
+  seq<-gsub("[\r\n ]","",seq)
   window<-min(nchar(seq),11)
   pep<-substring(toupper(seq),(window):nchar(seq),first = 1:((nchar(seq)-window)+1))
   # Compute the hmoment and hydrophobicity for each amino acid window
