@@ -1,5 +1,9 @@
 NEWS
 ====
+**Peptides v.1.1.1**
+* The mw function now computes the molecular weight using monoisotopic values
+* A problem with blank spaces was solved
+ 
 **Peptides v.1.1.0**
 * The kidera function and Kfactors dataset was included.
 

@@ -8,13 +8,13 @@
 This function calculates the molecular weight of a protein sequence. It is calculated as the sum of the mass of each amino acid using the scale available on Compute pI/Mw tool.
 }
 \usage{
-mw(seq)
+mw(seq,monoisotopic)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{seq}{amino acid sequence string
+  \item{seq}{amino acid sequence string}
+  \item{monoisotopic}{logical value indicating if monoisotopic weights should be used}
 %%     ~~Describe \code{x} here~~
-}
 }
 \source{
 The formula and amino acid scale are the same available on ExPASy Compute pI/Mw tool 

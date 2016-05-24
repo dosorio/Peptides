@@ -1,2 +1,5 @@
 exportPattern("^[[:alpha:]]+")
+importFrom("graphics", "legend", "plot")
+importFrom("stats", "embed")
+importFrom("utils", "data")
 S3method(plot,xvg)
