@@ -5,15 +5,23 @@
 # A simple method for displaying the hydropathic character of a protein.
 # Journal of Molecular Biology, 157(1), 105-32.
 
-hydrophobicity<-function(seq,scale="KyteDoolittle"){
-  seq<-gsub("[\r\n ]","",seq)
+hydrophobicity <- function(seq, scale="KyteDoolittle"){
+  seq <- remove_spaces(seq)
   # Loading hydrophobicity scales
-  data(H, envir = environment())
-  H<-H
+  e <- new.env()
+  data(list = "H", package = "Peptides", envir = e)
   # Setting the hydrophobicity scale
-  M<-names(H)
-  scale<-match.arg(scale,M)
+  scale <- match.arg(scale, names(e$H))
   # Sum the hydrophobicity of each amino acid and divide them between the sequence length
   # Return the GRAVY value
-  sum(H[[scale]][strsplit(seq,"")[[1]]],na.rm = TRUE)/nchar(seq)
+  amino_acid_list <- strsplit(seq, "")
+  hydrophobicity_scores <- e$H[[scale]]
+  vapply(
+    amino_acid_list,
+    function(amino_acids)
+    {
+      sum(hydrophobicity_scores[amino_acids]) / length(amino_acids)
+    },
+    numeric(1)
+  )
 }
