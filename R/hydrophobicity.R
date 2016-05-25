@@ -6,7 +6,7 @@
 # Journal of Molecular Biology, 157(1), 105-32.
 
 hydrophobicity <- function(seq, scale="KyteDoolittle"){
-  seq <- remove_spaces(seq)
+  seq <- .remove_spaces(seq)
   # Loading hydrophobicity scales
   e <- new.env()
   data(list = "H", package = "Peptides", envir = e)

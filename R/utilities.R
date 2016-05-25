@@ -4,7 +4,7 @@
 #' @param x A character vector.
 #' @return A character vector without spaces.
 #' @noRd
-remove_spaces <- function(x)
+.remove_spaces <- function(x)
 {
   gsub("[\r\n ]", "", x)
 }
