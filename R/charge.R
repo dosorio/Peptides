@@ -4,26 +4,31 @@
 # The net charge can be calculated using one of the 9 pKa scales availables Bjellqvist, EMBOSS, Murray, Sillero, Solomon,
 # Stryer, Lehninger, Dawson or Rodwell
 
-charge <- function(seq,pH=7,pKscale= "Lehninger"){
+charge <- function(seq, pH = 7, pKscale = "Lehninger") {
   # Divide the amino acid sequence and makes an absolute frequencies table
-  seq <- gsub("[[:space:]]","",seq)
-  aa<- lapply(seq, function(seq){table(factor(unlist(strsplit(toupper(seq),"")),levels = LETTERS))})
+  seq <- gsub("[[:space:]]", "", seq)
+  aa <-
+    lapply(seq, function(seq) {
+      table(factor(unlist(strsplit(
+        toupper(seq), ""
+      )), levels = LETTERS))
+    })
   # Set pKscale
   data(pKscales, envir = environment())
-  pKscales<-pKscales
-  pKs<-pKscales[,match.arg(pKscale,names(pKscales))]
+  pKscales <- pKscales
+  pKs <- pKscales[, match.arg(pKscale, names(pKscales))]
   names(pKs) <- rownames(pKscales)
-  charge <- lapply(aa, function(aa){
+  charge <- lapply(aa, function(aa) {
     # Charge
-    cterm <- (-1 /(1+10^(-1*(pH-pKs["cTer"]))))
-    nterm <- ( 1 /(1+10^(1*(pH-pKs["nTer"]))))
-    carg  <- aa["R"]* ( 1 /(1+10^(1*(pH-pKs["R"]))))
-    chis  <- aa["H"]* ( 1 /(1+10^(1*(pH-pKs["H"]))))
-    clys  <- aa["K"]* ( 1 /(1+10^(1*(pH-pKs["K"]))))
-    casp  <- aa["D"]* (-1 /(1+10^(-1*(pH-pKs["D"]))))
-    cglu  <- aa["E"]* (-1 /(1+10^(-1*(pH-pKs["E"]))))
-    ccys  <- aa["C"]* (-1 /(1+10^(-1*(pH-pKs["C"]))))
-    ctyr  <- aa["Y"]* (-1 /(1+10^(-1*(pH-pKs["Y"]))))
+    cterm <- (-1 / (1 + 10 ^ (-1 * (pH - pKs["cTer"]))))
+    nterm <- (1 / (1 + 10 ^ (1 * (pH - pKs["nTer"]))))
+    carg  <- aa["R"] * (1 / (1 + 10 ^ (1 * (pH - pKs["R"]))))
+    chis  <- aa["H"] * (1 / (1 + 10 ^ (1 * (pH - pKs["H"]))))
+    clys  <- aa["K"] * (1 / (1 + 10 ^ (1 * (pH - pKs["K"]))))
+    casp  <- aa["D"] * (-1 / (1 + 10 ^ (-1 * (pH - pKs["D"]))))
+    cglu  <- aa["E"] * (-1 / (1 + 10 ^ (-1 * (pH - pKs["E"]))))
+    ccys  <- aa["C"] * (-1 / (1 + 10 ^ (-1 * (pH - pKs["C"]))))
+    ctyr  <- aa["Y"] * (-1 / (1 + 10 ^ (-1 * (pH - pKs["Y"]))))
     # Compute the charge and return the value rounded to 3 decimals
     return(as.numeric(carg + clys + chis + nterm + casp + cglu + ctyr + ccys + cterm))
   })
