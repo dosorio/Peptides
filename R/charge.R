@@ -32,5 +32,5 @@ charge <- function(seq, pH = 7, pKscale = "Lehninger") {
     # Compute the charge and return the value rounded to 3 decimals
     return(as.numeric(carg + clys + chis + nterm + casp + cglu + ctyr + ccys + cterm))
   })
-  return(charge)
+  return(unlist(charge))
 }
