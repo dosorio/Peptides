@@ -7,7 +7,7 @@ pI<-function (seq,pKscale="EMBOSS"){
   # Define pH values
   pHs <- seq(0 , 14 , 0.001)
   # Evaluate the net charge for defined pHs
-  charges <- charge(seq,pHs,pKscale)
+  charges <- lapply(seq, function(seq){charge(seq,pHs,pKscale)})
   # Computes the pI and returns the value rounded to 3 decimals
   pI <- unlist(lapply(charges, function(charges){pHs[which.min(abs(charges))]}))
   return(pI)
