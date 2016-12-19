@@ -11,19 +11,24 @@ hmoment <- function(seq, angle = 100, window = 11) {
   H <- H
   h <- H[["Eisenberg"]]
   # Splitting the sequence in amino acids
-  aa <- lapply(seq, function(seq){unlist(strsplit(seq,""))})
+  aa <- lapply(seq, function(seq) {
+    unlist(strsplit(seq, ""))
+  })
   # Setting the sequence length
-  pep <- lapply(aa, function(aa){embed(aa,min(c(length(aa),window)))})
+  pep <-
+    lapply(aa, function(aa) {
+      embed(aa, min(c(length(aa), window)))
+    })
   # Applying the hmoment function to each amino acids window
-  hmoment <- lapply(pep, function(pep){
-    angle <- angle * (pi / 180) * 1:min(c(length(pep),window))
+  hmoment <- lapply(pep, function(pep) {
+    angle <- angle * (pi / 180) * 1:min(c(length(pep), window))
     vcos <- h[t(pep)] * cos(angle)
     vsin <- h[t(pep)] * sin(angle)
     dim(vcos) <- dim(vsin) <- dim(t(pep))
     vcos <- colSums(vcos, na.rm = TRUE)
     vsin <- colSums(vsin, na.rm = TRUE)
     # Return the max value
-    max(sqrt(vsin * vsin + vcos * vcos) / min(c(length(pep),window)))
+    max(sqrt(vsin * vsin + vcos * vcos) / min(c(length(pep), window)))
   })
   return(unlist(hmoment))
 }
