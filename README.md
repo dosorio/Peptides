@@ -14,14 +14,9 @@ If you have devtools installed, install the latest stable version this package d
 
 ```
 library(devtools)
-install_github("Peptides", "dosorio")
+install_github("dosorio/Peptides")
 library(Peptides)
 ```
-You can install the development version:
-```
-install_github("Peptides", "dosorio", "develop")
-```
-although it may not always work.
 
 Available functions
 -------------------
