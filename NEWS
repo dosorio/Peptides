@@ -1,7 +1,8 @@
 NEWS
 ====
 **Peptides v.1.1.2**
-
+* All functions were re-vectorized to support set of peptides as input
+* Kidera function now returns all factors in a unique output
 
 **Peptides v.1.1.1**
 * The mw function now computes the molecular weight using monoisotopic values
@@ -19,7 +20,6 @@ NEWS
 * The results now are not rounded.
 
 **Peptides v.1.0.2**
-
 * Hydrophobicity function now can compute the GRAVY index with one of the 38 scales includes in Peptides (*new):
 
   1. **Aboderin:** Aboderin, A. A. (1971). An empirical hydrophobicity scale for α-amino-acids and some of its applications. International Journal of Biochemistry, 2(11), 537-544.
