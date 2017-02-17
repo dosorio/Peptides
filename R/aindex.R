@@ -1,4 +1,10 @@
 #' @export aindex
+#' @title Compute the aliphatic index of an amino-acids sequence
+#' @description This function calculates the Ikai (1980) aliphatic index of a protein. The \code{aindex} is defined as the relative volume occupied by aliphatic side chains (Alanine, Valine, Isoleucine, and Leucine). It may be regarded as a positive factor for the increase of thermostability of globular proteins.
+#' @param seq An amino-acids sequence
+#' @return The computed aliphatic index for a given amino-acids sequence
+#' @references Ikai (1980). Thermostability and aliphatic index of globular proteins. Journal of Biochemistry, 88(6), 1895-1898.
+#' @details Aliphatic amino acids (A, I, L and V) are responsible for the thermal stability of proteins. The aliphatic index was proposed by Ikai (1980) and evaluates the thermostability of proteins based on the percentage of each of the aliphatic amino acids that build up proteins.
 # This function compute the aliphatic index based on Ikai (1980).
 # Thermostability and aliphatic index of globular proteins.
 # Journal of Biochemistry, 88(6), 1895-1898.
