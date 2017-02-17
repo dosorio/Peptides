@@ -18,6 +18,15 @@ This function calculates the Ikai (1980) aliphatic index of a protein. The \code
 \details{
 Aliphatic amino acids (A, I, L and V) are responsible for the thermal stability of proteins. The aliphatic index was proposed by Ikai (1980) and evaluates the thermostability of proteins based on the percentage of each of the aliphatic amino acids that build up proteins.
 }
+\examples{
+# COMPARED TO ExPASy ALIPHATIC INDEX
+# http://web.expasy.org/protparam/
+# SEQUENCE: SDKEVDEVDAALSDLEITLE
+# Aliphatic index: 117.00
+
+aindex("SDKEVDEVDAALSDLEITLE")
+# [1] 117
+}
 \references{
 Ikai (1980). Thermostability and aliphatic index of globular proteins. Journal of Biochemistry, 88(6), 1895-1898.
 }
