@@ -1,8 +1,18 @@
 #' @export instaindex
-# This function compute the instability index proposed by Guruprasad, K., Reddy, B. V, & Pandit, M. W. (1990).
-# Correlation between stability of a protein and its dipeptide composition: a novel approach for predicting in vivo stability of a protein from its primary sequence.
-# Protein Engineering, 4(2), 155-61.
-
+#' @title Compute the instability index of a protein sequence
+#' @description This function calculates the instability index proposed by Guruprasad (1990). This index predicts the stability of a protein based on its amino acid composition, a protein whose instability index is smaller than 40 is predicted as stable, a value above 40 predicts that the protein may be unstable.
+#' @param seq An amino-acids sequence
+#' @return The computed instability index for a given amino-acids sequence
+#' @references Guruprasad K, Reddy BV, Pandit MW (1990). "Correlation between stability of a protein and its dipeptide composition: a novel approach for predicting in vivo stability of a protein from its primary sequence". Protein Eng. 4 (2): 155 - 61. doi:10.1093/protein/4.2.155
+#' @examples 
+#' # COMPARED TO ExPASy INSTAINDEX
+#' # http://web.expasy.org/protparam/
+#' # SEQUENCE: QWGRRCCGWGPGRRYCVRWC
+#' # The instability index (II) is computed to be 83.68
+#' 
+#' instaindex("QWGRRCCGWGPGRRYCVRWC")
+#' # [1] 83.68
+#' 
 instaindex <- function(seq) {
   # Setting the Guruprasad scale
   guruprasad <-
