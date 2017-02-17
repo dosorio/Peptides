@@ -1,18 +1,50 @@
 # plot.xvg
 # This function plot the XVG output file from GROMACS molecular dynamics package
 
-plot.xvg<-function(x, ...){
-  # Load data
-  data<-read.xvg(x)
-  # Read file
-  X<-readLines(x)
-  # Set Labels
-  P1<-grep(pattern="title",x=X[1:length(X)])
-  P2<-grep(pattern="s0",x=X[1:length(X)])
+plot.xvg <- function(file, ...) {
+  # Read flat file
+  content <- readLines(file)
+  # Read colnames
+  headers <-
+    gsub("^@ s[[:digit:]] legend ", "", content[grep(pattern = "^@ s[[:digit:]]", content)])
+  headers <- gsub("\\\"", "", headers)
+  # Read axis and title
+  title <-
+    gsub("[[:punct:]]", "", gsub("@    title ", "", content[grep("^@    title", content)]))
+  xlabel <-
+    gsub("@[[:space:]]+xaxis[[:space:]]+label[[:space:]]+",
+         "",
+         content[grep("^@    xaxis", content)])
+  xlabel <- gsub("\"", "", xlabel)
+  ylabel <-
+    gsub("@[[:space:]]+yaxis[[:space:]]+label[[:space:]]+",
+         "",
+         content[grep("^@    yaxis", content)])
+  ylabel <- gsub("\"", "", ylabel)
+  # Extracting the data
+  content <- sub("#", replacement = "@", content)
+  content <- content[!grepl("@", content)]
+  content <- gsub("^[[:space:]]+", "", content)
+  content <- strsplit(content, "[[:space:]]+")
+  content <-
+    matrix(
+      data = as.numeric(unlist(content)),
+      ncol = length(headers) + 1,
+      byrow = TRUE
+    )
+  # Asign colnames
+  colnames(content) <- c("Time", headers)
   # Plot
-  plot(data[,1],data[,2],type="l",
-       main=(scan(x,skip=min(P1)-1,nmax=min(P1)+2,what="",quiet=TRUE)[3]),
-       xlab=(scan(x,skip=min(P1)-1,nmax=min(P1)+2,what="",quiet=TRUE)[7]),
-       ylab=(scan(x,skip=min(P1)-1,nmax=min(P1)+2,what="",quiet=TRUE)[11]))
-  legend("topright",scan(x,skip=min(P2)-1,nmax=min(P2),what="",quiet=TRUE)[4],lty=c(1,1))
+  par(mfcol = c(1, (dim(content)[2] - 1)), oma = c(0, 0, 2.5, 0))
+  for (i in seq_len((dim(content)[2] - 1))) {
+    plot(
+      x = content[, 1],
+      y = content[, i + 1],
+      type = "l",
+      ylab = headers[i],
+      xlab = xlabel,
+      ...
+    )
+  }
+  title(title, outer = TRUE)
 }
