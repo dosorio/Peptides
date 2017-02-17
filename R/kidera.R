@@ -1,4 +1,4 @@
-# kidera
+#' @export kidera
 # Compute the Kidera factors for an amino acid sequence.
 # Kidera, A., Konishi, Y., Oka, M., Ooi, T., & Scheraga, H. A. (1985).
 # Statistical analysis of the physical properties of the 20 naturally occurring amino acids.
@@ -6,7 +6,7 @@
 
 kidera <- function (seq) {
   # Remove the break lines from the sequence
-  seq <- gsub("[[:space:]]", "", seq)
+  seq <- gsub("[[:space:]]+", "", seq)
   # Load the KFactors data
   data(Kfactors, envir = environment())
   Kfactors <- Kfactors

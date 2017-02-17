@@ -1,4 +1,4 @@
-# membpos
+#' @export membpos
 # This function compute the class of a protein based in their Hydrophobicity and Hydrophobic moment
 # Eisenberg, D. (1984). Three-dimensional structure of membrane and surface proteins.
 # Annual Review of Biochemistry, 53, 595-623. doi:10.1146/annurev.bi.53.070184.003115

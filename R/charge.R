@@ -1,4 +1,4 @@
-# charge
+#' @export charge
 # This function computes the net charge of a protein sequence based on the Henderson-Hasselbalch equation described in
 # Moore, D. S. (1985). Amino acid and peptide net charges: A simple calculational procedure. Biochemical Education, 13(1), 10-11.
 # The net charge can be calculated using one of the 9 pKa scales availables Bjellqvist, EMBOSS, Murray, Sillero, Solomon,

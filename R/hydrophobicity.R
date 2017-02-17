@@ -1,4 +1,4 @@
-# hydrophobicity
+#' @export hydrophobicity
 # This function compute the GRAVY hydrophobicity index using 22 different hydrophobicity scales.
 # The hydrophobicity scales are the same implemented in ExPASy "ProtScale"
 # The function is the reported in Kyte, J., & Doolittle, R. F. (1982).
@@ -6,7 +6,7 @@
 # Journal of Molecular Biology, 157(1), 105-32.
 
 hydrophobicity <- function(seq, scale = "KyteDoolittle") {
-  seq <- gsub("[[:space:]]", "", seq)
+  seq <- gsub("[[:space:]]+", "", seq)
   # Loading hydrophobicity scales
   data(H, envir = environment())
   H <- H

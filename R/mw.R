@@ -1,4 +1,4 @@
-# mw
+#' @export mw
 # This function calculates the molecular weight of a protein sequence using the formula and scale available on ExPASy MWtool
 # Gasteiger, E., Hoogland, C., Gattiker, A., Wilkins, M. R., Appel, R. D., & Bairoch, A. (2005).
 # Protein identification and analysis tools on the ExPASy server.

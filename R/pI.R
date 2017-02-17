@@ -1,4 +1,4 @@
-# pI
+#' @export pI
 # This function computes the theoretical pI of a protein sequence using one of the 9 pKa scales availables
 # Bjellqvist, EMBOSS, Murray, Sillero, Solomon, Stryer, Lehninger, Dawson or Rodwell
 

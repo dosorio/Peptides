@@ -1,4 +1,4 @@
-# aindex
+#' @export aindex
 # This function compute the aliphatic index based on Ikai (1980).
 # Thermostability and aliphatic index of globular proteins.
 # Journal of Biochemistry, 88(6), 1895-1898.

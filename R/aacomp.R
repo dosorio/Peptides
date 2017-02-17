@@ -1,4 +1,4 @@
-# aacomp
+#' @export aacomp
 # Compute the amount of amino acids of a particular class and reported as:
 # Tiny, Small, Aliphatic, Aromatic, Non Polar, Polar, Charged, Basic and Acid
 # This function is the same implemented in EMBOSS "pepstat"
@@ -6,7 +6,7 @@
 
 aacomp<-function(seq){
   # Remove space characters: tab, newline, vertical tab, form feed, carriage return, space and possibly other locale-dependent characters.
-  seq <- gsub("[[:space:]]","",as.vector(seq))
+  seq <- gsub("[[:space:]]+","",as.vector(seq))
   # Divide the amino acid sequence and makes a frequencies table
   seq <- lapply(seq, function(seq){table(unlist(strsplit(seq,"")))})
   # Applying composition function

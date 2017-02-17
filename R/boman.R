@@ -1,4 +1,4 @@
-# boman
+#' @export boman
 # PROTEIN - PROTEIN INTERACTION INDEX
 # This function compute the potential protein-protein interaction index proposed by Boman (2003)
 # based in the amino acid sequence of a protein.

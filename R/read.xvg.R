@@ -4,8 +4,6 @@
 #' @description XVG is the default format file of the GROMACS molecular dynamics package, contains data formatted to be imported into the Grace 2-D plotting program.
 #' @references  Pronk, S., Pall, S., Schulz, R., Larsson, P., Bjelkmar, P., Apostolov, R., ... & Lindahl, E. (2013). GROMACS 4.5: a high-throughput and highly parallel open source molecular simulation toolkit. Bioinformatics, 29 (7), 845-854.
 #' @author Daniel Osorio <daniel.osorio@correo.uis.edu.co>
-#  Grupo de Investigación en Bioquímica y Microbiología | Universidad Industrial de Santander
-#  Escuela de Biología | Universidad Industrial de Santander
 #' @examples # READING FILE
 #' file <- system.file("xvg-files/epot.xvg",package="Peptides")
 #' read.xvg(file)

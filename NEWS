@@ -1,5 +1,9 @@
 NEWS
 ====
+**Peptides v.1.2.1**
+* Functions related with XVG files were updated.
+* Documentation was changed to roxygen2
+
 **Peptides v.1.1.2**
 * All functions were re-vectorized to support set of peptides as input
 * Kidera function now returns all factors in a unique output
