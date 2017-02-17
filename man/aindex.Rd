@@ -2,7 +2,7 @@
 % Please edit documentation in R/aindex.R
 \name{aindex}
 \alias{aindex}
-\title{Compute the aliphatic index of an amino-acids sequence}
+\title{Compute the aliphatic index of a protein sequence}
 \usage{
 aindex(seq)
 }

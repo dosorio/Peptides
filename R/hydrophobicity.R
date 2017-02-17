@@ -8,7 +8,7 @@
 hydrophobicity <- function(seq, scale = "KyteDoolittle") {
   seq <- gsub("[[:space:]]+", "", seq)
   # Loading hydrophobicity scales
-  data(H, envir = environment())
+  utils::data(H, envir = environment())
   H <- H
   # Setting the hydrophobicity scale
   scale <- match.arg(scale, names(H))

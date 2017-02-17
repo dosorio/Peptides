@@ -1,5 +1,5 @@
 #' @export aindex
-#' @title Compute the aliphatic index of an amino-acids sequence
+#' @title Compute the aliphatic index of a protein sequence
 #' @description This function calculates the Ikai (1980) aliphatic index of a protein. The \code{aindex} is defined as the relative volume occupied by aliphatic side chains (Alanine, Valine, Isoleucine, and Leucine). It may be regarded as a positive factor for the increase of thermostability of globular proteins.
 #' @param seq An amino-acids sequence
 #' @return The computed aliphatic index for a given amino-acids sequence
