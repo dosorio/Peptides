@@ -80,8 +80,7 @@ charge <- function(seq, pH = 7, pKscale = "Lehninger") {
   # Set pKscale
   utils::data(pK, envir = environment())
   pK <- pK
-  pKs <- pK[, match.arg(pKscale, names(pK))]
-  names(pKs) <- rownames(pK)
+  pKs <- pK[[match.arg(pKscale, names(pK))]]
   charge <- lapply(aa, function(aa) {
     # Charge
     cterm <- (-1 / (1 + 10 ^ (-1 * (pH - pKs["cTer"]))))
