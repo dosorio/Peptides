@@ -24,8 +24,11 @@ Available functions
 | :------------- |:-------------|
 |aacomp  |  Compute the amino-acid composition of a protein sequence|
 |aindex  |	Compute the aliphatic index of a protein sequence |
+|autoCorrelation||
+|autoCovariance||
 |boman   |	Compute the Boman (Potential Protein Interaction) index |
 |charge  |	Compute the theoretical net charge of a protein sequence |
+|crossCovariance||
 |crucianiProperties | Compute the Cruciani properties of a protein sequence |
 |hmoment  |	Compute the hydrophobic moment of a protein sequence |
 |hydrophobicity	| Compute the hydrophobicity index |
