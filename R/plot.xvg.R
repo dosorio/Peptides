@@ -16,7 +16,7 @@ plot.xvg <- function(x, ...) {
   content <- readLines(x)
   # Read colnames
   headers <-
-    gsub("^@ s[[:digit:]] legend ", "", content[grep(pattern = "^@ s[[:digit:]]", content)])
+    gsub("^@ s[[:digit:]]+ legend ", "", content[grep(pattern = "^@ s[[:digit:]]+", content)])
   headers <- gsub("\\\"", "", headers)
   # Read axis and title
   title <-

@@ -24,9 +24,9 @@ read.xvg <- function(file) {
   content <- readLines(file)
   # Read colnames
   headers <-
-    gsub(pattern = "^@ s[[:digit:]] legend ",
+    gsub(pattern = "^@ s[[:digit:]]+ legend ",
          replacement =  "",
-         x = content[grep(pattern = "^@ s[[:digit:]]", x = content)])
+         x = content[grep(pattern = "^@ s[[:digit:]]+", x = content)])
   headers <- gsub("\\\"", "", headers)
   # Extracting the data
   content <- sub("#", replacement = "@", content)
