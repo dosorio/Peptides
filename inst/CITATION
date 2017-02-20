@@ -1,6 +1,6 @@
 citHeader("To cite Peptides in publications, please use:")
 citEntry(entry = "article",
-  author = c("Osorio, Daniel" and "Rondon-Villarreal, Paola" and "Torres, Rodrigo"),
+  author = personList(c(person(given = "Daniel", family = "Osorio"),person(given = "Paola", family = "Rondon-Villarreal"),person(given = "Rodrigo", family = "Torres"))),
   title = "Peptides: A Package for Data Mining of Antimicrobial Peptides",
   journal = "The R Journal",
   year = "2015",
