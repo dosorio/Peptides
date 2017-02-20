@@ -1,4 +1,5 @@
 #' @export charge
+#' @importFrom utils data
 #' @title Compute the theoretical net charge of a protein sequence
 #' @description This function computes the net charge of a protein sequence based on the Henderson-Hasselbalch equation described by Moore, D. S. (1985). The net charge can be calculated at defined pH using one of the 9 pKa scales availables: \code{Bjellqvist}, \code{Dawson}, \code{EMBOSS}, \code{Lehninger}, \code{Murray}, \code{Rodwell}, \code{Sillero}, \code{Solomon} or \code{Stryer}.
 #' @param seq An amino-acids sequence

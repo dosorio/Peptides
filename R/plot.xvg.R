@@ -1,5 +1,3 @@
-#' @exportMethod plot.xvg
-#' @method plot xvg
 #' @export plot.xvg
 #' @title Plot time series from GROMACS XVG files
 #' @param x A .XVG output file of the GROMACS molecular dynamics package

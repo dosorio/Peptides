@@ -1,4 +1,6 @@
 #' @export hmoment
+#' @importFrom stats embed
+#' @importFrom utils data
 #' @title Compute the hydrophobic moment of a protein sequence
 #' @description This function compute the hmoment based on Eisenberg, D., Weiss, R. M., & Terwilliger, T. C. (1984). Hydriphobic moment is a quantitative measure of the amphiphilicity perpendicular to the axis of any periodic peptide structure, such as the a-helix or b-sheet. It can be calculated for an amino acid sequence of N residues and their associated hydrophobicities Hn.
 #' @param seq An amino-acids sequence
@@ -35,7 +37,7 @@ hmoment <- function(seq, angle = 100, window = 11) {
   # Setting the sequence length
   pep <-
     lapply(aa, function(aa) {
-      embed(aa, min(c(length(aa), window)))
+      stats::embed(aa, min(c(length(aa), window)))
     })
   # Applying the hmoment function to each amino acids window
   hmoment <- lapply(pep, function(pep) {

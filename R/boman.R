@@ -7,10 +7,11 @@
 #' @return The computed potential protein-protein interaction for a given amino-acids sequence
 #' @references Boman, H. G. (2003). Antibacterial peptides: basic facts and emerging concepts. Journal of Internal Medicine, 254(3), 197-215.
 #' @details The potential protein interaction index was proposed by Boman (2003) as an easy way to differentiate the action mechanism of hormones (protein-protein) and antimicrobial peptides (protein-membrane) through this index. This function predicts the potential peptide interaction with another protein.
-#' @examples # COMPARED TO YADAMP DATABASE
-#' http://yadamp.unisa.it/showItem.aspx?yadampid=845&x=0,4373912
-#' SEQUENCE: FLPVLAGLTPSIVPKLVCLLTKKC
-#' BOMAN INDEX  -1.24  
+#' @examples 
+#' # COMPARED TO YADAMP DATABASE
+#' # http://yadamp.unisa.it/showItem.aspx?yadampid=845&x=0,4373912
+#' # SEQUENCE: FLPVLAGLTPSIVPKLVCLLTKKC
+#' # BOMAN INDEX  -1.24  
 #'
 #' boman("FLPVLAGLTPSIVPKLVCLLTKKC")
 #' # [1] -1.235833
