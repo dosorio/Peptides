@@ -41,4 +41,3 @@ kideraFactors(seq = "KLKLLLLLKLK")
 \references{
 Kidera, A., Konishi, Y., Oka, M., Ooi, T., & Scheraga, H. A. (1985). Statistical analysis of the physical properties of the 20 naturally occurring amino acids. Journal of Protein Chemistry, 4(1), 23-55.
 }
-

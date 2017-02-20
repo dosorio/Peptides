@@ -190,4 +190,3 @@ Kawashima, S. and Kanehisa, M.; AAindex: amino acid index database. Nucleic Acid
 
 Kawashima, S., Pokarowski, P., Pokarowska, M., Kolinski, A., Katayama, T., and Kanehisa, M.; AAindex: amino acid index database, progress report 2008. Nucleic Acids Res. 36, D202-D205 (2008).
 }
-

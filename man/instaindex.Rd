@@ -28,4 +28,3 @@ instaindex("QWGRRCCGWGPGRRYCVRWC")
 \references{
 Guruprasad K, Reddy BV, Pandit MW (1990). "Correlation between stability of a protein and its dipeptide composition: a novel approach for predicting in vivo stability of a protein from its primary sequence". Protein Eng. 4 (2): 155 - 61. doi:10.1093/protein/4.2.155
 }
-

@@ -68,4 +68,3 @@ aacomp("KWKLFKKIGIGKFLHSAKKFX")
 \references{
 Rice, Peter, Ian Longden, and Alan Bleasby. "EMBOSS: the European molecular biology open software suite." Trends in genetics 16.6 (2000): 276-277.
 }
-

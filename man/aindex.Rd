@@ -30,4 +30,3 @@ aindex("SDKEVDEVDAALSDLEITLE")
 \references{
 Ikai (1980). Thermostability and aliphatic index of globular proteins. Journal of Biochemistry, 88(6), 1895-1898.
 }
-

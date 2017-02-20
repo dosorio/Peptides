@@ -1,13 +1,38 @@
 #' @export membpos
-# This function compute the class of a protein based in their Hydrophobicity and Hydrophobic moment
-# Eisenberg, D. (1984). Three-dimensional structure of membrane and surface proteins.
-# Annual Review of Biochemistry, 53, 595-623. doi:10.1146/annurev.bi.53.070184.003115
-
+#' @title Compute theoretically the class of a protein sequence
+#' @description This function calculates the theoretical class of a protein sequence based on the relationship between the hydrophobic moment and hydrophobicity scale proposed by Eisenberg (1984).
+#' @param seq An amino-acids sequence
+#' @param angle A protein rotational angle
+#' @return A data frame for each sequence given with the calculated class for each window of eleven amino-acids
+#' @references Eisenberg, David. "Three-dimensional structure of membrane and surface proteins." Annual review of biochemistry 53.1 (1984): 595-623.
+#' @examples membpos("ARQQNLFINFCLILIFLLLI",100)
+#' #       Pep        H     uH       MembPos
+#' # 1 ARQQNLFINFCL 0.083 0.353      Globular
+#' # 2 RQQNLFINFCLI 0.147 0.317      Globular
+#' # 3 QQNLFINFCLIL 0.446 0.274      Globular
+#' # 4 QNLFINFCLILI 0.632 0.274 Transmembrane
+#' # 5 NLFINFCLILIF 0.802 0.253       Surface
+#' # 6 LFINFCLILIFL 0.955 0.113 Transmembrane
+#' # 7 FINFCLILIFLL 0.955 0.113 Transmembrane
+#' # 8 INFCLILIFLLL 0.944 0.108 Transmembrane
+#' # 9 NFCLILIFLLLI 0.944 0.132 Transmembrane
+#' 
+#' membpos("ARQQNLFINFCLILIFLLLI",160)
+#' #       Pep        H     uH    MembPos
+#' # 1 ARQQNLFINFCL 0.083 0.467  Globular
+#' # 2 RQQNLFINFCLI 0.147 0.467  Globular
+#' # 3 QQNLFINFCLIL 0.446 0.285  Globular
+#' # 4 QNLFINFCLILI 0.632 0.358  Surface
+#' # 5 NLFINFCLILIF 0.802 0.358  Surface
+#' # 6 LFINFCLILIFL 0.955 0.269  Surface
+#' # 7 FINFCLILIFLL 0.955 0.269  Surface
+#' # 8 INFCLILIFLLL 0.944 0.257  Surface
+#' # 9 NFCLILIFLLLI 0.944 0.229  Surface
 membpos <- function(seq, angle = 100) {
   # Setting input length
-  lapply(seq, function(seq){
-  seq <- gsub("[[:space:]]", "", seq)
+  seq <- gsub("[[:space:]]+", "", seq)
   window <- min(nchar(seq), 11)
+  lapply(seq, function(seq){
   pep <-
     substring(toupper(seq), (window):nchar(seq), first = 1:((nchar(seq) - window) +
                                                               1))

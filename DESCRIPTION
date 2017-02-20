@@ -11,4 +11,4 @@ Description: Calculate physicochemical properties and indices from amino-acid
     sequences of peptides and proteins. Include also the option to read and plot
     output files from the 'GROMACS' molecular dynamics package.
 License: GPL-2
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

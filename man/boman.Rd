@@ -33,4 +33,3 @@ boman("FLPVLAGLTPSIVPKLVCLLTKKC")
 \references{
 Boman, H. G. (2003). Antibacterial peptides: basic facts and emerging concepts. Journal of Internal Medicine, 254(3), 197-215.
 }
-
