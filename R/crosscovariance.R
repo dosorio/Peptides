@@ -8,7 +8,29 @@
 #' @param center A logical value \code{TRUE} or \code{FALSE} if the property must be centered.
 #' @return The computed cross-covariance index for a given amino-acids sequence
 #' @references Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
-#' @examples crossCovariance()
+#' @examples
+#' # Loading a property to evaluate its autocorrelation
+#' data(H)
+#'
+#' # Calculate the cross-covariance index for a lag=1
+#' crossCovariance(
+#'   sequence = "SDKEVDEVDAALSDLEITLE",
+#'   lag = 1,
+#'   property1 = H$KyteDoolittle,
+#'   property2 = H$Eisenberg,
+#'   center = TRUE
+#' )
+#' # [1] -0.3026609
+#'
+#' # Calculate the cross-correlation index for a lag=5
+#' crossCovariance(
+#'   sequence = "SDKEVDEVDAALSDLEITLE",
+#'   lag = 5,
+#'   property1 = H$KyteDoolittle,
+#'   property2 = H$Eisenberg,
+#'   center = TRUE
+#' )
+#' # [1] 0.02598035
 crossCovariance <-
   function(sequence,
            lag,

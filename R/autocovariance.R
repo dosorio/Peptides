@@ -7,7 +7,27 @@
 #' @param center A logical value \code{TRUE} or \code{FALSE} if the property must be centered.
 #' @return The computed auto-covariance index for a given amino-acids sequence
 #' @references Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
-#' @examples autoCovariance()
+#' @examples
+#' # Loading a property to evaluate its autocorrelation
+#' data(H)
+#'
+#' # Calculate the auto-covariance index for a lag=1
+#' autoCovariance(
+#'   sequence = "SDKEVDEVDAALSDLEITLE",
+#'   lag = 1,
+#'   property = H$KyteDoolittle,
+#'   center = TRUE
+#' )
+#' # [1] -0.4140053
+#'
+#' # Calculate the auto-covariance index for a lag=5
+#' autoCovariance(
+#'   sequence = "SDKEVDEVDAALSDLEITLE",
+#'   lag = 5,
+#'   property = H$KyteDoolittle,
+#'   center = TRUE
+#' )
+#' # [1] 0.001000336
 autoCovariance <- function(sequence, lag, property, center = TRUE) {
   if (center == TRUE) {
     property <- scale(property)[, ]

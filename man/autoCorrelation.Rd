@@ -22,7 +22,26 @@ The computed auto-correlation index for a given amino-acids sequence
 This function computes the Cruciani et al (2004) auto-correlation index. The \code{autoCorrelation} index is calculated for a lag 'd' using a descriptor 'f' (centred) over a sequence of length 'L'.
 }
 \examples{
-autoCorrelation()
+# Loading a property to evaluate its autocorrelation
+data(H)
+
+# Calculate the auto-correlation index for a lag=1
+autoCorrelation(
+  sequence = "SDKEVDEVDAALSDLEITLE",
+  lag = 1,
+  property = H$KyteDoolittle,
+  center = TRUE
+)
+# [1] -0.3519908
+
+# Calculate the auto-correlation index for a lag=5
+autoCorrelation(
+  sequence = "SDKEVDEVDAALSDLEITLE",
+  lag = 5,
+  property = H$KyteDoolittle,
+  center = TRUE
+)
+# [1] 0.001133553
 }
 \references{
 Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
