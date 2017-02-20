@@ -1,6 +1,14 @@
 #' @export crossCovariance
 #' @title Compute the cross-covariance index of a protein sequence
-#' @description This function computes the Cruciani et al (2004) cross-covariance index. 
+#' @description This function computes the Cruciani et al (2004) cross-covariance index. The lagged \code{crossCovariance} index is calculated for a lag 'd' using two descriptors 'f1' and 'f2' (centred) over a sequence of length 'L'.
+#' @param sequence An amino-acids sequence
+#' @param lag A value for a lag, the max value is equal to the length of the shortest peptide minus one.
+#' @param property1 A property to use as value to evaluate the cross-covariance.
+#' @param property2 A property to use as value to evaluate the cross-covariance.
+#' @param center A logical value \code{TRUE} or \code{FALSE} if the property must be centered.
+#' @return The computed cross-covariance index for a given amino-acids sequence
+#' @references Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
+#' @examples crossCovariance()
 crossCovariance <-
   function(sequence,
            lag,

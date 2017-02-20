@@ -6,6 +6,26 @@
 \usage{
 crossCovariance(sequence, lag, property1, property2, center = TRUE)
 }
+\arguments{
+\item{sequence}{An amino-acids sequence}
+
+\item{lag}{A value for a lag, the max value is equal to the length of the shortest peptide minus one.}
+
+\item{property1}{A property to use as value to evaluate the cross-covariance.}
+
+\item{property2}{A property to use as value to evaluate the cross-covariance.}
+
+\item{center}{A logical value \code{TRUE} or \code{FALSE} if the property must be centered.}
+}
+\value{
+The computed cross-covariance index for a given amino-acids sequence
+}
 \description{
-This function computes the Cruciani et al (2004) cross-covariance index.
+This function computes the Cruciani et al (2004) cross-covariance index. The lagged \code{crossCovariance} index is calculated for a lag 'd' using two descriptors 'f1' and 'f2' (centred) over a sequence of length 'L'.
+}
+\examples{
+crossCovariance()
+}
+\references{
+Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
 }

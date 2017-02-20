@@ -1,6 +1,13 @@
 #' @export autoCovariance
 #' @title Compute the auto-covariance index of a protein sequence
-#' @description This function computes the Cruciani et al (2004) auto-corvariance index. 
+#' @description This function computes the Cruciani et al (2004) auto-corvariance index. The \code{autoCovariance} index is calculated for a lag 'd' using a descriptor 'f' (centred) over a sequence of length 'L'.
+#' @param sequence An amino-acids sequence
+#' @param lag A value for a lag, the max value is equal to the length of the shortest peptide minus one.
+#' @param property A property to use as value to evaluate the covariance.
+#' @param center A logical value \code{TRUE} or \code{FALSE} if the property must be centered.
+#' @return The computed auto-covariance index for a given amino-acids sequence
+#' @references Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
+#' @examples autoCovariance()
 autoCovariance <- function(sequence, lag, property, center = TRUE) {
   if (center == TRUE) {
     property <- scale(property)[, ]

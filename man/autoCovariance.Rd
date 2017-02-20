@@ -6,6 +6,24 @@
 \usage{
 autoCovariance(sequence, lag, property, center = TRUE)
 }
+\arguments{
+\item{sequence}{An amino-acids sequence}
+
+\item{lag}{A value for a lag, the max value is equal to the length of the shortest peptide minus one.}
+
+\item{property}{A property to use as value to evaluate the covariance.}
+
+\item{center}{A logical value \code{TRUE} or \code{FALSE} if the property must be centered.}
+}
+\value{
+The computed auto-covariance index for a given amino-acids sequence
+}
 \description{
-This function computes the Cruciani et al (2004) auto-corvariance index.
+This function computes the Cruciani et al (2004) auto-corvariance index. The \code{autoCovariance} index is calculated for a lag 'd' using a descriptor 'f' (centred) over a sequence of length 'L'.
+}
+\examples{
+autoCovariance()
+}
+\references{
+Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
 }
