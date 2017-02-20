@@ -3,7 +3,7 @@
 \docType{data}
 \name{K}
 \alias{K}
-\title{The Ten Kidera Factors}
+\title{The 10 factors from Kidera et al (1985)}
 \format{A list with the ten Kidera factors of the 20 amino acids. The first four factors are essentially pure physical properties; the remaining six factors are superpositions of several physical properties, and are labelled for convenience by the name of the most heavily weighted component.
 \itemize{\item{Helix/bend preference},
 \item{Side-chain size},

@@ -26,8 +26,9 @@ Available functions
 |aindex  |	Compute the aliphatic index of a protein sequence |
 |boman   |	Compute the Boman (Potential Protein Interaction) index |
 |charge  |	Compute the theoretical net charge of a protein sequence |
-|hydrophobicity	| Compute the hydrophobicity index |
+|crucianiProperties | Compute the Cruciani properties of a protein sequence |
 |hmoment  |	Compute the hydrophobic moment of a protein sequence |
+|hydrophobicity	| Compute the hydrophobicity index |
 |instaindex	| Compute the instability index of a protein sequence |
 |kideraFactors | Compute the Kidera factors of a protein sequence |
 |lengthpep| Compute the aminoacid length of a protein sequence |
@@ -41,8 +42,9 @@ Available datasets
 -------------------
 | Code        | Description |
 |:----------- |:------------|
+|CP | The 3 properties from Cruciani *et. al* (2004) |
 |H  | 38 Hydrophobicity values for amino acids form various sources |
-|K | The 10 Kidera factors from Kidera *et. al* (1985)|
+|K | The 10 factors from Kidera *et. al* (1985)|
 |pepdata | A data frame with 21 physicochemical properties and indices from 100 amino-acid sequences (50 antimicrobial and 50 non antimicrobial)  |
 |pK | 9 pKa scales for the side chain of charged amino acids from various sources |
 

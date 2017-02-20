@@ -3,7 +3,7 @@
 \docType{data}
 \name{CP}
 \alias{CP}
-\title{The Three Cruciani Properties}
+\title{The 3 properties from Cruciani et. al (2004)}
 \format{A list with the three Cruciani et. al (2004) properties. Each PP represent an amino-acid property as follows: \itemize{\item{PP1:} Polarity, \item{PP2:} Hydrophobicity, \item{PP3:} H-bonding}}
 \usage{
 data(CP)
