@@ -14,7 +14,7 @@
 #' # [1] 117
 
 aindex <- function(seq) {
-  seq <- gsub("[[:space:]]", "", seq)
+  seq <- gsub("[[:space:]]+", "", seq)
   # Divide the amino acid sequence and extracts the relative frequency of Alanine, Valine, Leucine and Isoleucine
   seq <-
     lapply(seq, function(seq) {
