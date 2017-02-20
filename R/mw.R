@@ -4,8 +4,8 @@
 #' @param seq An amino-acids sequence
 #' @param monoisotopic A logical value \code{'TRUE'} or \code{'FALSE'} indicating if monoisotopic weights of amino-acids should be used
 #' @source The formula and amino acid scale are the same available on ExPASy Compute pI/Mw tool: http://web.expasy.org/compute_pi/
-#' @references Gasteiger, E., Hoogland, C., Gattiker, A., Wilkins, M. R., Appel, R. D., & Bairoch, A. (2005). Protein identification and analysis tools on the ExPASy server. In The proteomics protocols handbook (pp. 571-607). Humana Press. Chicago  
-#' @details The molecular weight is the sum of the masses of each atom constituting a molecule. The molecular weight is directly related to the length of the amino acid sequence and is expressed in units called daltons (Da). In Peptides the function mw computes the molecular weight using the same formulas and weights as ExPASy’s “compute pI/mw” tool (Gasteiger et al., 2005).
+#' @references Gasteiger, E., Hoogland, C., Gattiker, A., Wilkins, M. R., Appel, R. D., & Bairoch, A. (2005). Protein identification and analysis tools on the ExPASy server. In The proteomics protocols handbook (pp. 571-607). Humana Press. Chicago
+#' @details The molecular weight is the sum of the masses of each atom constituting a molecule. The molecular weight is directly related to the length of the amino acid sequence and is expressed in units called daltons (Da). In Peptides the function mw computes the molecular weight using the same formulas and weights as ExPASy's "compute pI/mw" tool (Gasteiger et al., 2005).
 #' @examples # COMPARED TO ExPASy Compute pI/Mw tool
 #' # http://web.expasy.org/compute_pi/
 #' # SEQUENCE: QWGRRCCGWGPGRRYCVRWC 
