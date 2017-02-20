@@ -32,8 +32,8 @@ kideraFactors <- function (seq) {
   # Remove the break lines from the sequence
   seq <- gsub("[[:space:]]+", "", seq)
   # Load the KFactors data
-  data(Kfactors, envir = environment())
-  Kfactors <- Kfactors
+  data(K, envir = environment())
+  Kfactors <- K
   # Compute the selected Kidera factor.
   seq <- lapply(seq, function(seq) {
     unlist(strsplit(seq, ""))

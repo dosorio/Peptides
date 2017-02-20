@@ -1,8 +1,8 @@
-#' @name Kfactors
+#' @name K
 #' @docType data
 #' @title The Ten Kidera Factors
 #' @description The Kidera Factors were originally derived by applying multivariate analysis to 188 physical properties of the 20 amino acids and using dimension reduction techniques. A 10-dimensional vector of orthogonal factors was then obtained for each amino acid.
-#' @usage data(Kfactors)
+#' @usage data(K)
 #' @format A list with the ten Kidera factors of the 20 amino acids. The first four factors are essentially pure physical properties; the remaining six factors are superpositions of several physical properties, and are labelled for convenience by the name of the most heavily weighted component.
 #' \itemize{\item{Helix/bend preference},
 #' \item{Side-chain size},

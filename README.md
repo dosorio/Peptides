@@ -29,7 +29,7 @@ Available functions
 |hydrophobicity	| Compute the hydrophobicity index |
 |hmoment  |	Compute the hydrophobic moment of a protein sequence |
 |instaindex	| Compute the instability index of a protein sequence |
-|kidera | Compute the Kidera factors of a protein sequence |
+|kideraFactors | Compute the Kidera factors of a protein sequence |
 |lengthpep| Compute the aminoacid length of a protein sequence |
 |membpos |	Compute theoretically the class of a protein sequence |
 |mw	| Compute the molecular weight of a protein sequence |
@@ -42,10 +42,11 @@ Available datasets
 | Code        | Description |
 |:----------- |:------------|
 |H  | 38 Hydrophobicity values for amino acids form various sources |
-|Kfactors | The 10 Kidera factors from Kidera *et. al* (1985)|
-|pepdata | A data frame with physicochemical properties and indices from 100 amino-acid sequences (50 antimicrobial and 50 non antimicrobial)  |
-|pKscales | 9 pKa scales for the side chain of charged amino acids from various sources |
+|K | The 10 Kidera factors from Kidera *et. al* (1985)|
+|pepdata | A data frame with 21 physicochemical properties and indices from 100 amino-acid sequences (50 antimicrobial and 50 non antimicrobial)  |
+|pK | 9 pKa scales for the side chain of charged amino acids from various sources |
 
 Citation
 --------
-D. Osorio, P. Rondón-Villarreal and R. Torres. **Peptides: *Calculate indices and theoretical physicochemical properties of peptides and protein sequences*.**, 2014. URL: http: //CRAN.R-project.org/package=Peptides. R Package Version 1.1.2.
+Osorio, D., Rondon-Villarreal, P. & Torres, R. **Peptides: A package for data mining of antimicrobial peptides**. The R Journal. 7(1), 4–14 (2015).
+D. Osorio, P. Rondón-Villarreal and R. Torres. **Peptides: *Calculate indices and theoretical physicochemical properties of peptides and protein sequences*.**, 2014. URL: http: //CRAN.R-project.org/package=Peptides. R Package Version 1.2.1.
