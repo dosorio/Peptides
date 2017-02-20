@@ -6,3 +6,6 @@
 \usage{
 crossCovariance(sequence, lag, property1, property2, center = TRUE)
 }
+\description{
+This function computes the Cruciani et al (2004) cross-covariance index.
+}

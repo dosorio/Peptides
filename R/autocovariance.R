@@ -1,6 +1,10 @@
 #' @export autoCovariance
 #' @title Compute the auto-covariance index of a protein sequence
+#' @description This function computes the Cruciani et al (2004) auto-corvariance index. 
 autoCovariance <- function(sequence, lag, property, center = TRUE) {
+  if (center == TRUE) {
+    property <- scale(property)[, ]
+  }
   sequence <- gsub("[[:space:]]+", "", sequence)
   sequence <- strsplit(sequence, "")
   unlist(lapply(sequence, function(sequence) {

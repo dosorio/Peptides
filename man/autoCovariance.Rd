@@ -6,3 +6,6 @@
 \usage{
 autoCovariance(sequence, lag, property, center = TRUE)
 }
+\description{
+This function computes the Cruciani et al (2004) auto-corvariance index.
+}
