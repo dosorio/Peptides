@@ -1,5 +1,5 @@
 #' @export autoCorrelation
-#'
+#' @title Compute the auto-correlation index of a protein sequence
 autoCorrelation <- function(sequence, lag, property, center = TRUE) {
   sequence <- gsub("[[:space:]]+", "", sequence)
   sequence <- strsplit(sequence, "")

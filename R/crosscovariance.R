@@ -1,4 +1,5 @@
 #' @export crossCovariance
+#' @title Compute the cross-covariance index of a protein sequence
 crossCovariance <-
   function(sequence,
            lag,

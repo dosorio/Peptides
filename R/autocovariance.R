@@ -1,5 +1,5 @@
 #' @export autoCovariance
-#'
+#' @title Compute the auto-covariance index of a protein sequence
 autoCovariance <- function(sequence, lag, property, center = TRUE) {
   sequence <- gsub("[[:space:]]+", "", sequence)
   sequence <- strsplit(sequence, "")
