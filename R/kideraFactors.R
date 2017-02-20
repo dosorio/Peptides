@@ -33,15 +33,15 @@ kideraFactors <- function (seq) {
   seq <- gsub("[[:space:]]+", "", seq)
   # Load the KFactors data
   data(K, envir = environment())
-  Kfactors <- K
+  K <- K
   # Compute the selected Kidera factor.
   seq <- lapply(seq, function(seq) {
     unlist(strsplit(seq, ""))
   })
-  kf <- lapply(seq, function(seq) {
-    sapply(names(Kfactors), function(factor) {
-      sum(Kfactors[[factor]][seq], na.rm = TRUE) / length(seq)
+  kFactors <- lapply(seq, function(seq) {
+    sapply(names(K), function(factor) {
+      sum(K[[factor]][seq], na.rm = TRUE) / length(seq)
     })
   })
-  return(kf)
+  return(kFactors)
 }

@@ -1,4 +1,5 @@
 #' @export plot.xvg
+#' @rawNamespace S3method(plot,xvg)
 #' @title Plot time series from GROMACS XVG files
 #' @param x A .XVG output file of the GROMACS molecular dynamics package
 #' @param ... Arguments to be passed to methods, such as graphical parameters.
