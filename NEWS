@@ -1,6 +1,7 @@
 NEWS
 ====
 **Peptides v.1.2.1**
+* Four new functions were added: autoCorrelation, autoCovariance, crossCovariance and crucianiProperties
 * Functions related with XVG files were updated.
 * Documentation was changed to roxygen2
 
