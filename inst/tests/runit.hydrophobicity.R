@@ -5,7 +5,7 @@ test.hydrophobicity <- function(){
   # GRAVY: -0.950
   
   # CHECK GRAVY VALUE
-  checkEquals(hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Kyte"),-0.950)
+  checkEquals(hydrophobicity(seq = "QWGRRCCGWGPGRRYCVRWC",scale = "Kyte"),-0.950)
   
   # CHECK OUTPUT CLASS
   checkTrue(is.numeric(hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Kyte")))

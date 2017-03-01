@@ -1,6 +1,6 @@
 test.aacomp <- function(){
   # CHECK OUTPUT CLASS
-  checkTrue(is.matrix(aacomp("QWGRRCCGWGPGRRYCVRWC")))
+  checkTrue(is.matrix(aacomp("QWGRRCCGWGPGRRYCVRWC")[[1]]))
   
   # COMPARED TO PEPSTATS
   # http://emboss.bioinformatics.nl/cgi-bin/emboss/pepstats
@@ -16,8 +16,8 @@ test.aacomp <- function(){
   # Acidic		(B+D+E+Z)		            0		  0.000
   
   # CHECK VALUES
-  checkEquals(aacomp("QWGRRCCGWGPGRRYCVRWC")[1:9],c(8,10,1,4,14,6,5,5,0))
+  checkEquals(aacomp("QWGRRCCGWGPGRRYCVRWC")[[1]][1:9],c(8,10,1,4,14,6,5,5,0))
   
   #CHECK PERCENTAGES
-  checkEquals(aacomp("QWGRRCCGWGPGRRYCVRWC")[10:18],c(40,50,5,20,70,30,25,25,0))
+  checkEquals(aacomp("QWGRRCCGWGPGRRYCVRWC")[[1]][10:18],c(40,50,5,20,70,30,25,25,0))
 }

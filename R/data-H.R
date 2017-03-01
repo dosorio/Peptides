@@ -1,11 +1,15 @@
-#' @export hydrophobicity
-#' @title Compute the hydrophobicity index of a protein sequence
-#' @description This function calculates the GRAVY hydrophobicity index of an amino acids sequence using one of the 38 scales from different sources.
-#' @param seq An amino-acids sequence
-#' @param scale A character string specifying the hydophobicity scale to be used; must be one of \code{"Aboderin"}, \code{"AbrahamLeo"}, \code{"Argos"}, \code{"BlackMould"}, \code{"BullBreese"}, \code{"Casari"}, \code{"Chothia"}, \code{"Cid"}, \code{"Cowan3.4"}, \code{"Cowan7.5"}, \code{"Eisenberg"}, \code{"Engelman"}, \code{"Fasman"}, \code{"Fauchere"}, \code{"Goldsack"}, \code{"Guy"}, \code{"HoppWoods"}, \code{"Janin"}, \code{"Jones"}, \code{"Juretic"}, \code{"Kidera"}, \code{"Kuhn"}, \code{"KyteDoolittle"}, \code{"Levitt"}, \code{"Manavalan"}, \code{"Miyazawa"}, \code{"Parker"}, \code{"Ponnuswamy"}, \code{"Prabhakaran"}, \code{"Rao"}, \code{"Rose"}, \code{"Roseman"}, \code{"Sweet"}, \code{"Tanford"}, \code{"Welling"}, \code{"Wilson"}, \code{"Wolfenden"} or \code{"Zimmerman"}
-#' @return The computed GRAVY index for a given amino-acid sequence
+#' @name H
+#' @docType data
+#' @title 38 Hydrophobicity scales for amino-acids from various sources
+#' @description A list with 38 Hydrophobicity scales for amino acids from various sources
+#' @usage data(H)
+#' @format A list with 38 Hydrophobicity scales.
+#' @details The hydrophobicity is an important stabilization force in protein folding; this force changes depending on the solvent in which the protein is found.
+#' @source ExPASy-Protscale (http://web.expasy.org/protscale/)
+#' 
+#' AAIndex Database (http://www.genome.jp/aaindex/)
 #' @references Aboderin, A. A. (1971). An empirical hydrophobicity scale for alpha-amino-acids and some of its applications. International Journal of Biochemistry, 2(11), 537-544.
-#'
+#' 
 #' Abraham D.J., Leo A.J. Hydrophobicity (delta G1/2 cal). Proteins: Structure, Function and Genetics 2:130-152(1987).
 #' 
 #' Argos, P., Rao, J. K., & Hargrave, P. A. (1982). Structural Prediction of Membrane-Bound Proteins. European Journal of Biochemistry, 128(2-3), 565-575.
@@ -89,101 +93,5 @@
 #' Kawashima, S. and Kanehisa, M.; AAindex: amino acid index database. Nucleic Acids Res. 28, 374 (2000).
 #' 
 #' Kawashima, S., Pokarowski, P., Pokarowska, M., Kolinski, A., Katayama, T., and Kanehisa, M.; AAindex: amino acid index database, progress report 2008. Nucleic Acids Res. 36, D202-D205 (2008). 
-#' @details The hydrophobicity is an important stabilization force in protein folding; this force changes depending on the solvent in which the protein is found. The hydrophobicity index is calculated adding the hydrophobicity of individual amino acids and dividing this value by the length of the sequence.
-#' @examples 
-#' # COMPARED TO GRAVY Grand average of hydropathicity (GRAVY) ExPASy
-#' # http://web.expasy.org/cgi-bin/protparam/protparam
-#' # SEQUENCE: QWGRRCCGWGPGRRYCVRWC
-#' # GRAVY: -0.950
-#' 
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Aboderin")
-#' #[1] 3.84
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","AbrahamLeo")
-#' #[1] 0.092
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Argos")
-#' #[1] 1.033
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","BlackMould")
-#' #[1] 0.50125
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","BullBreese")
-#' #[1] 0.1575
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Casari")
-#' #[1] 0.38
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Chothia")
-#' #[1] 0.262
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Cid")
-#' #[1] 0.198
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Cowan3.4")
-#' #[1] 0.0845
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Cowan7.5")
-#' #[1] 0.0605
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Eisenberg")
-#' #[1] -0.3265
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Engelman")
-#' #[1] 2.31
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Fasman")
-#' #[1] -1.2905
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Fauchere")
-#' #[1] 0.527
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Goldsack")
-#' #[1] 1.2245
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Guy")
-#' #[1] 0.193
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","HoppWoods")
-#' #[1] -0.14
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Janin")
-#' #[1] -0.105
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Jones")
-#' #[1] 1.4675
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Juretic")
-#' #[1] -1.106
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Kidera")
-#' #[1] -0.0405
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Kuhn")
-#' #[1] 0.9155
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","KyteDoolittle")
-#' #[1] -0.95
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Levitt")
-#' #[1] -0.21
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Manavalan")
-#' #[1] 13.0445
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Miyazawa")
-#' #[1] 5.739
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Parker")
-#' #[1] 1.095
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Ponnuswamy")
-#' #[1] 0.851
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Prabhakaran")
-#' #[1] 9.67
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Rao")
-#' #[1] 0.813
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Rose")
-#' #[1] 0.7575
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Roseman")
-#' #[1] -0.495
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Sweet")
-#' #[1] -0.1135
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Tanford")
-#' #[1] -0.2905
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Welling")
-#' #[1] -0.666
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Wilson")
-#' #[1] 3.16
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Wolfenden")
-#' #[1] -6.307
-#' hydrophobicity("QWGRRCCGWGPGRRYCVRWC","Zimmerman")
-#' #[1] 0.943
-hydrophobicity <- function(seq, scale = "KyteDoolittle") {
-  seq <- gsub("[[:space:]]+", "", seq)
-  # Loading hydrophobicity scales
-  utils::data(H, envir = environment())
-  H <- H
-  # Setting the hydrophobicity scale
-  scale <- match.arg(scale, names(H))
-  # Sum the hydrophobicity of each amino acid and divide them between the sequence length
-  # Return the GRAVY value
-  h <-
-    lapply(seq, function(seq) {
-      (sum(H[[scale]][unlist(strsplit(seq, ""))], na.rm = TRUE) / nchar(seq))
-    })
-  return(unlist(h))
-}
+
+NULL

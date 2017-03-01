@@ -3,7 +3,7 @@ test.charge <- function(){
   # http://emboss.bioinformatics.nl/cgi-bin/emboss/pepstats
   # SEQUENCE: FLPVLAGLTPSIVPKLVCLLTKKC
   # Charge   = 3.0
-  checkEquals(round(charge("FLPVLAGLTPSIVPKLVCLLTKKC",7,pKscale = "EMBOSS")),3)
+  checkEquals(round(charge(seq = "FLPVLAGLTPSIVPKLVCLLTKKC",pH = 7,pKscale = "EMBOSS")),3)
   
   # COMPARED TO YADAMP
   # http://yadamp.unisa.it/showItem.aspx?yadampid=845&x=0,7055475

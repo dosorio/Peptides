@@ -1,25 +1,46 @@
-# READ.XVG
-# This function reads the .XVG output files from GROMACS molecular dynamics package
+#' @export read.xvg
+#' @title Read output data from a XVG format file.
+#' @param file A .XVG output file of the GROMACS molecular dynamics package
+#' @description XVG is the default format file of the GROMACS molecular dynamics package, contains data formatted to be imported into the Grace 2-D plotting program.
+#' @references  Pronk, S., Pall, S., Schulz, R., Larsson, P., Bjelkmar, P., Apostolov, R., ... & Lindahl, E. (2013). GROMACS 4.5: a high-throughput and highly parallel open source molecular simulation toolkit. Bioinformatics, 29 (7), 845-854.
+#' @author Daniel Osorio <daniel.osorio@correo.uis.edu.co>
+#' @details GROMACS (GROningen MAchine for Chemical Simulations) is a molecular dynamics package designed for simulations of proteins, lipids and nucleic acids. It is free, open source software released under the GNU General Public License. 
+#' The file format used by GROMACS is XVG. This format can be displayed in graphical form through the GRACE program on UNIX/LINUX systems and the GNUPlot program on Windows. XVG files are plain text files containing tabular data separated by tabulators and two types of comments which contain data labels. Although manual editing is possible, this is not a viable option when working with multiple files of this type. 
+#' For ease of reading, information management and data plotting, the functions \code{read.xvg} and \code{plot.xvg} were incorporated.
+#' @examples # READING FILE
+#' file <- system.file("xvg-files/epot.xvg",package="Peptides")
+#' read.xvg(file)
+#' 
+#' #    Time (ps)  Potential
+#' #  1         1 6672471040
+#' #  2         2 6516461568
+#' #  3         3 6351947264
+#' #  4         4 6183133184
+#' #  5         5 6015310336
+#' #  6         6 5854271488
 
-read.xvg<-function(file){
+read.xvg <- function(file) {
   # Read flat file
-  X<-readLines(file)
-  # Count the number of columns
-  C<-length(grep(pattern="@ s",x=X[1:length(X)]))+1
+  content <- readLines(file)
   # Read colnames
-  P<-grep(pattern="@ s",x=X[1:length(X)])
-  P1<-grep(pattern="xaxis",x=X[1:length(X)])
-  # Unifying comments
-  X<-sub("#",replacement="@",X)
+  headers <-
+    gsub(pattern = "^@ s[[:digit:]]+ legend ",
+         replacement =  "",
+         x = content[grep(pattern = "^@ s[[:digit:]]+", x = content)])
+  headers <- gsub("\\\"", "", headers)
   # Extracting the data
-  X<-as.numeric(scan(file,skip=max(grep(pattern="@",x=X[1:length(X)])),what="",quiet=TRUE))
+  content <- sub("#", replacement = "@", content)
+  content <- content[!grepl("@", content)]
+  content <- gsub("^[[:space:]]+", "", content)
+  content <- strsplit(content, "[[:space:]]+")
+  content <-
+    matrix(
+      data = as.numeric(unlist(content)),
+      ncol = length(headers) + 1,
+      byrow = TRUE
+    )
   # Asign colnames
-  name<-list(c(1:(length(X)/C)),c("Time"))
-  for (i in 1:C-1){
-    name[[2]][i]<-(scan(file,skip=min(P)-1,nmax=min(P)+1,what="",quiet=TRUE)[4*i])
-  }
-  name[[2]][2:C]<-name[[2]][1:C-1]
-  name[[2]][1]<-(scan(file,skip=min(P1)-1,nmax=min(P1)+1,what="",quiet=TRUE)[4])
+  colnames(content) <- c("Time", headers)
   # Return a matrix
-  as.data.frame(matrix(X,byrow=TRUE,ncol=C,nrow=length(X)/C,dimnames=as.list(name)))
+  return(content)
 }

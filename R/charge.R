@@ -1,28 +1,99 @@
-# CHARGE
-# This function computes the net charge of a protein sequence based on the Henderson-Hasselbalch equation described in
-# Moore, D. S. (1985). Amino acid and peptide net charges: A simple calculational procedure. Biochemical Education, 13(1), 10–11.
-# The net charge can be calculated using one of the 9 pKa scales availables Bjellqvist, EMBOSS, Murray, Sillero, Solomon, 
-# Stryer, Lehninger, Dawson or Rodwell
+#' @export charge
+#' @importFrom utils data
+#' @title Compute the theoretical net charge of a protein sequence
+#' @description This function computes the net charge of a protein sequence based on the Henderson-Hasselbalch equation described by Moore, D. S. (1985). The net charge can be calculated at defined pH using one of the 9 pKa scales availables: \code{Bjellqvist}, \code{Dawson}, \code{EMBOSS}, \code{Lehninger}, \code{Murray}, \code{Rodwell}, \code{Sillero}, \code{Solomon} or \code{Stryer}.
+#' @param seq An amino-acids sequence
+#' @param pH A pH value
+#' @param pKscale A character string specifying the pKa scale to be used; must be one of \code{"Bjellqvist"}, \code{"Dawson"}, \code{"EMBOSS"}, \code{"Lehninger"}, \code{"Murray"}, \code{"Rodwell"}, \code{"Sillero"}, \code{"Solomon"} or \code{"Stryer"}
+#' @references 
+#' Kiraga, J. (2008) Analysis and computer simulations of variability of isoelectric point of proteins in the proteomes. PhD thesis, University of Wroclaw, Poland.
+#' 
+#' Bjellqvist, B., Hughes, G.J., Pasquali, Ch., Paquet, N., Ravier, F., Sanchez, J.Ch., Frutige,r S., Hochstrasser D. (1993) The focusing positions of polypeptides in immobilized pH gradients can be predicted from their amino acid sequences. Electrophoresis, 14:1023-1031.
+#' 
+#' Dawson, R. M. C.; Elliot, D. C.; Elliot, W. H.; Jones, K. M. Data for biochemical research. Oxford University Press, 1989; p. 592.
+#' 
+#' EMBOSS data are from http://emboss.sourceforge.net/apps/release/5.0/emboss/apps/iep.html.
+#' 
+#' Nelson, D. L.; Cox, M. M. Lehninger Principles of Biochemistry, Fourth Edition; W. H. Freeman, 2004; p. 1100.
+#' 
+#' Murray, R.K., Granner, D.K., Rodwell, V.W. (2006) Harper's illustrated Biochemistry. 27th edition. Published by The McGraw-Hill Companies.
+#' 
+#' Rodwell, J. Heterogeneity of component bands in isoelectric focusing patterns. Analytical Biochemistry, 1982, 119 (2), 440-449.
+#' 
+#' Sillero, A., Maldonado, A. (2006) Isoelectric point determination of proteins and other macromolecules: oscillating method. Comput Biol Med., 36:157-166.
+#' 
+#' Solomon, T.W.G. (1998) Fundamentals of Organic Chemistry, 5th edition. Published by Wiley.
+#' 
+#' Stryer L. (1999) Biochemia. czwarta edycja. Wydawnictwo Naukowe PWN.
+#' 
+#' @examples # COMPARED TO EMBOSS PEPSTATS
+#' # http://emboss.bioinformatics.nl/cgi-bin/emboss/pepstats
+#' # SEQUENCE: FLPVLAGLTPSIVPKLVCLLTKKC
+#' # Charge   = 3.0
+#' 
+#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Bjellqvist")
+#' # [1] 2.737303
+#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="EMBOSS")
+#' # [1] 2.914112
+#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Murray")
+#' # [1] 2.907541
+#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Sillero")
+#' # [1] 2.919812
+#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Solomon")
+#' # [1] 2.844406
+#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Stryer")
+#' # [1] 2.876504
+#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Lehninger")
+#' # [1] 2.87315
+#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Dawson")
+#' # [1] 2.844406
+#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Rodwell")
+#' # [1] 2.819755
+#' 
+#' # COMPARED TO YADAMP
+#' # http://yadamp.unisa.it/showItem.aspx?yadampid=845&x=0,7055475
+#' # SEQUENCE: FLPVLAGLTPSIVPKLVCLLTKKC
+#' # CHARGE pH5: 3.00   	 
+#' # CHARGE pH7: 2.91   	 
+#' # CHARGE pH9: 1.09  
 
-charge <- function(seq,pH=7,pKscale="EMBOSS"){
-  # # Divide the amino acid sequence and makes an absolute frequencies table
-  aa<-table(factor(prot<-strsplit(toupper(seq),"")[[1]],levels = LETTERS))
+#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=5, pKscale="EMBOSS")
+#' # [1] 3.037398
+#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="EMBOSS")
+#' # [1] 2.914112
+#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=9, pKscale="EMBOSS")
+#' # [1] 0.7184524
+#' 
+#' # JUST ONE COMMAND
+#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=seq(from = 5,to = 9,by = 2), pKscale="EMBOSS")
+#' # [1] 3.0373984 2.9141123 0.7184524
+
+charge <- function(seq, pH = 7, pKscale = "Lehninger") {
+  # Divide the amino acid sequence and makes an absolute frequencies table
+  seq <- gsub("[[:space:]]", "", seq)
+  aa <-
+    lapply(seq, function(seq) {
+      table(factor(unlist(strsplit(
+        toupper(seq), ""
+      )), levels = LETTERS))
+    })
   # Set pKscale
-  data(pKscales, envir = environment())
-  pKscales<-pKscales
-  pKs<-pKscales[,match.arg(pKscale,names(pKscales))]
-  names(pKs) <- rownames(pKscales)
-  # Charge
-  cterm <- (-1 /(1+10^(-1*(pH-pKs["cTer"]))))
-  nterm <- ( 1 /(1+10^(1*(pH-pKs["nTer"]))))
-  carg  <- aa["R"]* ( 1 /(1+10^(1*(pH-pKs["R"]))))
-  chis  <- aa["H"]* ( 1 /(1+10^(1*(pH-pKs["H"]))))
-  clys  <- aa["K"]* ( 1 /(1+10^(1*(pH-pKs["K"]))))
-  casp  <- aa["D"]* (-1 /(1+10^(-1*(pH-pKs["D"]))))
-  cglu  <- aa["E"]* (-1 /(1+10^(-1*(pH-pKs["E"]))))
-  ccys  <- aa["C"]* (-1 /(1+10^(-1*(pH-pKs["C"]))))
-  ctyr  <- aa["Y"]* (-1 /(1+10^(-1*(pH-pKs["Y"]))))
-  # Compute the charge and return the value rounded to 3 decimals
-  charge <- as.numeric(carg + clys + chis + nterm + casp + cglu + ctyr + ccys + cterm)
-  return(charge)
+  utils::data(pK, envir = environment())
+  pK <- pK
+  pKs <- pK[[match.arg(pKscale, names(pK))]]
+  charge <- lapply(aa, function(aa) {
+    # Charge
+    cterm <- (-1 / (1 + 10 ^ (-1 * (pH - pKs["cTer"]))))
+    nterm <- (1 / (1 + 10 ^ (1 * (pH - pKs["nTer"]))))
+    carg  <- aa["R"] * (1 / (1 + 10 ^ (1 * (pH - pKs["R"]))))
+    chis  <- aa["H"] * (1 / (1 + 10 ^ (1 * (pH - pKs["H"]))))
+    clys  <- aa["K"] * (1 / (1 + 10 ^ (1 * (pH - pKs["K"]))))
+    casp  <- aa["D"] * (-1 / (1 + 10 ^ (-1 * (pH - pKs["D"]))))
+    cglu  <- aa["E"] * (-1 / (1 + 10 ^ (-1 * (pH - pKs["E"]))))
+    ccys  <- aa["C"] * (-1 / (1 + 10 ^ (-1 * (pH - pKs["C"]))))
+    ctyr  <- aa["Y"] * (-1 / (1 + 10 ^ (-1 * (pH - pKs["Y"]))))
+    # Compute the charge and return the value rounded to 3 decimals
+    return(as.numeric(carg + clys + chis + nterm + casp + cglu + ctyr + ccys + cterm))
+  })
+  return(unlist(charge))
 }
