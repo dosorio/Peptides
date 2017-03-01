@@ -19,8 +19,8 @@ For ease of reading, information management and data plotting, the functions \co
 }
 \examples{
 # READING FILE
-file <- system.file("xvg-files/epot.xvg",package="Peptides")
-read.xvg(file)
+XVGfile <- system.file("xvg-files/epot.xvg",package="Peptides")
+read.xvg(XVGfile)
 
 #    Time (ps)  Potential
 #  1         1 6672471040

@@ -8,8 +8,8 @@
 #' The file format used by GROMACS is XVG. This format can be displayed in graphical form through the GRACE program on UNIX/LINUX systems and the GNUPlot program on Windows. XVG files are plain text files containing tabular data separated by tabulators and two types of comments which contain data labels. Although manual editing is possible, this is not a viable option when working with multiple files of this type. 
 #' For ease of reading, information management and data plotting, the functions \code{read.xvg} and \code{plot.xvg} were incorporated.
 #' @examples # READING FILE
-#' file <- system.file("xvg-files/epot.xvg",package="Peptides")
-#' read.xvg(file)
+#' XVGfile <- system.file("xvg-files/epot.xvg",package="Peptides")
+#' read.xvg(XVGfile)
 #' 
 #' #    Time (ps)  Potential
 #' #  1         1 6672471040
@@ -28,6 +28,11 @@ read.xvg <- function(file) {
          replacement =  "",
          x = content[grep(pattern = "^@ s[[:digit:]]+", x = content)])
   headers <- gsub("\\\"", "", headers)
+  xlabel <-
+    gsub("@[[:space:]]+xaxis[[:space:]]+label[[:space:]]+",
+         "",
+         content[grep("^@    xaxis", content)])
+  xlabel <- gsub("\"", "", xlabel)
   # Extracting the data
   content <- sub("#", replacement = "@", content)
   content <- content[!grepl("@", content)]
@@ -40,7 +45,7 @@ read.xvg <- function(file) {
       byrow = TRUE
     )
   # Asign colnames
-  colnames(content) <- c("Time", headers)
+  colnames(content) <- c(xlabel, headers)
   # Return a matrix
   return(content)
 }

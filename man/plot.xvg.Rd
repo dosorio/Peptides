@@ -20,8 +20,8 @@ The file format used by GROMACS is XVG. This format can be displayed in graphica
 For ease of reading, information management and data plotting, the functions \code{read.xvg} and \code{plot.xvg} were incorporated.
 }
 \examples{
-file <- system.file("xvg-files/epot.xvg",package="Peptides")
-plot.xvg(file)
+XVGfile <- system.file("xvg-files/epot.xvg",package="Peptides")
+plot.xvg(XVGfile)
 }
 \references{
 Pronk, S., Pall, S., Schulz, R., Larsson, P., Bjelkmar, P., Apostolov, R., ... & Lindahl, E. (2013). GROMACS 4.5: a high-throughput and highly parallel open source molecular simulation toolkit. Bioinformatics, 29 (7), 845-854.

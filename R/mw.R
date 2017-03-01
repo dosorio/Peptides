@@ -11,8 +11,11 @@
 #' # SEQUENCE: QWGRRCCGWGPGRRYCVRWC 
 #' # Theoretical pI/Mw: 9.88 / 2485.91 
 #' 
-#' mw("QWGRRCCGWGPGRRYCVRWC")
+#' mw(seq = "QWGRRCCGWGPGRRYCVRWC",monoisotopic = FALSE)
 #' # [1] 2485.911
+#' 
+#' mw(seq = "QWGRRCCGWGPGRRYCVRWC",monoisotopic = TRUE)
+#' # [1] 2484.12
 mw <- function(seq, monoisotopic = FALSE) {
   seq <- gsub("[[:space:]]", "", seq)
   # Create the weight scale

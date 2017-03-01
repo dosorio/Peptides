@@ -16,7 +16,7 @@ The computed average of Cruciani properties of all the amino acids in the corres
 This function calculates the Cruciani properties of an amino-acids sequence using the scaled principal component scores that summarize a broad set of descriptors calculated based on the interaction of each amino acid residue with several chemical groups (or "probes"), such as charged ions, methyl, hydroxyl groups, and so forth.
 }
 \examples{
-crucianiProperties("QWGRRCCGWGPGRRYCVRWC")
+crucianiProperties(seq = "QWGRRCCGWGPGRRYCVRWC")
 #     PP1     PP2     PP3 
 #  -0.1130 -0.0220  0.2735 
 }

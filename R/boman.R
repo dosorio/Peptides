@@ -15,7 +15,7 @@
 #' # SEQUENCE: FLPVLAGLTPSIVPKLVCLLTKKC
 #' # BOMAN INDEX  -1.24  
 #'
-#' boman(seq = "FLPVLAGLTPSIVPKLVCLLTKKC")
+#' boman(seq= "FLPVLAGLTPSIVPKLVCLLTKKC")
 #' # [1] -1.235833
 #' 
 boman <- function(seq) {
@@ -49,7 +49,7 @@ boman <- function(seq) {
     unlist(strsplit(seq, ""))
   })
   bindex <- lapply(seq, function(seq) {
-    return(-1 * mean(boman[seq],na.rm = TRUE))
+    return(-1 * sum(boman[seq], na.rm = TRUE) / length(seq))
   })
   return(unlist(bindex))
 }

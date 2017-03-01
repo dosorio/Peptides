@@ -10,7 +10,7 @@
 #' # SEQUENCE: QWGRRCCGWGPGRRYCVRWC
 #' # The instability index (II) is computed to be 83.68
 #' 
-#' instaindex("QWGRRCCGWGPGRRYCVRWC")
+#' instaindex(seq = "QWGRRCCGWGPGRRYCVRWC")
 #' # [1] 83.68
 #' 
 instaindex <- function(seq) {

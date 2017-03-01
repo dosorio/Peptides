@@ -8,7 +8,7 @@
 #'
 #' D. Eisenberg, R. M. Weiss, and T. C. Terwilliger. The helical hydrophobic moment: A measure of the amphiphilicity of a helix. Nature, 299(5881):371-374, 1982. [p7, 8]
 #' @details Eisenberg et al. (1982) found a correlation between hydrophobicity and hydrophobic moment that defines the protein section as globular, transmembrane or superficial. The function calculates the hydrophobicity (H) and hydrophobic moment (uH) based on the standardized scale of Eisenberg (1984) using windows of 11 amino acids for calculate the theoretical fragment type.
-#' @examples membpos("ARQQNLFINFCLILIFLLLI",100)
+#' @examples membpos(seq = "ARQQNLFINFCLILIFLLLI",angle = 100)
 #' #       Pep        H     uH       MembPos
 #' # 1 ARQQNLFINFCL 0.083 0.353      Globular
 #' # 2 RQQNLFINFCLI 0.147 0.317      Globular
@@ -20,7 +20,7 @@
 #' # 8 INFCLILIFLLL 0.944 0.108 Transmembrane
 #' # 9 NFCLILIFLLLI 0.944 0.132 Transmembrane
 #' 
-#' membpos("ARQQNLFINFCLILIFLLLI",160)
+#' membpos(seq = "ARQQNLFINFCLILIFLLLI",angle = 160)
 #' #       Pep        H     uH    MembPos
 #' # 1 ARQQNLFINFCL 0.083 0.467  Globular
 #' # 2 RQQNLFINFCLI 0.147 0.467  Globular

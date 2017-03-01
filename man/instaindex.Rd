@@ -21,7 +21,7 @@ This function calculates the instability index proposed by Guruprasad (1990). Th
 # SEQUENCE: QWGRRCCGWGPGRRYCVRWC
 # The instability index (II) is computed to be 83.68
 
-instaindex("QWGRRCCGWGPGRRYCVRWC")
+instaindex(seq = "QWGRRCCGWGPGRRYCVRWC")
 # [1] 83.68
 
 }

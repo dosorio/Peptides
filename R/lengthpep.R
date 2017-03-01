@@ -8,7 +8,7 @@
 #' # SEQUENCE: QWGRRCCGWGPGRRYCVRWC
 #' # Number of amino acids: 20
 #' 
-#' lengthpep("QWGRRCCGWGPGRRYCVRWC")
+#' lengthpep(seq = "QWGRRCCGWGPGRRYCVRWC")
 #' # [1] 20
 lengthpep <- function(seq) {
   seq <- gsub("[[:space:]]+", "", seq)
