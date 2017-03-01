@@ -24,7 +24,7 @@ Aliphatic amino acids (A, I, L and V) are responsible for the thermal stability 
 # SEQUENCE: SDKEVDEVDAALSDLEITLE
 # Aliphatic index: 117.00
 
-aindex("SDKEVDEVDAALSDLEITLE")
+aindex(seq = "SDKEVDEVDAALSDLEITLE")
 # [1] 117
 }
 \references{

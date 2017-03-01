@@ -9,7 +9,7 @@ autoCorrelation(sequence, lag, property, center = TRUE)
 \arguments{
 \item{sequence}{An amino-acids sequence}
 
-\item{lag}{A value for a lag, the max value is equal to the length of the shortest peptide minus one.}
+\item{lag}{A value for a lag, the max value is equal to the length of shortest peptide minus one.}
 
 \item{property}{A property to use as value to be correlated.}
 

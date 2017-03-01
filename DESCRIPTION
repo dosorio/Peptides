@@ -1,7 +1,7 @@
 Package: Peptides
 Version: 1.2.1
 Date: 2017-02-20
-Title: Calculate Indices and Theoretical Properties of Protein Sequences
+Title: Calculate Indices and Theoretical Physicochemical Properties of Protein Sequences
 Author: Daniel Osorio, Paola Rondon-Villarreal and Rodrigo Torres.
 Maintainer: Daniel Osorio <dcosorioh@unal.edu.co>
 URL: https://github.com/dosorio/Peptides/

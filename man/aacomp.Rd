@@ -51,7 +51,7 @@ Further information: http://emboss.sourceforge.net/apps/cvs/emboss/apps/pepstats
 # Acidic        (B+D+E+Z)               0   00.000
 
 ## AA composition of PDB: 1D9J Cecropin Peptide
-aacomp("KWKLFKKIGIGKFLHSAKKFX")
+aacomp(seq= "KWKLFKKIGIGKFLHSAKKFX")
 
 ## Output
 #           Number  Mole \%
