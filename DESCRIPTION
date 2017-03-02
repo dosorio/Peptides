@@ -5,6 +5,8 @@ Title: Calculate Indices and Theoretical Physicochemical Properties of Protein S
 Author: Daniel Osorio, Paola Rondon-Villarreal and Rodrigo Torres.
 Maintainer: Daniel Osorio <dcosorioh@unal.edu.co>
 URL: https://github.com/dosorio/Peptides/
+Depends:
+    plyr
 Suggests:
     RUnit
 Description: Calculate physicochemical properties and indices from amino-acid
