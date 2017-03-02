@@ -1,6 +1,8 @@
-#' @export read.xvg
+#' @export read_xvg
 #' @title Read output data from a XVG format file.
+#' 
 #' @param file A .XVG output file of the GROMACS molecular dynamics package
+#' 
 #' @description XVG is the default format file of the GROMACS molecular dynamics package, contains data formatted to be imported into the Grace 2-D plotting program.
 #' @references  Pronk, S., Pall, S., Schulz, R., Larsson, P., Bjelkmar, P., Apostolov, R., ... & Lindahl, E. (2013). GROMACS 4.5: a high-throughput and highly parallel open source molecular simulation toolkit. Bioinformatics, 29 (7), 845-854.
 #' @author Daniel Osorio <daniel.osorio@correo.uis.edu.co>
@@ -19,33 +21,40 @@
 #' #  5         5 6015310336
 #' #  6         6 5854271488
 
-read.xvg <- function(file) {
+read_xvg <- function(file) {
+  ## Helper functions
+  # Remove quotes, starting and ending whitespaces
+  unquote <- function(x, ...) { gsub("\\\"|^\\s|\\s$", "", x, ...) }
+  
+  # Subsets a list for elments that match a regex and then removes that regex
+  perlgsub <- function(pattern, replacement, x, ...) {
+    gsub(pattern = pattern,
+         replacement = replacement, 
+         x = grep(pattern = pattern, x, value = TRUE, perl = TRUE, ... ),
+         perl = TRUE, ...)
+  }
+  
   # Read flat file
   content <- readLines(file)
-  # Read colnames
-  headers <-
-    gsub(pattern = "^@ s[[:digit:]]+ legend ",
-         replacement =  "",
-         x = content[grep(pattern = "^@ s[[:digit:]]+", x = content)])
-  headers <- gsub("\\\"", "", headers)
-  xlabel <-
-    gsub("@[[:space:]]+xaxis[[:space:]]+label[[:space:]]+",
-         "",
-         content[grep("^@    xaxis", content)])
-  xlabel <- gsub("\"", "", xlabel)
+
+  # Read colnames and title
+  variables <- unquote(perlgsub("^@ s[0-9]+ legend ", "", content))
+  xvg_labels <- perlgsub("^@ \\s+[a-z]axis\\s+label ", "", content)
+  xvg_labels <- unquote(unlist(strsplit(xvg_labels, ',')))
+  title <- unquote(perlgsub("^@ \\s+title ", "", content))
+
   # Extracting the data
-  content <- sub("#", replacement = "@", content)
-  content <- content[!grepl("@", content)]
-  content <- gsub("^[[:space:]]+", "", content)
-  content <- strsplit(content, "[[:space:]]+")
-  content <-
-    matrix(
-      data = as.numeric(unlist(content)),
-      ncol = length(headers) + 1,
-      byrow = TRUE
-    )
+  content <- perlgsub('^\\s+', "", content)
+  content <- plyr::ldply(content, (function(x) {unlist(strsplit(x, "\\s+"))}))
+
   # Asign colnames
-  colnames(content) <- c(xlabel, headers)
+  x_axis_label <- perlgsub('(?!=\\w+)\\W+\\(\\w*\\)$', "", xvg_labels)
+  colnames(content) <- c(x_axis_label, variables)
+
+  # Add units and title as attribute
+  attr(content, 'xvg_labels') <- xvg_labels
+  attr(content, 'title') <- title
+
   # Return a matrix
   return(content)
 }
