@@ -29,7 +29,7 @@ readXVG <- function(file) {
   unquote <- function(x, ...) { gsub("\\\"|^\\s|\\s$", "", x, ...) }
   
   # Subsets a list for elments that match a regex and then removes that regex
-  perlgsub <- function(pattern, replacement, x, ...) {
+  perlgsub <- function(pattern, x, replacement = "", ...) {
     gsub(pattern = pattern,
          replacement = replacement, 
          x = grep(pattern = pattern, x, value = TRUE, perl = TRUE, ... ),
@@ -40,22 +40,24 @@ readXVG <- function(file) {
   content <- readLines(file)
 
   # Read colnames and title
-  variables <- unquote(perlgsub("^@ s[0-9]+ legend ", "", content))
-  xvg_labels <- perlgsub("^@ \\s+[a-z]axis\\s+label ", "", content)
+  header <- grep('^[@#]', content, value = TRUE)
+  variables <- unquote(perlgsub("^@ s[0-9]+ legend ", header))
+  x_axis_label <- unquote(perlgsub("^@ \\s+xaxis\\s+label ", header))
+  x_axis_label <- perlgsub("(?!=\\w+)\\W+\\(\\w*\\)$", x_axis_label)
+  xvg_labels <- perlgsub("^@ \\s+[a-z]axis\\s+label ", header)
   xvg_labels <- unquote(unlist(strsplit(xvg_labels, ',')))
-  title <- unquote(perlgsub("^@ \\s+title ", "", content))
+  title <- unquote(perlgsub("^@ \\s+title ", header))
 
   # Extracting the data
-  content <- perlgsub('^\\s+', "", content)
+  content <- perlgsub('^\\s+', content)
   content <- as.data.frame(
     t(sapply(
       content, 
       (function(x) {unlist(strsplit(x, "\\s+"))}), 
       USE.NAMES = FALSE)
-      ))
+      ), stringsAsFactors = FALSE)
 
   # Asign colnames
-  x_axis_label <- perlgsub('(?!=\\w+)\\W+\\(\\w*\\)$', "", xvg_labels)
   colnames(content) <- c(x_axis_label, variables)
 
   # Add units and title as attribute

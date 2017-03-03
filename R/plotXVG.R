@@ -30,7 +30,7 @@ plotXVG <- function(XVGfile, ...) {
   original_par <- par(no.readonly = TRUE)
   
   # Plot plot maximum 4 facets per row
-  graphics::par(mfcol = c((ncol(content) - 1) %/% 4 + 1,
+  graphics::par(mfcol = c((ncol(content) - 1.5) %/% 4 + 1,
                           min((ncol(content) - 1), 4)), 
                 oma = c(0, 0, 2.5, 0))
   for (i in seq_len(ncol(content) - 1)) {
