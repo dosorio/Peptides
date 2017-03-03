@@ -40,7 +40,7 @@ kideraFactors <- function (seq) {
   })
   kFactors <- lapply(seq, function(seq) {
     sapply(names(K), function(factor) {
-      sum(K[[factor]][seq], na.rm = TRUE) / length(seq)
+      (sum(K[[factor]][seq], na.rm = TRUE) / length(seq))
     })
   })
   return(kFactors)

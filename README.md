@@ -38,18 +38,20 @@ Available functions
 |membpos |	Compute theoretically the class of a protein sequence |
 |mw	| Compute the molecular weight of a protein sequence |
 |pI	| Compute the isoelectic point (pI) of a protein sequence |
-|plot.xvg	| Plot time series from GROMACS XVG files |
-|read.xvg |	Read XVG files from GROMACS molecular dynamics package |
+|plotXVG	| Plot time series from GROMACS XVG files |
+|readXVG |	Read XVG files from GROMACS molecular dynamics package |
+|zScales| Compute the Z-scales of a protein sequence |
 
 Available datasets
 -------------------
 | Code        | Description |
 |:----------- |:------------|
-|CP | The 3 properties from Cruciani *et. al* (2004) |
+|CP | The 3 properties from Cruciani *et al.* (2004) |
 |H  | 38 Hydrophobicity values for amino acids form various sources |
-|K | The 10 factors from Kidera *et. al* (1985)|
+|K | The 10 factors from Kidera *et al.* (1985)|
 |pepdata | A data frame with 21 physicochemical properties and indices from 100 amino-acid sequences (50 antimicrobial and 50 non antimicrobial)  |
 |pK | 9 pKa scales for the side chain of charged amino acids from various sources |
+|Z|The 5 Z-scales from Sandberg *et al.* (1998)|
 
 Citation
 --------

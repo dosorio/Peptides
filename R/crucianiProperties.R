@@ -5,8 +5,8 @@
 #' @return The computed average of Cruciani properties of all the amino acids in the corresponding peptide sequence. Each PP represent an amino-acid property as follows: \itemize{\item{PP1:} Polarity, \item{PP2:} Hydrophobicity, \item{PP3:} H-bonding}
 #' @references Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
 #' @examples crucianiProperties(seq = "QWGRRCCGWGPGRRYCVRWC")
-#' #     PP1     PP2     PP3 
-#' #  -0.1130 -0.0220  0.2735 
+#' #     PP1     PP2     PP3
+#' #  -0.1130 -0.0220  0.2735
 crucianiProperties <- function(seq) {
   # Remove spaces and line breaks
   seq <- gsub("[[:space:]]+", "", seq)
@@ -17,8 +17,8 @@ crucianiProperties <- function(seq) {
   seq <- strsplit(toupper(seq), split = "")
   # Calculate averages
   lapply(seq, function(seq) {
-    c(PP1 = mean(CP[["PP1"]][seq],na.rm = TRUE),
-      PP2 = mean(CP[["PP2"]][seq],na.rm = TRUE),
-      PP3 = mean(CP[["PP3"]][seq],na.rm = TRUE))
+    sapply(names(CP), function(property) {
+      (sum(CP[[property]][seq])/length(seq))
+    })
   })
 }

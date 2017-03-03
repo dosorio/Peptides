@@ -17,8 +17,8 @@ This function calculates the Cruciani properties of an amino-acids sequence usin
 }
 \examples{
 crucianiProperties(seq = "QWGRRCCGWGPGRRYCVRWC")
-#     PP1     PP2     PP3 
-#  -0.1130 -0.0220  0.2735 
+#     PP1     PP2     PP3
+#  -0.1130 -0.0220  0.2735
 }
 \references{
 Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
