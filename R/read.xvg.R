@@ -1,4 +1,4 @@
-#' @export read_xvg
+#' @export read.xvg
 #' @title Read output data from a XVG format file.
 #' 
 #' @param file A .XVG output file of the GROMACS molecular dynamics package
@@ -21,7 +21,7 @@
 #' #  5         5 6015310336
 #' #  6         6 5854271488
 
-read_xvg <- function(file) {
+read.xvg <- function(file) {
   ## Helper functions
   # Remove quotes, starting and ending whitespaces
   unquote <- function(x, ...) { gsub("\\\"|^\\s|\\s$", "", x, ...) }
@@ -45,7 +45,12 @@ read_xvg <- function(file) {
 
   # Extracting the data
   content <- perlgsub('^\\s+', "", content)
-  content <- plyr::ldply(content, (function(x) {unlist(strsplit(x, "\\s+"))}))
+  content <- as.data.frame(
+    t(sapply(
+      content, 
+      (function(x) {unlist(strsplit(x, "\\s+"))}), 
+      USE.NAMES = FALSE)
+      ))
 
   # Asign colnames
   x_axis_label <- perlgsub('(?!=\\w+)\\W+\\(\\w*\\)$', "", xvg_labels)
