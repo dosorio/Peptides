@@ -5,7 +5,7 @@
 \alias{AA}
 \title{Properties, scales and indices for the 20 naturally occurring amino acids from various sources}
 \format{A list as follows: \itemize{
-\item{Hydrophobicity} \itemize{
+\item{Hydrophobicity} The hydrophobicity is an important stabilization force in protein folding; this force changes depending on the solvent in which the protein is found. \itemize{
 \item{Aboderin:} Aboderin, A. A. (1971). An empirical hydrophobicity scale for alpha-amino-acids and some of its applications. International Journal of Biochemistry, 2(11), 537-544.
 \item{AbrahamLeo:} Abraham D.J., Leo A.J. Hydrophobicity (delta G1/2 cal). Proteins: Structure, Function and Genetics 2:130-152(1987).
 \item{Argos:} Argos, P., Rao, J. K., & Hargrave, P. A. (1982). Structural Prediction of Membrane-Bound Proteins. European Journal of Biochemistry, 128(2-3), 565-575.
@@ -45,10 +45,10 @@
 \item{Wolfenden:} Wolfenden R.V., Andersson L., Cullis P.M., Southgate C.C.F. Hydration potential (kcal/mole) at 25C. Biochemistry 20:849-855(1981).
 \item{Zimmerman:} Zimmerman, J. M., Eliezer, N., & Simha, R. (1968). The characterization of amino acid sequences in proteins by statistical methods. Journal of theoretical biology, 21(2), 170-201.
 }
-\item{crucianiProperties:} \itemize{
-\item{PP1:}
-\item{PP2:}
-\item{PP3: }
+\item{crucianiProperties:} The three Cruciani et. al (2004) properties, are the scaled principal component scores that summarize a broad set of descriptors calculated based on the interaction of each amino acid residue with several chemical groups (or "probes"), such as charged ions, methyl, hydroxyl groups, and so forth. \itemize{
+\item{PP1:} Polarity, 
+\item{PP2:} Hydrophobicity, 
+\item{PP3:} H-bonding
 }
 \item{kideraFactors:} \itemize{
 \item{helix.bend.pref}
@@ -107,6 +107,9 @@ Kawashima, S., Ogata, H., and Kanehisa, M.; AAindex: amino acid index database. 
 Kawashima, S. and Kanehisa, M.; AAindex: amino acid index database. Nucleic Acids Res. 28, 374 (2000).
 
 Kawashima, S., Pokarowski, P., Pokarowska, M., Kolinski, A., Katayama, T., and Kanehisa, M.; AAindex: amino acid index database, progress report 2008. Nucleic Acids Res. 36, D202-D205 (2008). 
+}
+\item{crucianiProperties:} \itemize{
+Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
 }
 }
 }
