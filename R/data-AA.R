@@ -1,7 +1,7 @@
 #' @name AA
 #' @docType data
 #' @title Properties, scales and indices for the 20 naturally occurring amino acids from various sources
-#' @description A list with a collection of properties, scales and indices for the 20 naturally occurring amino acids from various sources
+#' @description A list with a collection of properties, scales and indices for the 20 naturally occurring amino acids from various sources.
 #' @usage data(AA)
 #' @format A list as follows: \itemize{
 #' \item{Hydrophobicity} The hydrophobicity is an important stabilization force in protein folding; this force changes depending on the solvent in which the protein is found. \itemize{
@@ -49,35 +49,35 @@
 #' \item{PP2:} Hydrophobicity, 
 #' \item{PP3:} H-bonding
 #' }
-#' \item{kideraFactors:} \itemize{
-#' \item{helix.bend.pref}
-#' \item{side.chain.size}
-#' \item{extended.str.pref}
-#' \item{hydrophobicity}
-#' \item{double.bend.pref}
-#' \item{partial.spec.vol}
-#' \item{flat.ext.pref}
-#' \item{occurrence.alpha.reg}
-#' \item{pK.C}
-#' \item{surrounding.hydrop}
+#' \item{kideraFactors:} The Kidera Factors were originally derived by applying multivariate analysis to 188 physical properties of the 20 amino acids and using dimension reduction techniques. A 10-dimensional vector of orthogonal factors was then obtained for each amino acid.The first four factors are essentially pure physical properties; the remaining six factors are superpositions of several physical properties, and are labelled for convenience by the name of the most heavily weighted component \itemize{
+#' \item{helix.bend.pref:} Helix/bend preference
+#' \item{side.chain.size:} Side-chain size
+#' \item{extended.str.pref:} Extended structure preference
+#' \item{hydrophobicity:} Hydrophobicity
+#' \item{double.bend.pref:} Double-bend preference
+#' \item{partial.spec.vol:} Partial specific volume
+#' \item{flat.ext.pref:} Flat extended preference
+#' \item{occurrence.alpha.reg:} Occurrence in alpha region
+#' \item{pK.C:} pK-C
+#' \item{surrounding.hydrop:} Surrounding hydrophobicity
 #' }
 #' \item{pK}\itemize{
-#' \item{Bjellqvist}
-#' \item{Dawson}
-#' \item{EMBOSS}
-#' \item{Lehninger}
-#' \item{Murray}
-#' \item{Rodwell}
-#' \item{Sillero}
-#' \item{Solomon}
-#' \item{Stryer}
+#' \item{Bjellqvist:} Bjellqvist, B., Hughes, G.J., Pasquali, Ch., Paquet, N., Ravier, F., Sanchez, J.Ch., Frutige,r S., Hochstrasser D. (1993) The focusing positions of polypeptides in immobilized pH gradients can be predicted from their amino acid sequences. Electrophoresis, 14:1023-1031.
+#' \item{Dawson:} Dawson, R. M. C.; Elliot, D. C.; Elliot, W. H.; Jones, K. M. Data for biochemical research. Oxford University Press, 1989; p. 592.
+#' \item{EMBOSS:} EMBOSS data are from http://emboss.sourceforge.net/apps/release/5.0/emboss/apps/iep.html.
+#' \item{Lehninger:} Nelson, D. L.; Cox, M. M. Lehninger Principles of Biochemistry, Fourth Edition; W. H. Freeman, 2004; p. 1100.
+#' \item{Murray:} Murray, R.K., Granner, D.K., Rodwell, V.W. (2006) Harper's illustrated Biochemistry. 27th edition. Published by The McGraw-Hill Companies.
+#' \item{Rodwell:} Rodwell, J. Heterogeneity of component bands in isoelectric focusing patterns. Analytical Biochemistry, 1982, 119 (2), 440-449.
+#' \item{Sillero:} Sillero, A., Maldonado, A. (2006) Isoelectric point determination of proteins and other macromolecules: oscillating method. Comput Biol Med., 36:157-166.
+#' \item{Solomon:} Solomon, T.W.G. (1998) Fundamentals of Organic Chemistry, 5th edition. Published by Wiley.
+#' \item{Stryer:} Stryer L. (1999) Biochemia. czwarta edycja. Wydawnictwo Naukowe PWN.
 #' }
-#' \item{zScales}\itemize{
-#' \item{Z1}
-#' \item{Z2}
-#' \item{Z3}
-#' \item{Z4}
-#' \item{Z5}
+#' \item{zScales} The five Sandberg et al. (1998) Z-scales describe each amino acid with numerical values, descriptors, which represent the physicochemical properties of the amino acids including NMR data and thin-layer chromatography (TLC) data.\itemize{
+#' \item{Z1:} Lipophilicity
+#' \item{Z2:} Steric properties (Steric bulk/Polarizability)
+#' \item{Z3:} Electronic properties (Polarity / Charge)
+#' \item{Z4:} Related to  electronegativity, heat of formation, electrophilicity and hardness.
+#' \item{Z5:} Related to electronegativity, heat of formation, electrophilicity and hardness.
 #' }
 #' }
 #' @source
@@ -86,22 +86,37 @@
 #' \item ExPASy-Protscale (http://web.expasy.org/protscale/)
 #' \item AAIndex Database (http://www.genome.jp/aaindex/)
 #' }
+#' \item{pK}\itemize{
+#' \item Kiraga, J. (2008) Analysis and computer simulations of variability of isoelectric point of proteins in the proteomes. PhD thesis, University of Wroclaw, Poland.
+#' }
 #' }
 #' @references 
 #' \itemize{
 #' \item{Hydrophobicity}\itemize{
-#' Nakai, K., Kidera, A., and Kanehisa, M.; Cluster analysis of amino acid indices for prediction of protein structure and function. Protein Eng. 2, 93-100 (1988).
+#' \item Nakai, K., Kidera, A., and Kanehisa, M.; Cluster analysis of amino acid indices for prediction of protein structure and function. Protein Eng. 2, 93-100 (1988).
 #' 
-#' Tomii, K. and Kanehisa, M.; Analysis of amino acid indices and mutation matrices for sequence comparison and structure prediction of proteins. Protein Eng. 9, 27-36 (1996). 
+#' \item Tomii, K. and Kanehisa, M.; Analysis of amino acid indices and mutation matrices for sequence comparison and structure prediction of proteins. Protein Eng. 9, 27-36 (1996). 
 #' 
-#' Kawashima, S., Ogata, H., and Kanehisa, M.; AAindex: amino acid index database. Nucleic Acids Res. 27, 368-369 (1999).
+#' \item Kawashima, S., Ogata, H., and Kanehisa, M.; AAindex: amino acid index database. Nucleic Acids Res. 27, 368-369 (1999).
 #' 
-#' Kawashima, S. and Kanehisa, M.; AAindex: amino acid index database. Nucleic Acids Res. 28, 374 (2000).
+#' \item Kawashima, S. and Kanehisa, M.; AAindex: amino acid index database. Nucleic Acids Res. 28, 374 (2000).
 #' 
-#' Kawashima, S., Pokarowski, P., Pokarowska, M., Kolinski, A., Katayama, T., and Kanehisa, M.; AAindex: amino acid index database, progress report 2008. Nucleic Acids Res. 36, D202-D205 (2008). 
+#' \item Kawashima, S., Pokarowski, P., Pokarowska, M., Kolinski, A., Katayama, T., and Kanehisa, M.; AAindex: amino acid index database, progress report 2008. Nucleic Acids Res. 36, D202-D205 (2008). 
 #' }
 #' \item{crucianiProperties:} \itemize{
-#' Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
+#' \item Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
+#' }
+#' \item{kideraFactors:} \itemize{
+#' \item Kidera, A., Konishi, Y., Oka, M., Ooi, T., & Scheraga, H. A. (1985). Statistical analysis of the physical properties of the 20 naturally occurring amino acids. Journal of Protein Chemistry, 4(1), 23-55.
+#' }
+#' \item{pK:} \itemize{
+#' \item Aronson, J. N. The Henderson-Hasselbalch equation revisited. Biochemical Education, 1983, 11 (2), 68.
+#' \item Moore, D. S.. Amino acid and peptide net charges: A simple calculational procedure. Biochemical Education, 1986, 13 (1), 10-12.
+#' \item Goloborodko, A.A.; Levitsky, L.I.; Ivanov, M.V.; and Gorshkov, M.V. (2013) "Pyteomics - a Python Framework for Exploratory Data Analysis and Rapid Software Prototyping in Proteomics", Journal of The American Society for Mass Spectrometry, 24(2), 301-304.
+#' \item Kiraga, J. (2008) Analysis and computer simulations of variability of isoelectric point of proteins in the proteomes. PhD thesis, University of Wroclaw, Poland.
+#' }
+#' \item{zScales} \itemize{
+#' \item Sandberg M, Eriksson L, Jonsson J, Sjostrom M, Wold S: New chemical descriptors relevant for the design of biologically active peptides. A multivariate characterization of 87 amino acids. J Med Chem 1998, 41:2481-2491.
 #' }
 #' }
 NULL
