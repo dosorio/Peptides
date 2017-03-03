@@ -11,14 +11,13 @@ crucianiProperties <- function(seq) {
   # Remove spaces and line breaks
   seq <- gsub("[[:space:]]+", "", as.vector(seq))
   # Load Cruciani Properties
-  utils::data(CP, envir = environment())
-  CP <- CP
+  properties <- get(data("AA",envir = environment()))$crucianiProperties
   # Split sequence
   seq <- strsplit(toupper(seq), split = "")
   # Calculate averages
   lapply(seq, function(seq) {
-    sapply(names(CP), function(property) {
-      (sum(CP[[property]][seq])/length(seq))
+    sapply(names(properties), function(property) {
+      (sum(properties[[property]][seq])/length(seq))
     })
   })
 }

@@ -24,13 +24,12 @@ zScales <- function(seq) {
   seq <- strsplit(seq, "")
   
   # Load the Z-scales
-  utils::data(Z, envir = environment())
-  Z <- Z
+  scales <- get(data("AA",envir = environment()))$zScales
   
   # Computes the Z-scales for given sequences
   lapply(seq, function(seq) {
-    sapply(names(Z), function(scale) {
-      (sum(Z[[scale]][seq], na.rm = TRUE) / length(seq))
+    sapply(names(scales), function(scale) {
+      (sum(scales[[scale]][seq], na.rm = TRUE) / length(seq))
     })
   })
 }

@@ -32,15 +32,14 @@ kideraFactors <- function (seq) {
   # Remove the break lines from the sequence
   seq <- gsub("[[:space:]]+", "", as.vector(seq))
   # Load the KFactors data
-  data(K, envir = environment())
-  K <- K
+  factors <- get(data("AA",envir = environment()))$kideraFactors
   # Compute the selected Kidera factor.
   seq <- lapply(seq, function(seq) {
     unlist(strsplit(seq, ""))
   })
   kFactors <- lapply(seq, function(seq) {
-    sapply(names(K), function(factor) {
-      (sum(K[[factor]][seq], na.rm = TRUE) / length(seq))
+    sapply(names(factors), function(factor) {
+      (sum(factors[[factor]][seq], na.rm = TRUE) / length(seq))
     })
   })
   return(kFactors)

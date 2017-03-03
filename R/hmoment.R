@@ -27,16 +27,11 @@
 hmoment <- function(seq, angle = 100, window = 11) {
   # Loading hydrophobicity scale
   seq <- gsub("[[:space:]]+", "", as.vector(seq))
-  data(H, envir = environment())
-  H <- H
-  h <- H[["Eisenberg"]]
+  h <- get(data("AA",envir = environment()))$Hydrophobicity$Eisenberg
   # Splitting the sequence in amino acids
-  aa <- lapply(seq, function(seq) {
-    unlist(strsplit(seq, ""))
-  })
+  aa <- strsplit(seq,"")
   # Setting the sequence length
-  pep <-
-    lapply(aa, function(aa) {
+  pep <- lapply(aa, function(aa) {
       stats::embed(aa, min(c(length(aa), window)))
     })
   # Applying the hmoment function to each amino acids window

@@ -12,14 +12,14 @@
 #' @references Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
 #' @examples
 #' # Loading a property to evaluate its autocorrelation
-#' data(H)
+#' data(AA)
 #'
 #' # Calculate the cross-covariance index for a lag=1
 #' crossCovariance(
 #'   sequence = "SDKEVDEVDAALSDLEITLE",
 #'   lag = 1,
-#'   property1 = H$KyteDoolittle,
-#'   property2 = H$Eisenberg,
+#'   property1 = AA$Hydrophobicity$KyteDoolittle,
+#'   property2 = AA$Hydrophobicity$Eisenberg,
 #'   center = TRUE
 #' )
 #' # [1] -0.3026609
@@ -28,8 +28,8 @@
 #' crossCovariance(
 #'   sequence = "SDKEVDEVDAALSDLEITLE",
 #'   lag = 5,
-#'   property1 = H$KyteDoolittle,
-#'   property2 = H$Eisenberg,
+#'   property1 = AA$Hydrophobicity$KyteDoolittle,
+#'   property2 = AA$Hydrophobicity$Eisenberg,
 #'   center = TRUE
 #' )
 #' # [1] 0.02598035

@@ -23,13 +23,13 @@ This function computes the Cruciani et al (2004) auto-correlation index. The \co
 }
 \examples{
 # Loading a property to evaluate its autocorrelation
-data(H)
+data(AA)
 
 # Calculate the auto-correlation index for a lag=1
 autoCorrelation(
   sequence = "SDKEVDEVDAALSDLEITLE",
   lag = 1,
-  property = H$KyteDoolittle,
+  property = AA$Hydrophobicity$KyteDoolittle,
   center = TRUE
 )
 # [1] -0.3519908
@@ -38,7 +38,7 @@ autoCorrelation(
 autoCorrelation(
   sequence = "SDKEVDEVDAALSDLEITLE",
   lag = 5,
-  property = H$KyteDoolittle,
+  property = AA$Hydrophobicity$KyteDoolittle,
   center = TRUE
 )
 # [1] 0.001133553

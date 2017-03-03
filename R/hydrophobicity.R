@@ -175,15 +175,14 @@
 hydrophobicity <- function(seq, scale = "KyteDoolittle") {
   seq <- gsub("[[:space:]]+", "", as.vector(seq))
   # Loading hydrophobicity scales
-  utils::data(H, envir = environment())
-  H <- H
+  Hydrophobicity <- get(data("AA",envir = environment()))$Hydrophobicity
   # Setting the hydrophobicity scale
-  scale <- match.arg(scale, names(H))
+  scale <- match.arg(scale, names(Hydrophobicity))
   # Sum the hydrophobicity of each amino acid and divide them between the sequence length
   # Return the GRAVY value
   h <-
     lapply(seq, function(seq) {
-      (sum(H[[scale]][unlist(strsplit(seq, ""))], na.rm = TRUE) / nchar(seq))
+      (sum(Hydrophobicity[[scale]][unlist(strsplit(seq, ""))], na.rm = TRUE) / nchar(seq))
     })
   return(unlist(h))
 }
