@@ -1,4 +1,4 @@
-#' @export plot_xvg
+#' @export plot.xvg
 #' @title Plot time series from GROMACS XVG files
 #'
 #' @param XVGfile A .XVG output file of the GROMACS molecular dynamics package
@@ -13,7 +13,7 @@
 #' @examples XVGfile <- system.file("xvg-files/epot.xvg",package="Peptides")
 #' plot.xvg(XVGfile)
 
-plot_xvg <- function(XVGfile, ...) {
+plot.xvg <- function(XVGfile, ...) {
   # Read flat file
   content <- read.xvg(XVGfile)
   xlabel <- colnames(content)[[1]]
