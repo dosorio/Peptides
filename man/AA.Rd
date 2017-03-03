@@ -96,7 +96,7 @@
 data(AA)
 }
 \description{
-A list with a collection of properties, scales and indices for the 20 naturally occurring amino acids from various sources
+A list with a collection of properties, scales and indices for the 20 naturally occurring amino acids from various sources.
 }
 \references{
 \itemize{
