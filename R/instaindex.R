@@ -419,7 +419,7 @@ instaindex <- function(seq) {
       "NA" = 1
     )
   # Divide the amino acid sequence in dipeptides
-  seq <- gsub("[[:space:]]+", "", seq)
+  seq <- gsub("[[:space:]]+", "", as.vector(seq))
   aa <- lapply(seq, function(seq) {
     unlist(strsplit(seq, ""))
   })

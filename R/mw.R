@@ -17,7 +17,7 @@
 #' mw(seq = "QWGRRCCGWGPGRRYCVRWC",monoisotopic = TRUE)
 #' # [1] 2484.12
 mw <- function(seq, monoisotopic = FALSE) {
-  seq <- gsub("[[:space:]]", "", seq)
+  seq <- gsub("[[:space:]]", "", as.vector(seq))
   # Create the weight scale
   if (monoisotopic == TRUE) {
     weight <-

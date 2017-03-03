@@ -34,7 +34,7 @@ autoCovariance <- function(sequence, lag, property, center = TRUE) {
   if (center == TRUE) {
     property <- scale(property)[,]
   }
-  sequence <- gsub("[[:space:]]+", "", sequence)
+  sequence <- gsub("[[:space:]]+", "", as.vector(sequence))
   if (lag < (min(nchar(sequence)) - 1)) {
     sequence <- strsplit(sequence, "")
     unlist(lapply(sequence, function(sequence) {

@@ -9,7 +9,7 @@
 #' #  -0.1130 -0.0220  0.2735
 crucianiProperties <- function(seq) {
   # Remove spaces and line breaks
-  seq <- gsub("[[:space:]]+", "", seq)
+  seq <- gsub("[[:space:]]+", "", as.vector(seq))
   # Load Cruciani Properties
   utils::data(CP, envir = environment())
   CP <- CP

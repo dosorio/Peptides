@@ -33,7 +33,7 @@
 #' # 9 NFCLILIFLLLI 0.944 0.229  Surface
 membpos <- function(seq, angle = 100) {
   # Setting input length
-  seq <- gsub("[[:space:]]+", "", seq)
+  seq <- gsub("[[:space:]]+", "", as.vector(seq))
   window <- min(nchar(seq), 11)
   lapply(seq, function(seq){
   pep <-

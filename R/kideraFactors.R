@@ -30,7 +30,7 @@
 
 kideraFactors <- function (seq) {
   # Remove the break lines from the sequence
-  seq <- gsub("[[:space:]]+", "", seq)
+  seq <- gsub("[[:space:]]+", "", as.vector(seq))
   # Load the KFactors data
   data(K, envir = environment())
   K <- K

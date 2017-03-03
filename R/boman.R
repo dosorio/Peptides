@@ -19,7 +19,7 @@
 #' # [1] -1.235833
 #' 
 boman <- function(seq) {
-  seq <- gsub("[[:space:]]", "", seq)
+  seq <- gsub("[[:space:]]+", "", as.vector(seq))
   # Create the Boman scale vector
   boman <-
     c(

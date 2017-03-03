@@ -18,7 +18,7 @@
 #' # 0.6200  0.0865  0.0665  0.7280 -0.8740 
 zScales <- function(seq) {
   # Remove spaces and line breaks
-  seq <- gsub("[[:space:]]+", "", seq)
+  seq <- gsub("[[:space:]]+","",as.vector(seq))
   
   # Split the sequence by amino-acids
   seq <- strsplit(seq, "")

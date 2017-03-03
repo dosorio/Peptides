@@ -173,7 +173,7 @@
 #' hydrophobicity(seq = "QWGRRCCGWGPGRRYCVRWC",scale = "Zimmerman")
 #' #[1] 0.943
 hydrophobicity <- function(seq, scale = "KyteDoolittle") {
-  seq <- gsub("[[:space:]]+", "", seq)
+  seq <- gsub("[[:space:]]+", "", as.vector(seq))
   # Loading hydrophobicity scales
   utils::data(H, envir = environment())
   H <- H

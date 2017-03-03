@@ -26,7 +26,7 @@
 
 hmoment <- function(seq, angle = 100, window = 11) {
   # Loading hydrophobicity scale
-  seq <- gsub("[[:space:]]", "", seq)
+  seq <- gsub("[[:space:]]+", "", as.vector(seq))
   data(H, envir = environment())
   H <- H
   h <- H[["Eisenberg"]]

@@ -70,7 +70,7 @@
 
 charge <- function(seq, pH = 7, pKscale = "Lehninger") {
   # Divide the amino acid sequence and makes an absolute frequencies table
-  seq <- gsub("[[:space:]]", "", seq)
+  seq <- gsub("[[:space:]]+", "", as.vector(seq))
   aa <-
     lapply(seq, function(seq) {
       table(factor(unlist(strsplit(

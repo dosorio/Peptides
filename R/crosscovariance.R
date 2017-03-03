@@ -43,7 +43,7 @@ crossCovariance <-
       property1 <- scale(property1)[,]
       property2 <- scale(property2)[,]
     }
-    sequence <- gsub("[[:space:]]+", "", sequence)
+    sequence <- gsub("[[:space:]]+", "", as.vector(sequence))
     if (lag < (min(nchar(sequence)) - 1)) {
       sequence <- strsplit(sequence, "")
       unlist(lapply(sequence, function(sequence) {
