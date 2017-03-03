@@ -1,4 +1,4 @@
-#' @export plot_xvg
+#' @export plot.xvg
 #' @title Plot time series from GROMACS XVG files
 #'
 #' @param XVGfile A .XVG output file of the GROMACS molecular dynamics package
@@ -13,7 +13,7 @@
 #' @examples XVGfile <- system.file("xvg-files/epot.xvg",package="Peptides")
 #' plot.xvg(XVGfile)
 
-plot_xvg <- function(XVGfile, ...) {
+plot.xvg <- function(XVGfile, ...) {
   # Read flat file
   content <- read.xvg(XVGfile)
   xlabel <- colnames(content)[[1]]
@@ -27,7 +27,7 @@ plot_xvg <- function(XVGfile, ...) {
   original_par <- par(no.readonly = TRUE)
   
   # Plot plot maximum 4 facets per row
-  graphics::par(mfcol = c((ncol(content) - 1) %/% 4 + 1,
+  graphics::par(mfcol = c((ncol(content) - 1.5) %/% 4 + 1,
                           min((ncol(content) - 1), 4)), 
                 oma = c(0, 0, 2.5, 0))
   for (i in seq_len(ncol(content) - 1)) {
