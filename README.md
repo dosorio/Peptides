@@ -30,6 +30,7 @@ Available functions
 |charge  |	Compute the theoretical net charge of a protein sequence |
 |crossCovariance|Compute the cross-covariance index of a protein sequence|
 |crucianiProperties | Compute the Cruciani properties of a protein sequence |
+|fasgaiVectors| Compute the FASGAI vectors of a protein sequence |
 |hmoment  |	Compute the hydrophobic moment of a protein sequence |
 |hydrophobicity	| Compute the hydrophobicity index |
 |instaindex	| Compute the instability index of a protein sequence |
