@@ -17,9 +17,9 @@ The FASGAI vectors (Factor Analysis Scales of Generalized Amino Acid Information
 }
 \examples{
 fasgaiVectors(seq = "QWGRRCCGWGPGRRYCVRWC")
-[[1]]
-    F1       F2       F3       F4       F5       F6 
--0.13675 -0.45485 -0.11695 -0.45800 -0.38015  0.52740 
+# [[1]]
+#     F1       F2       F3       F4       F5       F6 
+# -0.13675 -0.45485 -0.11695 -0.45800 -0.38015  0.52740 
 }
 \references{
 Liang, G., & Li, Z. (2007). Factor analysis scale of generalized amino acid information as the source of a new set of descriptors for elucidating the structure and activity relationships of cationic antimicrobial peptides. Molecular Informatics, 26(6), 754-763.
