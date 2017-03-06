@@ -79,6 +79,14 @@
 #' \item{Z4:} Related to  electronegativity, heat of formation, electrophilicity and hardness.
 #' \item{Z5:} Related to electronegativity, heat of formation, electrophilicity and hardness.
 #' }
+#' \item{FASGAI} Factor Analysis Scale of Generalized Amino Acid Information (FASGAI) proposed by Liang and Li (2007), is a set of amino acid descriptors, that reflects hydrophobicity, alpha and turn propensities, bulky properties, compositional characteristics, local flexibility, and electronic properties, was derived from multi-dimensional properties of 20 naturally occurring amino acids. \itemize{
+#' \item{F1:} Hydrophobicity index
+#' \item{F2:} Alpha and turn propensities
+#' \item{F3:} Bulky properties
+#' \item{F4:} Compositional characteristic index
+#' \item{F5:} Local flexibility
+#' \item{F6:} Electronic properties
+#' }
 #' }
 #' @source
 #' \itemize{
@@ -117,6 +125,9 @@
 #' }
 #' \item{zScales} \itemize{
 #' \item Sandberg M, Eriksson L, Jonsson J, Sjostrom M, Wold S: New chemical descriptors relevant for the design of biologically active peptides. A multivariate characterization of 87 amino acids. J Med Chem 1998, 41:2481-2491.
+#' }
+#' \item{FASGAI} \itemize{
+#' \item Liang, G., & Li, Z. (2007). Factor analysis scale of generalized amino acid information as the source of a new set of descriptors for elucidating the structure and activity relationships of cationic antimicrobial peptides. Molecular Informatics, 26(6), 754-763.
 #' }
 #' }
 NULL
