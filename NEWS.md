@@ -1,5 +1,19 @@
 NEWS
 ====
+**Peptides v.1.20.X**
+
+* All datasets were unified into AAdata
+
+* zScales function was added
+
+* All test were migrated to testthat
+
+* fasgaiVectors function was added
+
+**Peptides v.1.2.2**
+
+* crucianiProperties function was added.
+
 **Peptides v.1.2.1**
 
 * Four new functions were added: autoCorrelation, autoCovariance, crossCovariance and crucianiProperties
