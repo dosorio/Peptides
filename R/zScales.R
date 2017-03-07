@@ -24,7 +24,7 @@ zScales <- function(seq) {
   seq <- strsplit(seq, "")
   
   # Load the Z-scales
-  scales <- get(data("AA",envir = environment()))$zScales
+  scales <- AAdata$zScales
   
   # Computes the Z-scales for given sequences
   lapply(seq, function(seq) {

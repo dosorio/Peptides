@@ -17,7 +17,7 @@ fasgaiVectors <- function(seq) {
   seq <- strsplit(seq, "")
   
   # Load the FASGAI vectors
-  vectors <- get(data("AA",envir = environment()))$FASGAI
+  vectors <- AAdata$FASGAI
   
   # Computes the FASGAI vectors for given sequences
   lapply(seq, function(seq) {

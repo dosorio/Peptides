@@ -11,7 +11,7 @@ crucianiProperties <- function(seq) {
   # Remove spaces and line breaks
   seq <- gsub("[[:space:]]+", "", as.vector(seq))
   # Load Cruciani Properties
-  properties <- get(data("AA",envir = environment()))$crucianiProperties
+  properties <- AAdata$crucianiProperties
   # Split sequence
   seq <- strsplit(toupper(seq), split = "")
   # Calculate averages

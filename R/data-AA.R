@@ -1,8 +1,8 @@
-#' @name AA
+#' @name AAdata
 #' @docType data
 #' @title Properties, scales and indices for the 20 naturally occurring amino acids from various sources
 #' @description A list with a collection of properties, scales and indices for the 20 naturally occurring amino acids from various sources.
-#' @usage data(AA)
+#' @usage data(AAdata)
 #' @format A list as follows: \itemize{
 #' \item{Hydrophobicity} The hydrophobicity is an important stabilization force in protein folding; this force changes depending on the solvent in which the protein is found. \itemize{
 #' \item{Aboderin:} Aboderin, A. A. (1971). An empirical hydrophobicity scale for alpha-amino-acids and some of its applications. International Journal of Biochemistry, 2(11), 537-544.

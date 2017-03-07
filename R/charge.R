@@ -78,7 +78,7 @@ charge <- function(seq, pH = 7, pKscale = "Lehninger") {
       )), levels = LETTERS))
     })
   # Set pKscale
-  pK <- get(data("AA",envir = environment()))$pK
+  pK <- AAdata$pK
   pK <- pK[[match.arg(pKscale, names(pK))]]
   charge <- lapply(aa, function(aa) {
     # Charge
