@@ -41,13 +41,14 @@ Available functions
 |pI	| Compute the isoelectic point (pI) of a protein sequence |
 |plotXVG	| Plot time series from GROMACS XVG files |
 |readXVG |	Read XVG files from GROMACS molecular dynamics package |
+|tScales| Compute the T-scales of a protein sequence|
 |zScales| Compute the Z-scales of a protein sequence |
 
 Available datasets
 -------------------
 | Code        | Description |
 |:----------- |:------------|
-|AA | Properties, scales and indices for the 20 naturally occurring amino acids from various sources |
+|AAdata | Properties, scales and indices for the 20 naturally occurring amino acids from various sources |
 |pepdata | A data frame with 21 physicochemical properties and indices from 100 amino-acid sequences (50 antimicrobial and 50 non antimicrobial) |
 
 Citation
