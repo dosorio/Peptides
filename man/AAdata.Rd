@@ -88,6 +88,11 @@
 \item{F5:} Local flexibility
 \item{F6:} Electronic properties
 }
+\item{VHSE} The principal components score Vectors of Hydrophobic, Steric, and Electronic properties, is derived from principal components analysis (PCA) on independent families of 18 hydrophobic properties, 17 steric properties, and 15 electronic properties, respectively, which are included in total 50 physicochemical variables of 20 coded amino acids. \itemize{
+\item{VHSE1 and VHSE2:} Hydrophobic properties
+\item{VHSE3 and VHSE4:} Steric properties
+\item{VHSE5 to VHSE8:} Electronic properties
+}
 }}
 \source{
 \itemize{
@@ -136,6 +141,9 @@ A list with a collection of properties, scales and indices for the 20 naturally 
 }
 \item{FASGAI} \itemize{
 \item Liang, G., & Li, Z. (2007). Factor analysis scale of generalized amino acid information as the source of a new set of descriptors for elucidating the structure and activity relationships of cationic antimicrobial peptides. Molecular Informatics, 26(6), 754-763.
+}
+\item{VHSE} \itemize{
+\item Mei, H. U., Liao, Z. H., Zhou, Y., & Li, S. Z. (2005). A new set of amino acid descriptors and its application in peptide QSARs. Peptide Science, 80(6), 775-786.
 }
 }
 }
