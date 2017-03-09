@@ -1,15 +1,22 @@
 NEWS
 ====
-**Peptides v.1.20.X**
+**Peptides v.2.0.0**
 
 * All datasets were unified into AAdata
 
-* zScales function was added
-
 * All test were migrated to testthat
+
+* readXVG and plotXVG functions were improved by J. Sebastian Paez
+
+* kideraFactors output vector was renamed as KF#
 
 * fasgaiVectors function was added
 
+* zScales function was added
+
+* vhseScales function was added
+
+* tScales function was added
 **Peptides v.1.2.2**
 
 * crucianiProperties function was added.
