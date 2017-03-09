@@ -12,11 +12,8 @@ NEWS
 
 * fasgaiVectors function was added
 
-* zScales function was added
+* zScales, vhseScales, protFP and tScales functions were added
 
-* vhseScales function was added
-
-* tScales function was added
 **Peptides v.1.2.2**
 
 * crucianiProperties function was added.

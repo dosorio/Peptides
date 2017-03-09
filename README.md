@@ -40,6 +40,7 @@ Available functions
 |mw	| Compute the molecular weight of a protein sequence |
 |pI	| Compute the isoelectic point (pI) of a protein sequence |
 |plotXVG	| Plot time series from GROMACS XVG files |
+|protFP|Compute the protFP descriptors of a protein sequence|
 |readXVG |	Read XVG files from GROMACS molecular dynamics package |
 |tScales| Compute the T-scales of a protein sequence|
 |vhseScales|Compute the VHSE-scales of a protein sequence|
