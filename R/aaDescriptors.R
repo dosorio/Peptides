@@ -1,5 +1,5 @@
 #' @export aaDescriptors
-#' @title Compute 66 descriptors (crucianiProperties, kideraFactors, zScales, FASGAI, tScales, VHSE, protFP, stScales, BLOSUM and MSWHIM) by amino acid of a protein sequence
+#' @title Compute 66 descriptors for each amino acid of a protein sequence.
 #' @description The function return 66 amino acid descriptors for the 20 natural amino acids. Available descriptors are: \itemize{
 #' \item{crucianiProperties:} Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.,
 #' \item{kideraFactors:} Kidera, A., Konishi, Y., Oka, M., Ooi, T., & Scheraga, H. A. (1985). Statistical analysis of the physical properties of the 20 naturally occurring amino acids. Journal of Protein Chemistry, 4(1), 23-55.,
