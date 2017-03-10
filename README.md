@@ -42,6 +42,7 @@ Available functions
 |plotXVG	| Plot time series from GROMACS XVG files |
 |protFP|Compute the protFP descriptors of a protein sequence|
 |readXVG |	Read XVG files from GROMACS molecular dynamics package |
+|stScales| Compute the ST-scales of a protein sequence|
 |tScales| Compute the T-scales of a protein sequence|
 |vhseScales|Compute the VHSE-scales of a protein sequence|
 |zScales| Compute the Z-scales of a protein sequence |
