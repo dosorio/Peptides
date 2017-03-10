@@ -2,7 +2,7 @@
 % Please edit documentation in R/aaDescriptors.R
 \name{aaDescriptors}
 \alias{aaDescriptors}
-\title{Compute 66 descriptors (crucianiProperties, kideraFactors, zScales, FASGAI, tScales, VHSE, protFP, stScales, BLOSUM and MSWHIM) by amino acid of a protein sequence}
+\title{Compute 66 descriptors for each amino acid of a protein sequence.}
 \usage{
 aaDescriptors(seq)
 }
