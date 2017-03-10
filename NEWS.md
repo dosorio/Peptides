@@ -12,7 +12,7 @@ NEWS
 
 * fasgaiVectors function was added
 
-* zScales, vhseScales, protFP and tScales functions were added
+* aaDescriptos, zScales, vhseScales, protFP, tScales and stScales functions were added
 
 **Peptides v.1.2.2**
 
