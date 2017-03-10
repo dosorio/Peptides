@@ -10,8 +10,7 @@ aaDescriptors <- function(seq){
     # Extract descriptors
     desc <- lapply(seq,function(seq){
       sapply(seq,function(aa){
-        c(data.frame(AAdata$Hydrophobicity)[aa,],
-          data.frame(AAdata$crucianiProperties)[aa,],
+        c(data.frame(AAdata$crucianiProperties)[aa,],
           data.frame(AAdata$kideraFactors)[aa,],
           data.frame(AAdata$zScales)[aa,],
           data.frame(AAdata$FASGAI)[aa,],
