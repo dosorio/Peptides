@@ -33,7 +33,7 @@ Available functions
 |crucianiProperties | Compute the Cruciani properties of a protein sequence |
 |fasgaiVectors| Compute the FASGAI vectors of a protein sequence |
 |hmoment  |	Compute the hydrophobic moment of a protein sequence |
-|hydrophobicity	| Compute the hydrophobicity index |
+|hydrophobicity	| Compute the hydrophobicity index of a protein sequence |
 |instaindex	| Compute the instability index of a protein sequence |
 |kideraFactors | Compute the Kidera factors of a protein sequence |
 |lengthpep| Compute the aminoacid length of a protein sequence |
