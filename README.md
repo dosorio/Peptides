@@ -27,6 +27,7 @@ Available functions
 |aindex  |	Compute the aliphatic index of a protein sequence |
 |autoCorrelation|Compute the auto-correlation index of a protein sequence|
 |autoCovariance|Compute the auto-covariance index of a protein sequence|
+|blosumIndices|Compute the BLOSUM62 derived indices of a protein sequence|
 |boman   |	Compute the Boman (Potential Protein Interaction) index |
 |charge  |	Compute the theoretical net charge of a protein sequence |
 |crossCovariance|Compute the cross-covariance index of a protein sequence|
