@@ -2,7 +2,7 @@
 % Please edit documentation in R/blosumIndices.R
 \name{blosumIndices}
 \alias{blosumIndices}
-\title{blosumIndices}
+\title{Compute the BLOSUM62 derived indices of a protein sequence}
 \usage{
 blosumIndices(seq)
 }
