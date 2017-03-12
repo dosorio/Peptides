@@ -10,9 +10,9 @@ NEWS
 
 * kideraFactors output vector was renamed as KF#
 
-* fasgaiVectors function was added
+* Now all sequences are checked before to property calculation
 
-* aaDescriptos, zScales, vhseScales, protFP, tScales and stScales functions were added
+* aaDescriptos, fasgaiVectors, blosumIndices, mswhimScores, zScales, vhseScales, protFP, tScales and stScales functions were added
 
 **Peptides v.1.2.2**
 
