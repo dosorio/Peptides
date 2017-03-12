@@ -23,13 +23,13 @@ This function computes the Cruciani et al (2004) auto-corvariance index. The \co
 }
 \examples{
 # Loading a property to evaluate its autocorrelation
-data(H)
+data(AAdata)
 
 # Calculate the auto-covariance index for a lag=1
 autoCovariance(
   sequence = "SDKEVDEVDAALSDLEITLE",
   lag = 1,
-  property = H$KyteDoolittle,
+  property = AAdata$Hydrophobicity$KyteDoolittle,
   center = TRUE
 )
 # [1] -0.4140053
@@ -38,7 +38,7 @@ autoCovariance(
 autoCovariance(
   sequence = "SDKEVDEVDAALSDLEITLE",
   lag = 5,
-  property = H$KyteDoolittle,
+  property = AAdata$Hydrophobicity$KyteDoolittle,
   center = TRUE
 )
 # [1] 0.001000336

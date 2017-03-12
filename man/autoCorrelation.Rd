@@ -9,7 +9,7 @@ autoCorrelation(sequence, lag, property, center = TRUE)
 \arguments{
 \item{sequence}{An amino-acids sequence}
 
-\item{lag}{A value for a lag, the max value is equal to the length of the shortest peptide minus one.}
+\item{lag}{A value for a lag, the max value is equal to the length of shortest peptide minus one.}
 
 \item{property}{A property to use as value to be correlated.}
 
@@ -23,13 +23,13 @@ This function computes the Cruciani et al (2004) auto-correlation index. The \co
 }
 \examples{
 # Loading a property to evaluate its autocorrelation
-data(H)
+data(AAdata)
 
 # Calculate the auto-correlation index for a lag=1
 autoCorrelation(
   sequence = "SDKEVDEVDAALSDLEITLE",
   lag = 1,
-  property = H$KyteDoolittle,
+  property = AAdata$Hydrophobicity$KyteDoolittle,
   center = TRUE
 )
 # [1] -0.3519908
@@ -38,7 +38,7 @@ autoCorrelation(
 autoCorrelation(
   sequence = "SDKEVDEVDAALSDLEITLE",
   lag = 5,
-  property = H$KyteDoolittle,
+  property = AAdata$Hydrophobicity$KyteDoolittle,
   center = TRUE
 )
 # [1] 0.001133553

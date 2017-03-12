@@ -8,7 +8,7 @@
 #'
 #' D. Eisenberg, R. M. Weiss, and T. C. Terwilliger. The helical hydrophobic moment: A measure of the amphiphilicity of a helix. Nature, 299(5881):371-374, 1982. [p7, 8]
 #' @details Eisenberg et al. (1982) found a correlation between hydrophobicity and hydrophobic moment that defines the protein section as globular, transmembrane or superficial. The function calculates the hydrophobicity (H) and hydrophobic moment (uH) based on the standardized scale of Eisenberg (1984) using windows of 11 amino acids for calculate the theoretical fragment type.
-#' @examples membpos("ARQQNLFINFCLILIFLLLI",100)
+#' @examples membpos(seq = "ARQQNLFINFCLILIFLLLI",angle = 100)
 #' #       Pep        H     uH       MembPos
 #' # 1 ARQQNLFINFCL 0.083 0.353      Globular
 #' # 2 RQQNLFINFCLI 0.147 0.317      Globular
@@ -20,7 +20,7 @@
 #' # 8 INFCLILIFLLL 0.944 0.108 Transmembrane
 #' # 9 NFCLILIFLLLI 0.944 0.132 Transmembrane
 #' 
-#' membpos("ARQQNLFINFCLILIFLLLI",160)
+#' membpos(seq = "ARQQNLFINFCLILIFLLLI",angle = 160)
 #' #       Pep        H     uH    MembPos
 #' # 1 ARQQNLFINFCL 0.083 0.467  Globular
 #' # 2 RQQNLFINFCLI 0.147 0.467  Globular
@@ -32,13 +32,20 @@
 #' # 8 INFCLILIFLLL 0.944 0.257  Surface
 #' # 9 NFCLILIFLLLI 0.944 0.229  Surface
 membpos <- function(seq, angle = 100) {
-  # Setting input length
-  seq <- gsub("[[:space:]]+", "", seq)
+  # Check amino acids
+  seq <- aaCheck(seq)
+  
+  # Set window length
   window <- min(nchar(seq), 11)
+  
+  # Paste sequences
+  seq <- unlist(lapply(seq,function(seq){paste0(seq,collapse = "")}))
+  
+  # K-mers
   lapply(seq, function(seq){
   pep <-
-    substring(toupper(seq), (window):nchar(seq), first = 1:((nchar(seq) - window) +
-                                                              1))
+    substring(toupper(seq), (window):nchar(seq), first = 1:((nchar(seq) - window) +1))
+  
   # Compute the hmoment and hydrophobicity for each amino acid window
   data <- as.data.frame(matrix(nrow = length(pep), ncol = 5))
   data[, 1] <- pep
@@ -50,6 +57,7 @@ membpos <- function(seq, angle = 100) {
       hmoment(x, angle, window))), 3)
   data[, 4] <- (data[, 2] * -0.421) + 0.579
   colnames(data) <- c("Pep", "H", "uH", "m", "MembPos")
+  
   # Assigns a class depending on the hydrophobicity and hmoment
   data[which(data$uH <= data$m & data$H >= 0.5), 5] <- "Transmembrane"
   data[which(data$uH <= data$m & data$H <= 0.5), 5] <- "Globular"

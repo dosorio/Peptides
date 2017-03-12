@@ -12,14 +12,14 @@
 #' @references Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
 #' @examples
 #' # Loading a property to evaluate its autocorrelation
-#' data(H)
+#' data(AAdata)
 #'
 #' # Calculate the cross-covariance index for a lag=1
 #' crossCovariance(
 #'   sequence = "SDKEVDEVDAALSDLEITLE",
 #'   lag = 1,
-#'   property1 = H$KyteDoolittle,
-#'   property2 = H$Eisenberg,
+#'   property1 = AAdata$Hydrophobicity$KyteDoolittle,
+#'   property2 = AAdata$Hydrophobicity$Eisenberg,
 #'   center = TRUE
 #' )
 #' # [1] -0.3026609
@@ -28,8 +28,8 @@
 #' crossCovariance(
 #'   sequence = "SDKEVDEVDAALSDLEITLE",
 #'   lag = 5,
-#'   property1 = H$KyteDoolittle,
-#'   property2 = H$Eisenberg,
+#'   property1 = AAdata$Hydrophobicity$KyteDoolittle,
+#'   property2 = AAdata$Hydrophobicity$Eisenberg,
 #'   center = TRUE
 #' )
 #' # [1] 0.02598035
@@ -43,9 +43,10 @@ crossCovariance <-
       property1 <- scale(property1)[,]
       property2 <- scale(property2)[,]
     }
-    sequence <- gsub("[[:space:]]+", "", sequence)
-    if (lag < (min(nchar(sequence)) - 1)) {
-      sequence <- strsplit(sequence, "")
+    # Split sequence by amino acids
+    sequence <- aaCheck(sequence)
+    if (lag < (min(lengths(sequence)) - 1)) {
+      # Apply Cruciani formula
       unlist(lapply(sequence, function(sequence) {
         sum(sapply(seq_len(length(sequence) - lag), function(position) {
           property1[sequence[[position]]] * property2[sequence[[position + lag]]]

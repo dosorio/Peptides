@@ -26,8 +26,11 @@ The molecular weight is the sum of the masses of each atom constituting a molecu
 # SEQUENCE: QWGRRCCGWGPGRRYCVRWC 
 # Theoretical pI/Mw: 9.88 / 2485.91 
 
-mw("QWGRRCCGWGPGRRYCVRWC")
+mw(seq = "QWGRRCCGWGPGRRYCVRWC",monoisotopic = FALSE)
 # [1] 2485.911
+
+mw(seq = "QWGRRCCGWGPGRRYCVRWC",monoisotopic = TRUE)
+# [1] 2484.12
 }
 \references{
 Gasteiger, E., Hoogland, C., Gattiker, A., Wilkins, M. R., Appel, R. D., & Bairoch, A. (2005). Protein identification and analysis tools on the ExPASy server. In The proteomics protocols handbook (pp. 571-607). Humana Press. Chicago

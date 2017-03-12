@@ -1,0 +1,51 @@
+#' @export aaDescriptors
+#' @title Compute 66 descriptors for each amino acid of a protein sequence.
+#' @description The function return 66 amino acid descriptors for the 20 natural amino acids. Available descriptors are: \itemize{
+#' \item{crucianiProperties:} Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.,
+#' \item{kideraFactors:} Kidera, A., Konishi, Y., Oka, M., Ooi, T., & Scheraga, H. A. (1985). Statistical analysis of the physical properties of the 20 naturally occurring amino acids. Journal of Protein Chemistry, 4(1), 23-55.,
+#' \item{zScales:} Sandberg M, Eriksson L, Jonsson J, Sjostrom M, Wold S: New chemical descriptors relevant for the design of biologically active peptides. A multivariate characterization of 87 amino acids. J Med Chem 1998, 41:2481-2491.,
+#' \item{FASGAI:} Liang, G., & Li, Z. (2007). Factor analysis scale of generalized amino acid information as the source of a new set of descriptors for elucidating the structure and activity relationships of cationic antimicrobial peptides. Molecular Informatics, 26(6), 754-763.,
+#' \item{tScales:} Tian F, Zhou P, Li Z: T-scale as a novel vector of topological descriptors for amino acids and its application in QSARs of peptides. J Mol Struct. 2007, 830: 106-115. 10.1016/j.molstruc.2006.07.004.,
+#' \item{VHSE:} VHSE-scales (principal components score Vectors of Hydrophobic, Steric, and Electronic properties), is derived from principal components analysis (PCA) on independent families of 18 hydrophobic properties, 17 steric properties, and 15 electronic properties, respectively, which are included in total 50 physicochemical variables of 20 coded amino acids.,
+#' \item{protFP:} van Westen, G. J., Swier, R. F., Wegner, J. K., IJzerman, A. P., van Vlijmen, H. W., & Bender, A. (2013). Benchmarking of protein descriptor sets in proteochemometric modeling (part 1): comparative study of 13 amino acid descriptor sets. Journal of cheminformatics, 5(1), 41.,
+#' \item{stScales:} Yang, L., Shu, M., Ma, K., Mei, H., Jiang, Y., & Li, Z. (2010). ST-scale as a novel amino acid descriptor and its application in QSAM of peptides and analogues. Amino acids, 38(3), 805-816.,
+#' \item{BLOSUM:} Georgiev, A. G. (2009). Interpretable numerical descriptors of amino acid space. Journal of Computational Biology, 16(5), 703-723.,
+#' \item{MSWHIM:} Zaliani, A., & Gancia, E. (1999). MS-WHIM scores for amino acids: a new 3D-description for peptide QSAR and QSPR studies. Journal of chemical information and computer sciences, 39(3), 525-533.
+#' }
+#' @param seq An amino-acids sequence. If multiple sequences are given all of them must have the same length (gap symbols are allowed.)
+#' @return a matrix with 66 amino acid descriptors for each aminoacid in a protein sequence.
+#' @examples aaDescriptors(seq = "KLKLLLLLKLK")
+aaDescriptors <- function(seq){
+  # Remove spaces and line breaks
+  seq <- aaCheck(seq)
+  sequences <- length(seq)
+  # Length validation
+  if(all(lengths(seq)==length(seq[[1]]))){
+    # Extract descriptors
+    desc <- lapply(seq,function(seq){
+      sapply(seq,function(aa){
+        c(data.frame(AAdata$crucianiProperties)[aa,],
+          data.frame(AAdata$kideraFactors)[aa,],
+          data.frame(AAdata$zScales)[aa,],
+          data.frame(AAdata$FASGAI)[aa,],
+          data.frame(AAdata$tScales)[aa,],
+          data.frame(AAdata$VHSE)[aa,],
+          data.frame(AAdata$ProtFP)[aa,],
+          data.frame(AAdata$stScales)[aa,],
+          data.frame(AAdata$BLOSUM)[aa,],
+          data.frame(AAdata$MSWHIM)[aa,]
+        )
+      })
+    })
+    # Format output
+    col_names <- as.vector((outer(rownames(desc[[1]]),seq_len(dim(desc[[1]])[2]),paste,sep=".")))
+    descriptors <- matrix(data = NA,nrow = sequences,ncol = length(col_names),dimnames = list(list(),col_names))
+    for(sequence in seq_along(desc)){
+      descriptors[sequence,] <- as.numeric(desc[[sequence]])
+    }
+    # Return
+    return(descriptors)
+  } else {
+    stop("All sequences must have the same length.")
+  }
+}

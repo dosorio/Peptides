@@ -21,6 +21,6 @@ All proteins are formed by linear chains of small residues known as amino acids 
 # SEQUENCE: QWGRRCCGWGPGRRYCVRWC
 # Number of amino acids: 20
 
-lengthpep("QWGRRCCGWGPGRRYCVRWC")
+lengthpep(seq = "QWGRRCCGWGPGRRYCVRWC")
 # [1] 20
 }

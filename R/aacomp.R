@@ -1,10 +1,10 @@
-#' @export aacomp
+#' @export aaComp
 #' @title Compute the amino acid composition of a protein sequence
 #' @description This function calculates the amount of amino acids of a particular class and classified as: Tiny, Small, Aliphatic, Aromatic, Non-polar, Polar, Charged, Basic and Acidic based on their size and R-groups using same function implemented in EMBOSS 'pepstat'. 
 #' The output is a matrix with the number and percentage of amino acids of a particular class 
 #' @details Amino acids are zwitterionic molecules with an amine and a carboxyl group present in their structure. 
 #' Some amino acids possess side chains with specific properties that allow grouping them in different ways. 
-#' The \code{aacomp} function classifies amino acids based on their size, side chains, hydrophobicity, charge and their response to pH 7.
+#' The \code{aaComp} function classifies amino acids based on their size, side chains, hydrophobicity, charge and their response to pH 7.
 #' @param seq An amino-acid sequence
 #' @return  The output is a matrix with the number and percentage of amino acids of a particular class
 #' \itemize{
@@ -35,7 +35,7 @@
 #' # Acidic        (B+D+E+Z)               0   00.000
 #' 
 #' ## AA composition of PDB: 1D9J Cecropin Peptide
-#' aacomp("KWKLFKKIGIGKFLHSAKKFX")
+#' aaComp(seq= "KWKLFKKIGIGKFLHSAKKFX")
 #' 
 #' ## Output
 #' #           Number  Mole %
@@ -49,11 +49,11 @@
 #' # Basic          8 38.095
 #' # Acidic         0  0.000
 
-aacomp<-function(seq){
+aaComp<-function(seq){
   # Remove space characters: tab, newline, vertical tab, form feed, carriage return, space and possibly other locale-dependent characters.
-  seq <- gsub("[[:space:]]+","",as.vector(seq))
-  # Divide the amino acid sequence and makes a frequencies table
-  seq <- lapply(seq, function(seq){table(unlist(strsplit(seq,"")))})
+  seq <- aaCheck(seq)
+  # Make a frequencies table
+  seq <- lapply(seq, function(seq){table(unlist(seq))})
   # Applying composition function
   aacomp <- lapply(seq, function(seq){
     # Create data matrix output

@@ -25,14 +25,14 @@ This function computes the Cruciani et al (2004) cross-covariance index. The lag
 }
 \examples{
 # Loading a property to evaluate its autocorrelation
-data(H)
+data(AAdata)
 
 # Calculate the cross-covariance index for a lag=1
 crossCovariance(
   sequence = "SDKEVDEVDAALSDLEITLE",
   lag = 1,
-  property1 = H$KyteDoolittle,
-  property2 = H$Eisenberg,
+  property1 = AAdata$Hydrophobicity$KyteDoolittle,
+  property2 = AAdata$Hydrophobicity$Eisenberg,
   center = TRUE
 )
 # [1] -0.3026609
@@ -41,8 +41,8 @@ crossCovariance(
 crossCovariance(
   sequence = "SDKEVDEVDAALSDLEITLE",
   lag = 5,
-  property1 = H$KyteDoolittle,
-  property2 = H$Eisenberg,
+  property1 = AAdata$Hydrophobicity$KyteDoolittle,
+  property2 = AAdata$Hydrophobicity$Eisenberg,
   center = TRUE
 )
 # [1] 0.02598035

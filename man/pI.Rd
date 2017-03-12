@@ -23,7 +23,7 @@ The isoelectric point (pI) is the pH at which the net charge of the protein is e
 # SEQUENCE: QWGRRCCGWGPGRRYCVRWC
 # Theoretical pI: 9.88
 
-pI("QWGRRCCGWGPGRRYCVRWC","Bjellqvist")
+pI(seq= "QWGRRCCGWGPGRRYCVRWC",pKscale= "Bjellqvist")
 # [1] 9.881
 
 # COMPARED TO EMBOSS PEPSTATS
@@ -31,23 +31,23 @@ pI("QWGRRCCGWGPGRRYCVRWC","Bjellqvist")
 # SEQUENCE: QWGRRCCGWGPGRRYCVRWC
 # Isoelectric Point = 9.7158
 
-pI("QWGRRCCGWGPGRRYCVRWC","EMBOSS")
+pI(seq= "QWGRRCCGWGPGRRYCVRWC",pKscale= "EMBOSS")
 # [1] 9.716
 
 # OTHER SCALES
 
-pI("QWGRRCCGWGPGRRYCVRWC","Murray")
+pI(seq= "QWGRRCCGWGPGRRYCVRWC",pKscale= "Murray")
 # [1] 9.818
-pI("QWGRRCCGWGPGRRYCVRWC","Sillero")
+pI(seq= "QWGRRCCGWGPGRRYCVRWC",pKscale= "Sillero")
 # [1] 9.891
-pI("QWGRRCCGWGPGRRYCVRWC","Solomon")
+pI(seq= "QWGRRCCGWGPGRRYCVRWC",pKscale= "Solomon")
 # [1] 9.582
-pI("QWGRRCCGWGPGRRYCVRWC","Stryer")
+pI(seq= "QWGRRCCGWGPGRRYCVRWC",pKscale= "Stryer")
 # [1] 9.623
-pI("QWGRRCCGWGPGRRYCVRWC","Lehninger")
+pI(seq= "QWGRRCCGWGPGRRYCVRWC",pKscale= "Lehninger")
 # [1] 9.931
-pI("QWGRRCCGWGPGRRYCVRWC","Dawson")
+pI(seq= "QWGRRCCGWGPGRRYCVRWC",pKscale= "Dawson")
 # [1] 9.568
-pI("QWGRRCCGWGPGRRYCVRWC","Rodwell")
+pI(seq= "QWGRRCCGWGPGRRYCVRWC",pKscale= "Rodwell")
 # [1] 9.718
 }

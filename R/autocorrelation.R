@@ -11,13 +11,13 @@
 #' @references Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
 #' @examples
 #' # Loading a property to evaluate its autocorrelation
-#' data(H)
+#' data(AAdata)
 #'
 #' # Calculate the auto-correlation index for a lag=1
 #' autoCorrelation(
 #'   sequence = "SDKEVDEVDAALSDLEITLE",
 #'   lag = 1,
-#'   property = H$KyteDoolittle,
+#'   property = AAdata$Hydrophobicity$KyteDoolittle,
 #'   center = TRUE
 #' )
 #' # [1] -0.3519908
@@ -26,18 +26,19 @@
 #' autoCorrelation(
 #'   sequence = "SDKEVDEVDAALSDLEITLE",
 #'   lag = 5,
-#'   property = H$KyteDoolittle,
+#'   property = AAdata$Hydrophobicity$KyteDoolittle,
 #'   center = TRUE
 #' )
 #' # [1] 0.001133553
 autoCorrelation <-
   function(sequence, lag, property, center = TRUE) {
     if (center == TRUE) {
-      property <- scale(property)[, ]
+      property <- scale(property)[,]
     }
-    sequence <- gsub("[[:space:]]+", "", sequence)
-    if (lag < (min(nchar(sequence)) - 1)) {
-      sequence <- strsplit(sequence, "")
+    # Split sequence by amino acids
+    sequence <- aaCheck(sequence)
+    if (lag < (min(lengths(sequence)) - 1)) {
+      # Apply the Cruciani formula
       unlist(lapply(sequence, function(sequence) {
         sum(sapply(seq_len(length(sequence) - lag), function(position) {
           property[sequence[[position]]] * property[sequence[[position + lag]]]

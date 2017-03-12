@@ -1,7 +1,9 @@
-#' @export aindex
+#' @export aIndex
 #' @title Compute the aliphatic index of a protein sequence
 #' @description This function calculates the Ikai (1980) aliphatic index of a protein. The \code{aindex} is defined as the relative volume occupied by aliphatic side chains (Alanine, Valine, Isoleucine, and Leucine). It may be regarded as a positive factor for the increase of thermostability of globular proteins.
+#'
 #' @param seq An amino-acids sequence
+#'
 #' @return The computed aliphatic index for a given amino-acids sequence
 #' @references Ikai (1980). Thermostability and aliphatic index of globular proteins. Journal of Biochemistry, 88(6), 1895-1898.
 #' @details Aliphatic amino acids (A, I, L and V) are responsible for the thermal stability of proteins. The aliphatic index was proposed by Ikai (1980) and evaluates the thermostability of proteins based on the percentage of each of the aliphatic amino acids that build up proteins.
@@ -10,16 +12,13 @@
 #' # SEQUENCE: SDKEVDEVDAALSDLEITLE
 #' # Aliphatic index: 117.00
 #' 
-#' aindex("SDKEVDEVDAALSDLEITLE")
+#' aIndex(seq = "SDKEVDEVDAALSDLEITLE")
 #' # [1] 117
 
-aindex <- function(seq) {
-  seq <- gsub("[[:space:]]+", "", seq)
+aIndex <- function(seq) {
+  seq <- aaCheck(seq)
   # Divide the amino acid sequence and extracts the relative frequency of Alanine, Valine, Leucine and Isoleucine
-  seq <-
-    lapply(seq, function(seq) {
-      table(unlist(strsplit(seq, ""))) / nchar(seq)
-    })
+  seq <- lapply(seq, function(seq) { table(unlist(seq)) / length(seq) })
   # Aliphatic index = X(Ala) + a * X(Val) + b * ( X(Ile) + X(Leu) )
   # where X(Ala), X(Val), X(Ile), and X(Leu) are mole percent (100 X mole fraction)
   # of alanine, valine, isoleucine, and leucine.

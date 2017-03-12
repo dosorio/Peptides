@@ -31,23 +31,23 @@
 #' # SEQUENCE: FLPVLAGLTPSIVPKLVCLLTKKC
 #' # Charge   = 3.0
 #' 
-#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Bjellqvist")
+#' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "Bjellqvist")
 #' # [1] 2.737303
-#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="EMBOSS")
+#' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "EMBOSS")
 #' # [1] 2.914112
-#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Murray")
+#' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "Murray")
 #' # [1] 2.907541
-#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Sillero")
+#' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "Sillero")
 #' # [1] 2.919812
-#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Solomon")
+#' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "Solomon")
 #' # [1] 2.844406
-#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Stryer")
+#' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "Stryer")
 #' # [1] 2.876504
-#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Lehninger")
+#' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "Lehninger")
 #' # [1] 2.87315
-#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Dawson")
+#' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "Dawson")
 #' # [1] 2.844406
-#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="Rodwell")
+#' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "Rodwell")
 #' # [1] 2.819755
 #' 
 #' # COMPARED TO YADAMP
@@ -57,41 +57,37 @@
 #' # CHARGE pH7: 2.91   	 
 #' # CHARGE pH9: 1.09  
 
-#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=5, pKscale="EMBOSS")
+#' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 5, pKscale= "EMBOSS")
 #' # [1] 3.037398
-#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=7, pKscale="EMBOSS")
+#' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "EMBOSS")
 #' # [1] 2.914112
-#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=9, pKscale="EMBOSS")
+#' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 9, pKscale= "EMBOSS")
 #' # [1] 0.7184524
 #' 
 #' # JUST ONE COMMAND
-#' charge(seq="FLPVLAGLTPSIVPKLVCLLTKKC",pH=seq(from = 5,to = 9,by = 2), pKscale="EMBOSS")
+#' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= seq(from = 5,to = 9,by = 2), pKscale= "EMBOSS")
 #' # [1] 3.0373984 2.9141123 0.7184524
 
 charge <- function(seq, pH = 7, pKscale = "Lehninger") {
   # Divide the amino acid sequence and makes an absolute frequencies table
-  seq <- gsub("[[:space:]]", "", seq)
-  aa <-
-    lapply(seq, function(seq) {
-      table(factor(unlist(strsplit(
-        toupper(seq), ""
-      )), levels = LETTERS))
+  seq <- aaCheck(seq)
+  aa <-lapply(seq, function(seq) {
+      table(factor(unlist(seq), levels = LETTERS))
     })
   # Set pKscale
-  utils::data(pK, envir = environment())
-  pK <- pK
-  pKs <- pK[[match.arg(pKscale, names(pK))]]
+  pK <- AAdata$pK
+  pK <- pK[[match.arg(pKscale, names(pK))]]
   charge <- lapply(aa, function(aa) {
     # Charge
-    cterm <- (-1 / (1 + 10 ^ (-1 * (pH - pKs["cTer"]))))
-    nterm <- (1 / (1 + 10 ^ (1 * (pH - pKs["nTer"]))))
-    carg  <- aa["R"] * (1 / (1 + 10 ^ (1 * (pH - pKs["R"]))))
-    chis  <- aa["H"] * (1 / (1 + 10 ^ (1 * (pH - pKs["H"]))))
-    clys  <- aa["K"] * (1 / (1 + 10 ^ (1 * (pH - pKs["K"]))))
-    casp  <- aa["D"] * (-1 / (1 + 10 ^ (-1 * (pH - pKs["D"]))))
-    cglu  <- aa["E"] * (-1 / (1 + 10 ^ (-1 * (pH - pKs["E"]))))
-    ccys  <- aa["C"] * (-1 / (1 + 10 ^ (-1 * (pH - pKs["C"]))))
-    ctyr  <- aa["Y"] * (-1 / (1 + 10 ^ (-1 * (pH - pKs["Y"]))))
+    cterm <- (-1 / (1 + 10 ^ (-1 * (pH - pK["cTer"]))))
+    nterm <- (1 / (1 + 10 ^ (1 * (pH - pK["nTer"]))))
+    carg  <- aa["R"] * (1 / (1 + 10 ^ (1 * (pH - pK["R"]))))
+    chis  <- aa["H"] * (1 / (1 + 10 ^ (1 * (pH - pK["H"]))))
+    clys  <- aa["K"] * (1 / (1 + 10 ^ (1 * (pH - pK["K"]))))
+    casp  <- aa["D"] * (-1 / (1 + 10 ^ (-1 * (pH - pK["D"]))))
+    cglu  <- aa["E"] * (-1 / (1 + 10 ^ (-1 * (pH - pK["E"]))))
+    ccys  <- aa["C"] * (-1 / (1 + 10 ^ (-1 * (pH - pK["C"]))))
+    ctyr  <- aa["Y"] * (-1 / (1 + 10 ^ (-1 * (pH - pK["Y"]))))
     # Compute the charge and return the value rounded to 3 decimals
     return(as.numeric(carg + clys + chis + nterm + casp + cglu + ctyr + ccys + cterm))
   })

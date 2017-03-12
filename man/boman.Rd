@@ -26,7 +26,7 @@ The potential protein interaction index was proposed by Boman (2003) as an easy 
 # SEQUENCE: FLPVLAGLTPSIVPKLVCLLTKKC
 # BOMAN INDEX  -1.24  
 
-boman("FLPVLAGLTPSIVPKLVCLLTKKC")
+boman(seq= "FLPVLAGLTPSIVPKLVCLLTKKC")
 # [1] -1.235833
 
 }

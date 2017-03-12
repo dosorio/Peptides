@@ -1,19 +1,19 @@
-#' @export instaindex
+#' @export instaIndex
 #' @title Compute the instability index of a protein sequence
 #' @description This function calculates the instability index proposed by Guruprasad (1990). This index predicts the stability of a protein based on its amino acid composition, a protein whose instability index is smaller than 40 is predicted as stable, a value above 40 predicts that the protein may be unstable.
 #' @param seq An amino-acids sequence
 #' @return The computed instability index for a given amino-acids sequence
 #' @references Guruprasad K, Reddy BV, Pandit MW (1990). "Correlation between stability of a protein and its dipeptide composition: a novel approach for predicting in vivo stability of a protein from its primary sequence". Protein Eng. 4 (2): 155 - 61. doi:10.1093/protein/4.2.155
-#' @examples 
+#' @examples
 #' # COMPARED TO ExPASy INSTAINDEX
 #' # http://web.expasy.org/protparam/
 #' # SEQUENCE: QWGRRCCGWGPGRRYCVRWC
 #' # The instability index (II) is computed to be 83.68
-#' 
-#' instaindex("QWGRRCCGWGPGRRYCVRWC")
+#'
+#' instaIndex(seq = "QWGRRCCGWGPGRRYCVRWC")
 #' # [1] 83.68
-#' 
-instaindex <- function(seq) {
+#'
+instaIndex <- function(seq) {
   # Setting the Guruprasad scale
   guruprasad <-
     c(
@@ -416,23 +416,18 @@ instaindex <- function(seq) {
       LG = 1,
       LA = 1,
       LL = 1,
-      "NA" = 1
+      'NA' = 1
     )
   # Divide the amino acid sequence in dipeptides
-  seq <- gsub("[[:space:]]+", "", seq)
-  aa <- lapply(seq, function(seq) {
-    unlist(strsplit(seq, ""))
+  aa <- aaCheck(seq)
+  dp <- lapply(aa, function(aa) {
+    apply(embed(aa, 2)[, 2:1], 1, paste0, collapse = "")
   })
-  dp <-
-    lapply(aa, function(aa) {
-      apply(embed(aa, 2)[, 2:1], 1, paste0, collapse = "")
-    })
   # Apply the formula:
   # (10/L)*sum(DIWV(XiYi+1) for each dipeptide)
   # Return the index value rounded to 2 decimals
-  gp <-
-    lapply(dp, function(dp) {
-      (10 / (length(dp) + 1)) * sum(guruprasad[dp], na.rm = TRUE)
-    })
+  gp <- lapply(dp, function(dp) {
+    (10 / (length(dp) + 1)) * sum(guruprasad[dp], na.rm = TRUE)
+  })
   return(unlist(gp))
 }
