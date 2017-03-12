@@ -11,7 +11,7 @@
 #' lengthpep(seq = "QWGRRCCGWGPGRRYCVRWC")
 #' # [1] 20
 lengthpep <- function(seq) {
-  seq <- gsub("[[:space:]]+", "", as.vector(seq))
+  seq <- aaCheck(seq)
   # Count the amino acids
-  nchar(seq)
+  lengths(seq)
 }

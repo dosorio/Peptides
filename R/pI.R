@@ -37,7 +37,6 @@
 #' pI(seq= "QWGRRCCGWGPGRRYCVRWC",pKscale= "Rodwell")
 #' # [1] 9.718
 pI <- function (seq, pKscale = "EMBOSS") {
-  seq <- gsub("[[:space:]]+", "", as.vector(seq))
   # Define pH values
   pHs <- seq(0 , 14 , 0.0001)
   # Evaluate the net charge for defined pHs

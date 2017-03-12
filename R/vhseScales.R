@@ -14,11 +14,8 @@
 #' #-0.1150  0.0630 -0.0055  0.7955  0.4355  0.2485  0.1740 -0.0960
 #' 
 vhseScales <- function(seq){
-  # Remove spaces and line breaks
-  seq <- gsub("[[:space:]]+","",as.vector(seq))
-  
-  # Split the sequence by amino-acids
-  seq <- strsplit(seq, "")
+  # Split the sequence by amino-acids - Remove spaces and line breaks
+  seq <- aaCheck(seq)
   
   # Load the VHSE-scales
   scales <- AAdata$VHSE

@@ -17,11 +17,8 @@
 #' #  Z1      Z2      Z3      Z4      Z5 
 #' # 0.6200  0.0865  0.0665  0.7280 -0.8740 
 zScales <- function(seq) {
-  # Remove spaces and line breaks
-  seq <- gsub("[[:space:]]+","",as.vector(seq))
-  
   # Split the sequence by amino-acids
-  seq <- strsplit(seq, "")
+  seq <- aaCheck(seq)
   
   # Load the Z-scales
   scales <- AAdata$zScales

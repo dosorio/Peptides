@@ -43,9 +43,10 @@ crossCovariance <-
       property1 <- scale(property1)[,]
       property2 <- scale(property2)[,]
     }
-    sequence <- gsub("[[:space:]]+", "", as.vector(sequence))
-    if (lag < (min(nchar(sequence)) - 1)) {
-      sequence <- strsplit(sequence, "")
+    # Split sequence by amino acids
+    sequence <- aaCheck(sequence)
+    if (lag < (min(lengths(sequence)) - 1)) {
+      # Apply Cruciani formula
       unlist(lapply(sequence, function(sequence) {
         sum(sapply(seq_len(length(sequence) - lag), function(position) {
           property1[sequence[[position]]] * property2[sequence[[position + lag]]]

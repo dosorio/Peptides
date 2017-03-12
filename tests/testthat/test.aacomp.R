@@ -1,6 +1,6 @@
 # CHECK OUTPUT CLASS
 test_that("aacomp function: output value should be a matrix",{
-  expect_true(is.matrix(aacomp("QWGRRCCGWGPGRRYCVRWC")[[1]]))
+  expect_true(is.matrix(aaComp("QWGRRCCGWGPGRRYCVRWC")[[1]]))
 })
 
 
@@ -19,11 +19,11 @@ test_that("aacomp function: output value should be a matrix",{
 
 # CHECK VALUES
 test_that("aacomp function: absolute frequencies are wrong",{
-  expect_equal(aacomp("QWGRRCCGWGPGRRYCVRWC")[[1]][1:9],c(8,10,1,4,14,6,5,5,0))
+  expect_equal(aaComp("QWGRRCCGWGPGRRYCVRWC")[[1]][1:9],c(8,10,1,4,14,6,5,5,0))
 })
 
 #CHECK PERCENTAGES
 test_that("aacomp function: relative frequencies are wrong",{
-  expect_equal(aacomp("QWGRRCCGWGPGRRYCVRWC")[[1]][10:18],c(40,50,5,20,70,30,25,25,0))
+  expect_equal(aaComp("QWGRRCCGWGPGRRYCVRWC")[[1]][10:18],c(40,50,5,20,70,30,25,25,0))
 })
 

@@ -10,11 +10,10 @@
 #' #     F1       F2       F3       F4       F5       F6 
 #' # -0.13675 -0.45485 -0.11695 -0.45800 -0.38015  0.52740 
 fasgaiVectors <- function(seq) {
-  # Remove spaces and line breaks
-  seq <- gsub("[[:space:]]+","",as.vector(seq))
   
+  # Remove spaces and line breaks
   # Split the sequence by amino-acids
-  seq <- strsplit(seq, "")
+  seq <- aaCheck(seq)
   
   # Load the FASGAI vectors
   vectors <- AAdata$FASGAI

@@ -34,9 +34,10 @@ autoCovariance <- function(sequence, lag, property, center = TRUE) {
   if (center == TRUE) {
     property <- scale(property)[,]
   }
-  sequence <- gsub("[[:space:]]+", "", as.vector(sequence))
-  if (lag < (min(nchar(sequence)) - 1)) {
-    sequence <- strsplit(sequence, "")
+  # Split sequence by amino acids
+  sequence <- aaCheck(sequence)
+  if (lag < (min(lengths(sequence)) - 1)) {
+    # Apply the Cruciani formula
     unlist(lapply(sequence, function(sequence) {
       sum(sapply(seq_len(length(sequence) - lag), function(position) {
         property[sequence[[position]]] * property[sequence[[position + lag]]]

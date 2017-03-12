@@ -10,11 +10,8 @@
 #' # 0.2065 -0.0565  1.9930 -0.2845  0.7315  0.7000  0.1715  0.1135 
 
 protFP <- function(seq){
-  # Remove spaces and line breaks
-  seq <- gsub("[[:space:]]+","",as.vector(seq))
-  
-  # Split the sequence by amino-acids
-  seq <- strsplit(seq, "")
+  # Split sequences by amino acids - Remove spaces and line breaks
+  seq <- aaCheck(seq)
   
   # Load the ProtFP descriptors
   descriptors <- AAdata$ProtFP

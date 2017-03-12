@@ -26,18 +26,20 @@
 #' # -1.89363636  1.02909091 -0.51272727  0.11181818  0.81000000 
 
 kideraFactors <- function (seq) {
-  # Remove the break lines from the sequence
-  seq <- gsub("[[:space:]]+", "", as.vector(seq))
+  
+  # Remove the break lines from the sequence and Split by amino acids
+  seq <- aaCheck(seq)
+  
   # Load the KFactors data
   factors <- AAdata$kideraFactors
+  
   # Compute the selected Kidera factor.
-  seq <- lapply(seq, function(seq) {
-    unlist(strsplit(seq, ""))
-  })
   kFactors <- lapply(seq, function(seq) {
     sapply(names(factors), function(factor) {
       (sum(factors[[factor]][seq], na.rm = TRUE) / length(seq))
     })
   })
+  
+  # Return
   return(kFactors)
 }

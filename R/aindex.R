@@ -1,4 +1,4 @@
-#' @export aindex
+#' @export aIndex
 #' @title Compute the aliphatic index of a protein sequence
 #' @description This function calculates the Ikai (1980) aliphatic index of a protein. The \code{aindex} is defined as the relative volume occupied by aliphatic side chains (Alanine, Valine, Isoleucine, and Leucine). It may be regarded as a positive factor for the increase of thermostability of globular proteins.
 #'
@@ -12,16 +12,13 @@
 #' # SEQUENCE: SDKEVDEVDAALSDLEITLE
 #' # Aliphatic index: 117.00
 #' 
-#' aindex(seq = "SDKEVDEVDAALSDLEITLE")
+#' aIndex(seq = "SDKEVDEVDAALSDLEITLE")
 #' # [1] 117
 
-aindex <- function(seq) {
-  seq <- gsub("[[:space:]]+","",as.vector(seq))
+aIndex <- function(seq) {
+  seq <- aaCheck(seq)
   # Divide the amino acid sequence and extracts the relative frequency of Alanine, Valine, Leucine and Isoleucine
-  seq <-
-    lapply(seq, function(seq) {
-      table(unlist(strsplit(seq, ""))) / nchar(seq)
-    })
+  seq <- lapply(seq, function(seq) { table(unlist(seq)) / length(seq) })
   # Aliphatic index = X(Ala) + a * X(Val) + b * ( X(Ile) + X(Leu) )
   # where X(Ala), X(Val), X(Ile), and X(Leu) are mole percent (100 X mole fraction)
   # of alanine, valine, isoleucine, and leucine.

@@ -10,11 +10,8 @@
 #' # -3.2700 -0.0035 -0.3855 -0.1475  0.7585 
 
 tScales <- function(seq){
-  # Remove spaces and line breaks
-  seq <- gsub("[[:space:]]+","",as.vector(seq))
-  
-  # Split the sequence by amino-acids
-  seq <- strsplit(seq, "")
+  # Split the sequence by amino-acids - Remove spaces and line breaks
+  seq <- aaCheck(seq)
   
   # Load the T-scales
   scales <- AAdata$tScales

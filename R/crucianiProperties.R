@@ -9,11 +9,11 @@
 #' #  -0.1130 -0.0220  0.2735
 crucianiProperties <- function(seq) {
   # Remove spaces and line breaks
-  seq <- gsub("[[:space:]]+", "", as.vector(seq))
+  seq <- aaCheck(seq)
+  
   # Load Cruciani Properties
   properties <- AAdata$crucianiProperties
-  # Split sequence
-  seq <- strsplit(toupper(seq), split = "")
+  
   # Calculate averages
   lapply(seq, function(seq) {
     sapply(names(properties), function(property) {

@@ -19,7 +19,6 @@
 #' # [1] -1.235833
 #' 
 boman <- function(seq) {
-  seq <- gsub("[[:space:]]+", "", as.vector(seq))
   # Create the Boman scale vector
   boman <-
     c(
@@ -43,13 +42,12 @@ boman <- function(seq) {
       D = -8.72,
       R = -14.92
     )
+  # Split sequence by amino acid
+  seq <- aaCheck(seq)
   # Asign a value to each amino acids in the sequence, sum the values and divide on amino acid sequence length
-  # Report the index rounded to 2 decimals
-  seq <- lapply(seq, function(seq) {
-    unlist(strsplit(seq, ""))
-  })
   bindex <- lapply(seq, function(seq) {
     return(-1 * sum(boman[seq], na.rm = TRUE) / length(seq))
   })
+  # Return the Boman index
   return(unlist(bindex))
 }

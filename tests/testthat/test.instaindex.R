@@ -6,10 +6,10 @@
 
 # CHECK INSTAINDEX VALUE
 test_that("instaindex function: the computed value is wrong",{
-  expect_equal(instaindex(seq = "QWGRRCCGWGPGRRYCVRWC"), 83.68)
+  expect_equal(instaIndex(seq = "QWGRRCCGWGPGRRYCVRWC"), 83.68)
 })
 
 # CHECK OUTPUT CLASS
 test_that("instaindex function: the output class is wrong",{
-  expect_true(is.numeric(instaindex(seq = "QWGRRCCGWGPGRRYCVRWC")))
+  expect_true(is.numeric(instaIndex(seq = "QWGRRCCGWGPGRRYCVRWC")))
 })

@@ -32,13 +32,20 @@
 #' # 8 INFCLILIFLLL 0.944 0.257  Surface
 #' # 9 NFCLILIFLLLI 0.944 0.229  Surface
 membpos <- function(seq, angle = 100) {
-  # Setting input length
-  seq <- gsub("[[:space:]]+", "", as.vector(seq))
+  # Check amino acids
+  seq <- aaCheck(seq)
+  
+  # Set window length
   window <- min(nchar(seq), 11)
+  
+  # Paste sequences
+  seq <- unlist(lapply(seq,function(seq){paste0(seq,collapse = "")}))
+  
+  # K-mers
   lapply(seq, function(seq){
   pep <-
-    substring(toupper(seq), (window):nchar(seq), first = 1:((nchar(seq) - window) +
-                                                              1))
+    substring(toupper(seq), (window):nchar(seq), first = 1:((nchar(seq) - window) +1))
+  
   # Compute the hmoment and hydrophobicity for each amino acid window
   data <- as.data.frame(matrix(nrow = length(pep), ncol = 5))
   data[, 1] <- pep
@@ -50,6 +57,7 @@ membpos <- function(seq, angle = 100) {
       hmoment(x, angle, window))), 3)
   data[, 4] <- (data[, 2] * -0.421) + 0.579
   colnames(data) <- c("Pep", "H", "uH", "m", "MembPos")
+  
   # Assigns a class depending on the hydrophobicity and hmoment
   data[which(data$uH <= data$m & data$H >= 0.5), 5] <- "Transmembrane"
   data[which(data$uH <= data$m & data$H <= 0.5), 5] <- "Globular"

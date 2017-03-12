@@ -10,11 +10,8 @@
 #' # -0.6360  0.0795  0.0520  0.0700 -0.2790 -0.8105  0.5820  0.5430 
 
 stScales <- function(seq){
-  # Remove spaces and line breaks
-  seq <- gsub("[[:space:]]+","",as.vector(seq))
-  
-  # Split the sequence by amino-acids
-  seq <- strsplit(seq, "")
+  # Split the sequence by amino-acids - Remove spaces and line breaks
+  seq <- aaCheck(seq)
   
   # Load the ST-scales
   scales <- AAdata$stScales

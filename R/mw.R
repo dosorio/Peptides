@@ -17,7 +17,9 @@
 #' mw(seq = "QWGRRCCGWGPGRRYCVRWC",monoisotopic = TRUE)
 #' # [1] 2484.12
 mw <- function(seq, monoisotopic = FALSE) {
-  seq <- gsub("[[:space:]]", "", as.vector(seq))
+  # Split sequence by amino acids
+  seq <- aaCheck(seq)
+  
   # Create the weight scale
   if (monoisotopic == TRUE) {
     weight <-
@@ -77,7 +79,6 @@ mw <- function(seq, monoisotopic = FALSE) {
   
   # Sum the weight of each amino acid and add H2O weight
   unlist(lapply(seq, function(seq) {
-    sum(weight[c(strsplit(toupper(seq), split = "")[[1]], "H2O")], na.rm =
-          TRUE)
+    sum(weight[c(seq, "H2O")], na.rm = TRUE)
   }))
 }

@@ -13,11 +13,10 @@
 #' # 0.2527273  0.1463636  0.1427273 -0.2145455 -0.3218182 
 #' 
 blosumIndices <- function(seq) {
-  # Remove spaces and line breaks
-  seq <- gsub("[[:space:]]+","",as.vector(seq))
-  
+
   # Split the sequence by amino-acids
-  seq <- strsplit(seq, "")
+  # Remove spaces and line breaks
+  seq <- aaCheck(seq)
   
   # Load the BLOSUM indices
   scales <- AAdata$BLOSUM

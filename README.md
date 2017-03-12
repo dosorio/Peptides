@@ -22,9 +22,9 @@ Available functions
 -------------------
 | Code        | Function |
 | :------------- |:-------------|
-|aacomp  |  Compute the amino-acid composition of a protein sequence|
+|aaComp  |  Compute the amino-acid composition of a protein sequence|
 |aaDescriptors|Compute 66 descriptors for each amino acid of a protein sequence|
-|aindex  |	Compute the aliphatic index of a protein sequence |
+|aIndex  |	Compute the aliphatic index of a protein sequence |
 |autoCorrelation|Compute the auto-correlation index of a protein sequence|
 |autoCovariance|Compute the auto-covariance index of a protein sequence|
 |blosumIndices|Compute the BLOSUM62 derived indices of a protein sequence|
@@ -35,7 +35,7 @@ Available functions
 |fasgaiVectors| Compute the FASGAI vectors of a protein sequence |
 |hmoment  |	Compute the hydrophobic moment of a protein sequence |
 |hydrophobicity	| Compute the hydrophobicity index of a protein sequence |
-|instaindex	| Compute the instability index of a protein sequence |
+|instaIndex	| Compute the instability index of a protein sequence |
 |kideraFactors | Compute the Kidera factors of a protein sequence |
 |lengthpep| Compute the aminoacid length of a protein sequence |
 |membpos |	Compute theoretically the class of a protein sequence |

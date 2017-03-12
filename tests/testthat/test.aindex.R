@@ -6,10 +6,10 @@
 
 # CHECK VALUES
 test_that("aindex function: output value is wrong",{
-  expect_equal(aindex(seq = "DAYAQWLKDGGPSSGRPPPS"),29.50)
+  expect_equal(aIndex(seq = "DAYAQWLKDGGPSSGRPPPS"),29.50)
 })
 
 # # CHECK OUTPUT CLASS
 test_that("aindex function: output class is wrong",{
-  expect_true(is.numeric(aindex(seq = "DAYAQWLKDGGPSSGRPPPS")))
+  expect_true(is.numeric(aIndex(seq = "DAYAQWLKDGGPSSGRPPPS")))
 })

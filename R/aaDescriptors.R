@@ -17,12 +17,10 @@
 #' @examples aaDescriptors(seq = "KLKLLLLLKLK")
 aaDescriptors <- function(seq){
   # Remove spaces and line breaks
-  seq <- gsub("[[:space:]]+","",as.vector(seq))
+  seq <- aaCheck(seq)
   sequences <- length(seq)
   # Length validation
-  if(all(nchar(seq)==nchar(seq[1]))){
-    # Split by amino acids
-    seq <- strsplit(seq,"")
+  if(all(lengths(seq)==length(seq[[1]]))){
     # Extract descriptors
     desc <- lapply(seq,function(seq){
       sapply(seq,function(aa){
