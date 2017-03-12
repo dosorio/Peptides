@@ -39,6 +39,7 @@ Available functions
 |kideraFactors | Compute the Kidera factors of a protein sequence |
 |lengthpep| Compute the aminoacid length of a protein sequence |
 |membpos |	Compute theoretically the class of a protein sequence |
+|mswhimScores|Compute the MS-WHIM scores of a protein sequence|
 |mw	| Compute the molecular weight of a protein sequence |
 |pI	| Compute the isoelectic point (pI) of a protein sequence |
 |plotXVG	| Plot time series from GROMACS XVG files |
