@@ -10,3 +10,5 @@ Suggests:
 Description: Includes functions to calculate several physicochemical properties and indices for amino-acid sequences as well as to read and plot 'XVG' output files from the 'GROMACS' molecular dynamics package.
 License: GPL-2
 RoxygenNote: 6.0.1
+LinkingTo: Rcpp
+Imports: Rcpp
