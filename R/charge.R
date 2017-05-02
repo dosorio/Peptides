@@ -68,22 +68,12 @@
 #' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= seq(from = 5,to = 9,by = 2), pKscale= "EMBOSS")
 #' # [1] 3.0373984 2.9141123 0.7184524
 
-charge <- function(seq, pH = 7, pKscale = "Lehninger") {
-  if (length(seq) > 1) {
-    if (length(pH) > 1) {
-      sequenceList(seq = seq,
-                   pH = pH,
-                   pKscale = pKscale)
-    } else {
-      unlist(sequenceList(
-        seq = seq,
-        pH = pH,
-        pKscale = pKscale
-      ))
-    }
-  } else{
-    calculateCharge(seq = seq,
-                    pH = pH,
-                    pKscale = pKscale)
+charge<- function(seq, pH = 7, pKscale = "Lehninger") {
+  seq <- toupper(seq)
+  pKscale <- names(AAdata$pK)[match(pKscale,names(AAdata$pK))]
+  if(length(seq) == 1 || length(pH) == 1){
+    return(unlist(chargeList(seq = seq,pH = pH, pKscale = pKscale)))
+  } else {
+    return(chargeList(seq = seq,pH = pH, pKscale = pKscale))
   }
 }
