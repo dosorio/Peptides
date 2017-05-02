@@ -237,7 +237,6 @@ break;
   }
 }
 
-// [[Rcpp::export]]
 double calculateCharge(std::string seq, double pH = 7, std::string pKscale = "Lehninger"){
   double charge = 0;
   // nTerm
@@ -270,7 +269,6 @@ double calculateCharge(std::string seq, double pH = 7, std::string pKscale = "Le
   return charge;
 }
 
-// [[Rcpp::export]]
 NumericVector pHsequence(std::string seq, NumericVector pH, std::string pKscale = "Lehninger"){
   int size = pH.size();
   NumericVector charges(size);
@@ -281,7 +279,7 @@ NumericVector pHsequence(std::string seq, NumericVector pH, std::string pKscale 
 }
 
 // [[Rcpp::export]]
-Rcpp::List sequenceList(std::vector< std::string > seq, NumericVector pH, std::string pKscale = "Lehninger"){
+Rcpp::List chargeList(std::vector< std::string > seq, NumericVector pH, std::string pKscale = "Lehninger"){
   int size = seq.size();
   List sequences(size);
   for(int i=0; i< size; i++){
@@ -290,6 +288,38 @@ Rcpp::List sequenceList(std::vector< std::string > seq, NumericVector pH, std::s
   return sequences;
 }
 
+// [[Rcpp::export]]
+double absoluteCharge(std::string seq, double pH = 7, std::string pKscale = "Lehninger"){
+  double charge = 0;
+  // nTerm
+  charge += (1 / (1 + pow(10,(1 * (pH - pKvalue(pKscale,'n'))))));
+  // AAsequence
+  int i=0;
+  while(seq[i] != '\0'){
+    switch (seq[i]) {
+    case 'R': charge += (1 / (1 + pow(10, (1 * (pH - pKvalue(pKscale,'R'))))));
+      break;
+    case 'H': charge += (1 / (1 + pow(10, (1 * (pH - pKvalue(pKscale,'H'))))));
+      break;
+    case 'K': charge += (1 / (1 + pow(10, (1 * (pH - pKvalue(pKscale,'K'))))));
+      break;
+    case 'D': charge += (-1 / (1 + pow(10, (-1 * (pH - pKvalue(pKscale,'D'))))));
+      break;
+    case 'E': charge += (-1 / (1 + pow(10, (-1 * (pH - pKvalue(pKscale,'E'))))));
+      break;
+    case 'C': charge += (-1 / (1 + pow(10, (-1 * (pH - pKvalue(pKscale,'C'))))));
+      break;
+    case 'Y': charge += (-1 / (1 + pow(10, (-1 * (pH - pKvalue(pKscale,'Y'))))));
+      break;
+    default: charge +=0;
+    break;
+    }
+    i++;
+  }
+  // cTerm
+  charge += (-1 / (1 + pow(10,(-1 * (pH - pKvalue(pKscale,'c'))))));
+  return abs(charge);
+}
 
 
 

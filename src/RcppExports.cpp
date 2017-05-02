@@ -5,42 +5,29 @@
 
 using namespace Rcpp;
 
-// calculateCharge
-double calculateCharge(std::string seq, double pH, std::string pKscale);
-RcppExport SEXP Peptides_calculateCharge(SEXP seqSEXP, SEXP pHSEXP, SEXP pKscaleSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::string >::type seq(seqSEXP);
-    Rcpp::traits::input_parameter< double >::type pH(pHSEXP);
-    Rcpp::traits::input_parameter< std::string >::type pKscale(pKscaleSEXP);
-    rcpp_result_gen = Rcpp::wrap(calculateCharge(seq, pH, pKscale));
-    return rcpp_result_gen;
-END_RCPP
-}
-// pHsequence
-NumericVector pHsequence(std::string seq, NumericVector pH, std::string pKscale);
-RcppExport SEXP Peptides_pHsequence(SEXP seqSEXP, SEXP pHSEXP, SEXP pKscaleSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::string >::type seq(seqSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type pH(pHSEXP);
-    Rcpp::traits::input_parameter< std::string >::type pKscale(pKscaleSEXP);
-    rcpp_result_gen = Rcpp::wrap(pHsequence(seq, pH, pKscale));
-    return rcpp_result_gen;
-END_RCPP
-}
-// sequenceList
-Rcpp::List sequenceList(std::vector< std::string > seq, NumericVector pH, std::string pKscale);
-RcppExport SEXP Peptides_sequenceList(SEXP seqSEXP, SEXP pHSEXP, SEXP pKscaleSEXP) {
+// chargeList
+Rcpp::List chargeList(std::vector< std::string > seq, NumericVector pH, std::string pKscale);
+RcppExport SEXP Peptides_chargeList(SEXP seqSEXP, SEXP pHSEXP, SEXP pKscaleSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector< std::string > >::type seq(seqSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type pH(pHSEXP);
     Rcpp::traits::input_parameter< std::string >::type pKscale(pKscaleSEXP);
-    rcpp_result_gen = Rcpp::wrap(sequenceList(seq, pH, pKscale));
+    rcpp_result_gen = Rcpp::wrap(chargeList(seq, pH, pKscale));
+    return rcpp_result_gen;
+END_RCPP
+}
+// absoluteCharge
+double absoluteCharge(std::string seq, double pH, std::string pKscale);
+RcppExport SEXP Peptides_absoluteCharge(SEXP seqSEXP, SEXP pHSEXP, SEXP pKscaleSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::string >::type seq(seqSEXP);
+    Rcpp::traits::input_parameter< double >::type pH(pHSEXP);
+    Rcpp::traits::input_parameter< std::string >::type pKscale(pKscaleSEXP);
+    rcpp_result_gen = Rcpp::wrap(absoluteCharge(seq, pH, pKscale));
     return rcpp_result_gen;
 END_RCPP
 }
