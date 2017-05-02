@@ -1,4 +1,5 @@
 #' @export pI
+#' @importFrom stats optimize
 #' @title Compute the isoelectic point (pI) of a protein sequence
 #' @description The isoelectric point (pI), is the pH at which a particular molecule or surface carries no net electrical charge. 
 #' @param seq An amino-acids sequence
