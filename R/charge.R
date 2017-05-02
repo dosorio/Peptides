@@ -5,32 +5,32 @@
 #' @param seq An amino-acids sequence
 #' @param pH A pH value
 #' @param pKscale A character string specifying the pKa scale to be used; must be one of \code{"Bjellqvist"}, \code{"Dawson"}, \code{"EMBOSS"}, \code{"Lehninger"}, \code{"Murray"}, \code{"Rodwell"}, \code{"Sillero"}, \code{"Solomon"} or \code{"Stryer"}
-#' @references 
+#' @references
 #' Kiraga, J. (2008) Analysis and computer simulations of variability of isoelectric point of proteins in the proteomes. PhD thesis, University of Wroclaw, Poland.
-#' 
+#'
 #' Bjellqvist, B., Hughes, G.J., Pasquali, Ch., Paquet, N., Ravier, F., Sanchez, J.Ch., Frutige,r S., Hochstrasser D. (1993) The focusing positions of polypeptides in immobilized pH gradients can be predicted from their amino acid sequences. Electrophoresis, 14:1023-1031.
-#' 
+#'
 #' Dawson, R. M. C.; Elliot, D. C.; Elliot, W. H.; Jones, K. M. Data for biochemical research. Oxford University Press, 1989; p. 592.
-#' 
+#'
 #' EMBOSS data are from http://emboss.sourceforge.net/apps/release/5.0/emboss/apps/iep.html.
-#' 
+#'
 #' Nelson, D. L.; Cox, M. M. Lehninger Principles of Biochemistry, Fourth Edition; W. H. Freeman, 2004; p. 1100.
-#' 
+#'
 #' Murray, R.K., Granner, D.K., Rodwell, V.W. (2006) Harper's illustrated Biochemistry. 27th edition. Published by The McGraw-Hill Companies.
-#' 
+#'
 #' Rodwell, J. Heterogeneity of component bands in isoelectric focusing patterns. Analytical Biochemistry, 1982, 119 (2), 440-449.
-#' 
+#'
 #' Sillero, A., Maldonado, A. (2006) Isoelectric point determination of proteins and other macromolecules: oscillating method. Comput Biol Med., 36:157-166.
-#' 
+#'
 #' Solomon, T.W.G. (1998) Fundamentals of Organic Chemistry, 5th edition. Published by Wiley.
-#' 
+#'
 #' Stryer L. (1999) Biochemia. czwarta edycja. Wydawnictwo Naukowe PWN.
-#' 
+#'
 #' @examples # COMPARED TO EMBOSS PEPSTATS
 #' # http://emboss.bioinformatics.nl/cgi-bin/emboss/pepstats
 #' # SEQUENCE: FLPVLAGLTPSIVPKLVCLLTKKC
 #' # Charge   = 3.0
-#' 
+#'
 #' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "Bjellqvist")
 #' # [1] 2.737303
 #' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "EMBOSS")
@@ -49,13 +49,13 @@
 #' # [1] 2.844406
 #' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "Rodwell")
 #' # [1] 2.819755
-#' 
+#'
 #' # COMPARED TO YADAMP
 #' # http://yadamp.unisa.it/showItem.aspx?yadampid=845&x=0,7055475
 #' # SEQUENCE: FLPVLAGLTPSIVPKLVCLLTKKC
-#' # CHARGE pH5: 3.00   	 
-#' # CHARGE pH7: 2.91   	 
-#' # CHARGE pH9: 1.09  
+#' # CHARGE pH5: 3.00
+#' # CHARGE pH7: 2.91
+#' # CHARGE pH9: 1.09
 
 #' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 5, pKscale= "EMBOSS")
 #' # [1] 3.037398
@@ -63,33 +63,17 @@
 #' # [1] 2.914112
 #' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 9, pKscale= "EMBOSS")
 #' # [1] 0.7184524
-#' 
+#'
 #' # JUST ONE COMMAND
 #' charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= seq(from = 5,to = 9,by = 2), pKscale= "EMBOSS")
 #' # [1] 3.0373984 2.9141123 0.7184524
 
-charge <- function(seq, pH = 7, pKscale = "Lehninger") {
-  # Divide the amino acid sequence and makes an absolute frequencies table
-  seq <- aaCheck(seq)
-  aa <-lapply(seq, function(seq) {
-      table(factor(unlist(seq), levels = LETTERS))
-    })
-  # Set pKscale
-  pK <- AAdata$pK
-  pK <- pK[[match.arg(pKscale, names(pK))]]
-  charge <- lapply(aa, function(aa) {
-    # Charge
-    cterm <- (-1 / (1 + 10 ^ (-1 * (pH - pK["cTer"]))))
-    nterm <- (1 / (1 + 10 ^ (1 * (pH - pK["nTer"]))))
-    carg  <- aa["R"] * (1 / (1 + 10 ^ (1 * (pH - pK["R"]))))
-    chis  <- aa["H"] * (1 / (1 + 10 ^ (1 * (pH - pK["H"]))))
-    clys  <- aa["K"] * (1 / (1 + 10 ^ (1 * (pH - pK["K"]))))
-    casp  <- aa["D"] * (-1 / (1 + 10 ^ (-1 * (pH - pK["D"]))))
-    cglu  <- aa["E"] * (-1 / (1 + 10 ^ (-1 * (pH - pK["E"]))))
-    ccys  <- aa["C"] * (-1 / (1 + 10 ^ (-1 * (pH - pK["C"]))))
-    ctyr  <- aa["Y"] * (-1 / (1 + 10 ^ (-1 * (pH - pK["Y"]))))
-    # Compute the charge and return the value rounded to 3 decimals
-    return(as.numeric(carg + clys + chis + nterm + casp + cglu + ctyr + ccys + cterm))
-  })
-  return(unlist(charge))
+charge<- function(seq, pH = 7, pKscale = "Lehninger") {
+  seq <- toupper(seq)
+  pKscale <- names(AAdata$pK)[match(pKscale,names(AAdata$pK))]
+  if(length(seq) == 1 || length(pH) == 1){
+    return(unlist(chargeList(seq = seq,pH = pH, pKscale = pKscale)))
+  } else {
+    return(chargeList(seq = seq,pH = pH, pKscale = pKscale))
+  }
 }
