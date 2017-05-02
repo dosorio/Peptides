@@ -44,9 +44,9 @@ charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "Rodwell")
 # COMPARED TO YADAMP
 # http://yadamp.unisa.it/showItem.aspx?yadampid=845&x=0,7055475
 # SEQUENCE: FLPVLAGLTPSIVPKLVCLLTKKC
-# CHARGE pH5: 3.00   	 
-# CHARGE pH7: 2.91   	 
-# CHARGE pH9: 1.09  
+# CHARGE pH5: 3.00
+# CHARGE pH7: 2.91
+# CHARGE pH9: 1.09
 charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 5, pKscale= "EMBOSS")
 # [1] 3.037398
 charge(seq= "FLPVLAGLTPSIVPKLVCLLTKKC",pH= 7, pKscale= "EMBOSS")
