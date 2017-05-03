@@ -70,7 +70,13 @@
 
 charge<- function(seq, pH = 7, pKscale = "Lehninger") {
   seq <- toupper(seq)
-  pKscale <- names(AAdata$pK)[match(pKscale,names(AAdata$pK))]
+  pKscale <- names(AAdata$pK)[pmatch(pKscale,names(AAdata$pK))]
+  if(is.na(pKscale)){
+    stop("The selected pK scale is not available. pKscale must be one of: 'Bjellqvist','Dawson', 'EMBOSS', 'Lehninger', 'Murray', 'Rodwell', 'Sillero', 'Solomon', or 'Stryer'.")
+  }
+  if(!is.numeric(pH)){
+    stop("The pH must be numeric.")
+  }
   if(length(seq) == 1 || length(pH) == 1){
     return(unlist(chargeList(seq = seq,pH = pH, pKscale = pKscale)))
   } else {

@@ -278,6 +278,7 @@ NumericVector pHsequence(std::string seq, NumericVector pH, std::string pKscale 
   return charges;
 }
 
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 Rcpp::List chargeList(std::vector< std::string > seq, NumericVector pH, std::string pKscale = "Lehninger"){
   int size = seq.size();
@@ -288,6 +289,7 @@ Rcpp::List chargeList(std::vector< std::string > seq, NumericVector pH, std::str
   return sequences;
 }
 
+// [[Rcpp::interfaces(r, cpp)]]
 // [[Rcpp::export]]
 double absoluteCharge(std::string seq, double pH = 7, std::string pKscale = "Lehninger"){
   double charge = 0;
