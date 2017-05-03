@@ -1,5 +1,10 @@
 NEWS
 ====
+**Peptides v.2.1**
+* The charge and pI functions were rewritten in C++ and an optimization approach was used thanks to Scott McCain (@jspmccain) and Timothée Poisot (@tpoisot) suggestion.
+
+* An error in zScales function data was solved. Q and E values were wrongly interchanged in v 2.0.
+
 **Peptides v.2.0.0**
 
 * All datasets were unified into AAdata
