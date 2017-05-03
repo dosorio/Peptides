@@ -39,6 +39,10 @@
 #' # [1] 9.718
 pI <- function (seq, pKscale = "EMBOSS") {
   seq <- toupper(seq)
+  pKscale <- names(AAdata$pK)[pmatch(pKscale,names(AAdata$pK))]
+  if(is.na(pKscale)){
+    stop("The selected pK scale is not available. pKscale must be one of: 'Bjellqvist','Dawson', 'EMBOSS', 'Lehninger', 'Murray', 'Rodwell', 'Sillero', 'Solomon', or 'Stryer'.")
+  }
   sapply(seq,function(sequence){unlist(optimize(f = absoluteCharge,interval = c(0,14), seq = sequence, pKscale = pKscale))[[1]]},USE.NAMES = FALSE)
 }
 
