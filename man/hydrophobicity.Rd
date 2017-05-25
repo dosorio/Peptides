@@ -9,7 +9,7 @@ hydrophobicity(seq, scale = "KyteDoolittle")
 \arguments{
 \item{seq}{An amino-acids sequence}
 
-\item{scale}{A character string specifying the hydophobicity scale to be used; must be one of \code{"Aboderin"}, \code{"AbrahamLeo"}, \code{"Argos"}, \code{"BlackMould"}, \code{"BullBreese"}, \code{"Casari"}, \code{"Chothia"}, \code{"Cid"}, \code{"Cowan3.4"}, \code{"Cowan7.5"}, \code{"Eisenberg"}, \code{"Engelman"}, \code{"Fasman"}, \code{"Fauchere"}, \code{"Goldsack"}, \code{"Guy"}, \code{"HoppWoods"}, \code{"Janin"}, \code{"Jones"}, \code{"Juretic"}, \code{"Kidera"}, \code{"Kuhn"}, \code{"KyteDoolittle"}, \code{"Levitt"}, \code{"Manavalan"}, \code{"Miyazawa"}, \code{"Parker"}, \code{"Ponnuswamy"}, \code{"Prabhakaran"}, \code{"Rao"}, \code{"Rose"}, \code{"Roseman"}, \code{"Sweet"}, \code{"Tanford"}, \code{"Welling"}, \code{"Wilson"}, \code{"Wolfenden"} or \code{"Zimmerman"}}
+\item{scale}{A character string specifying the hydophobicity scale to be used; must be one of \code{"Aboderin"}, \code{"AbrahamLeo"}, \code{"Argos"}, \code{"BlackMould"}, \code{"BullBreese"}, \code{"Casari"}, \code{"Chothia"}, \code{"Cid"}, \code{"Cowan3.4"}, \code{"Cowan7.5"}, \code{"Eisenberg"}, \code{"Engelman"}, \code{"Fasman"}, \code{"Fauchere"}, \code{"Goldsack"}, \code{"Guy"}, \code{"HoppWoods"}, \code{"Janin"}, \code{"Jones"}, \code{"Juretic"}, \code{"Kidera"}, \code{"Kuhn"}, \code{"KyteDoolittle"}, \code{"Levitt"}, \code{"Manavalan"}, \code{"Miyazawa"}, \code{"Parker"}, \code{"Ponnuswamy"}, \code{"Prabhakaran"}, \code{"Rao"}, \code{"Rose"}, \code{"Roseman"}, \code{"Sweet"}, \code{"Tanford"}, \code{"Welling"}, \code{"Wilson"}, \code{"Wolfenden"}, \code{"Zimmerman"}, \code{"interfaceScale_pH8"}, \code{"interfaceScale_pH2"}, \code{"octanolScale_pH8"}, \code{"octanolScale_pH2"}, \code{"oiScale_pH8"} or \code{"oiScale_pH2"}.}
 }
 \value{
 The computed GRAVY index for a given amino-acid sequence
@@ -188,5 +188,7 @@ Kawashima, S., Ogata, H., and Kanehisa, M.; AAindex: amino acid index database. 
 
 Kawashima, S. and Kanehisa, M.; AAindex: amino acid index database. Nucleic Acids Res. 28, 374 (2000).
 
-Kawashima, S., Pokarowski, P., Pokarowska, M., Kolinski, A., Katayama, T., and Kanehisa, M.; AAindex: amino acid index database, progress report 2008. Nucleic Acids Res. 36, D202-D205 (2008).
+Kawashima, S., Pokarowski, P., Pokarowska, M., Kolinski, A., Katayama, T., and Kanehisa, M.; AAindex: amino acid index database, progress report 2008. Nucleic Acids Res. 36, D202-D205 (2008). 
+
+White, Stephen (2006-06-29). "Experimentally Determined Hydrophobicity Scales". University of California, Irvine. Retrieved 2017-05-25
 }

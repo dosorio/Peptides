@@ -2,7 +2,7 @@
 #' @title Compute the hydrophobicity index of a protein sequence
 #' @description This function calculates the GRAVY hydrophobicity index of an amino acids sequence using one of the 38 scales from different sources.
 #' @param seq An amino-acids sequence
-#' @param scale A character string specifying the hydophobicity scale to be used; must be one of \code{"Aboderin"}, \code{"AbrahamLeo"}, \code{"Argos"}, \code{"BlackMould"}, \code{"BullBreese"}, \code{"Casari"}, \code{"Chothia"}, \code{"Cid"}, \code{"Cowan3.4"}, \code{"Cowan7.5"}, \code{"Eisenberg"}, \code{"Engelman"}, \code{"Fasman"}, \code{"Fauchere"}, \code{"Goldsack"}, \code{"Guy"}, \code{"HoppWoods"}, \code{"Janin"}, \code{"Jones"}, \code{"Juretic"}, \code{"Kidera"}, \code{"Kuhn"}, \code{"KyteDoolittle"}, \code{"Levitt"}, \code{"Manavalan"}, \code{"Miyazawa"}, \code{"Parker"}, \code{"Ponnuswamy"}, \code{"Prabhakaran"}, \code{"Rao"}, \code{"Rose"}, \code{"Roseman"}, \code{"Sweet"}, \code{"Tanford"}, \code{"Welling"}, \code{"Wilson"}, \code{"Wolfenden"} or \code{"Zimmerman"}
+#' @param scale A character string specifying the hydophobicity scale to be used; must be one of \code{"Aboderin"}, \code{"AbrahamLeo"}, \code{"Argos"}, \code{"BlackMould"}, \code{"BullBreese"}, \code{"Casari"}, \code{"Chothia"}, \code{"Cid"}, \code{"Cowan3.4"}, \code{"Cowan7.5"}, \code{"Eisenberg"}, \code{"Engelman"}, \code{"Fasman"}, \code{"Fauchere"}, \code{"Goldsack"}, \code{"Guy"}, \code{"HoppWoods"}, \code{"Janin"}, \code{"Jones"}, \code{"Juretic"}, \code{"Kidera"}, \code{"Kuhn"}, \code{"KyteDoolittle"}, \code{"Levitt"}, \code{"Manavalan"}, \code{"Miyazawa"}, \code{"Parker"}, \code{"Ponnuswamy"}, \code{"Prabhakaran"}, \code{"Rao"}, \code{"Rose"}, \code{"Roseman"}, \code{"Sweet"}, \code{"Tanford"}, \code{"Welling"}, \code{"Wilson"}, \code{"Wolfenden"}, \code{"Zimmerman"}, \code{"interfaceScale_pH8"}, \code{"interfaceScale_pH2"}, \code{"octanolScale_pH8"}, \code{"octanolScale_pH2"}, \code{"oiScale_pH8"} or \code{"oiScale_pH2"}.
 #' @return The computed GRAVY index for a given amino-acid sequence
 #' @references Aboderin, A. A. (1971). An empirical hydrophobicity scale for alpha-amino-acids and some of its applications. International Journal of Biochemistry, 2(11), 537-544.
 #'
@@ -89,6 +89,8 @@
 #' Kawashima, S. and Kanehisa, M.; AAindex: amino acid index database. Nucleic Acids Res. 28, 374 (2000).
 #' 
 #' Kawashima, S., Pokarowski, P., Pokarowska, M., Kolinski, A., Katayama, T., and Kanehisa, M.; AAindex: amino acid index database, progress report 2008. Nucleic Acids Res. 36, D202-D205 (2008). 
+#' 
+#' White, Stephen (2006-06-29). "Experimentally Determined Hydrophobicity Scales". University of California, Irvine. Retrieved 2017-05-25
 #' @details The hydrophobicity is an important stabilization force in protein folding; this force changes depending on the solvent in which the protein is found. The hydrophobicity index is calculated adding the hydrophobicity of individual amino acids and dividing this value by the length of the sequence.
 #' @examples 
 #' # COMPARED TO GRAVY Grand average of hydropathicity (GRAVY) ExPASy
