@@ -1,6 +1,9 @@
 NEWS
 ====
 **Peptides v.2.1**
+* The Wimley-White hydrophobicity scales were added thanks to Alexander Komin <akomin1@jhu.edu> suggestion
+
+**Peptides v.2.1**
 * The charge and pI functions were rewritten in C++ and an optimization approach was used thanks to Scott McCain (@jspmccain) and Timothée Poisot (@tpoisot) suggestion.
 
 * An error in zScales function data was solved. Q and E values were wrongly interchanged in v 2.0.
