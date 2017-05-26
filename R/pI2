@@ -1,0 +1,70 @@
+# library(Peptides)
+# data(pepdata)
+
+aaCheck <- function(seq){
+  seq <- toupper(seq)
+  seq <- gsub(pattern = "[[:space:]]+",replacement = "",x = seq)
+  seq <- strsplit(x = seq,split = "")
+  check <- unlist(lapply(seq,function(sequence){
+    !all(seq[[1]]%in%c("A" ,"C" ,"D" ,"E" ,"F" ,"G" ,"H" ,"I" ,"K" ,"L" ,"M" ,"N" ,"P" ,"Q" ,"R" ,"S" ,"T" ,"V" ,"W" ,"Y", "-"))
+  }))
+  if(sum(check) > 0){
+    sapply(which(check == TRUE),function(sequence){warning(paste0("Sequence ",sequence," has unrecognized amino acid types. Output value might be wrong calculated"),call. = FALSE)})
+  }
+  return(seq)
+}
+
+charge_optim <- function (pH, seq, pKscale = "Lehninger") 
+{
+  seq <- aaCheck(seq)
+  aa <- lapply(seq, function(seq) {
+    table(factor(unlist(seq), levels = LETTERS))
+  })
+  pK <- AAdata$pK
+  pK <- pK[[match.arg(pKscale, names(pK))]]
+  charge <- lapply(aa, function(aa) {
+    cterm <- (-1/(1 + 10^(-1 * (pH - pK["cTer"]))))
+    nterm <- (1/(1 + 10^(1 * (pH - pK["nTer"]))))
+    carg <- aa["R"] * (1/(1 + 10^(1 * (pH - pK["R"]))))
+    chis <- aa["H"] * (1/(1 + 10^(1 * (pH - pK["H"]))))
+    clys <- aa["K"] * (1/(1 + 10^(1 * (pH - pK["K"]))))
+    casp <- aa["D"] * (-1/(1 + 10^(-1 * (pH - pK["D"]))))
+    cglu <- aa["E"] * (-1/(1 + 10^(-1 * (pH - pK["E"]))))
+    ccys <- aa["C"] * (-1/(1 + 10^(-1 * (pH - pK["C"]))))
+    ctyr <- aa["Y"] * (-1/(1 + 10^(-1 * (pH - pK["Y"]))))
+    return(as.numeric(carg + clys + chis + nterm + casp + 
+                        cglu + ctyr + ccys + cterm))
+  })
+  return(abs(unlist(charge)))
+}
+
+pI2 <- function (seq, pKscale = "EMBOSS") 
+{
+  length_seq <- length(seq)
+  pI_returns <- vector(length = length_seq)
+  for(i in 1:length_seq){
+    pI_returns[i] <- optimize(f = charge_optim, interval = c(0, 14), seq[i], pKscale)[[1]]
+  }
+  return(pI_returns)
+}
+
+#demonstrating that the pI() and pI2() produce the same output.
+# pI_testing_set <- pI2(seq = pepdata$sequence)
+# cor(pI_testing_set, pepdata$pI)
+
+#examining speed difference between pI2() and pI()
+# microbenchmark(
+#   pI2(seq = rep("KAA", 100)), #mean = 800, median = 777
+#   pI(seq = rep("KAA", 100)) #mean = 18121, median = 17787
+# )
+# 
+# 
+# profvis({
+#   pI2(seq = rep("KAA", 10))
+#   pI(seq = rep("KAA", 10))
+# })
+  
+
+
+
+
