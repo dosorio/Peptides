@@ -1,6 +1,6 @@
 NEWS
 ====
-**Peptides v.2.1**
+**Peptides v.2.2**
 * The Wimley-White hydrophobicity scales were added thanks to Alexander Komin <akomin1@jhu.edu> suggestion
 
 **Peptides v.2.1**
