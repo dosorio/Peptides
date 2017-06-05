@@ -1,6 +1,6 @@
 Package: Peptides
 Version: 2.2
-Date: 2017-05-25
+Date: 2017-06-05
 Title: Calculate Indices and Theoretical Physicochemical Properties of Protein Sequences
 Authors@R: c(person("Daniel","Osorio",email="dcosorioh@unal.edu.co",role=c("aut","cre")),
              person("Paola","Rondon-Villarreal",role=c("aut","ths")),
