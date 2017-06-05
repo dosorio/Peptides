@@ -1,9 +1,18 @@
 NEWS
 ====
 **Peptides v.2.2**
-* The Wimley-White hydrophobicity scales were added thanks to Alexander Komin <akomin1@jhu.edu> suggestion
+
+* The Wimley-White hydrophobicity scales were added thanks to Alexander Komin <akomin1@jhu.edu> suggestion. WW scales can be used as:
+1. **interfaceScale_pH2:** White, Stephen (2006-06-29). "Experimentally Determined Hydrophobicity Scales". University of California, Irvine. Retrieved 2017-05-25
+2. **interfaceScale_pH8:** White, Stephen (2006-06-29). "Experimentally Determined Hydrophobicity Scales". University of California, Irvine. Retrieved 2017-05-25
+3. **octanolScale_pH2:** White, Stephen (2006-06-29). "Experimentally Determined Hydrophobicity Scales". University of California, Irvine. Retrieved 2017-05-25
+4. **octanolScale_pH8:** White, Stephen (2006-06-29). "Experimentally Determined Hydrophobicity Scales". University of California, Irvine. Retrieved 2017-05-25
+5. **oiScale_pH2:** White, Stephen (2006-06-29). "Experimentally Determined Hydrophobicity Scales". University of California, Irvine. Retrieved 2017-05-25
+6. **oiScale_pH8:** White, Stephen (2006-06-29). "Experimentally Determined Hydrophobicity Scales". University of California, Irvine. Retrieved 2017-05-25
+
 
 **Peptides v.2.1**
+
 * The charge and pI functions were rewritten in C++ and an optimization approach was used thanks to Scott McCain (@jspmccain) and Timothée Poisot (@tpoisot) suggestion.
 
 * An error in zScales function data was solved. Q and E values were wrongly interchanged in v 2.0.
