@@ -2,14 +2,14 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 chargeList <- function(seq, pH, pKscale = "Lehninger") {
-    .Call(Peptides_chargeList, seq, pH, pKscale)
+    .Call(`_Peptides_chargeList`, seq, pH, pKscale)
 }
 
 absoluteCharge <- function(seq, pH = 7, pKscale = "Lehninger") {
-    .Call(Peptides_absoluteCharge, seq, pH, pKscale)
+    .Call(`_Peptides_absoluteCharge`, seq, pH, pKscale)
 }
 
 # Register entry points for exported C++ functions
 methods::setLoadAction(function(ns) {
-    .Call('Peptides_RcppExport_registerCCallable', PACKAGE = 'Peptides')
+    .Call('_Peptides_RcppExport_registerCCallable', PACKAGE = 'Peptides')
 })

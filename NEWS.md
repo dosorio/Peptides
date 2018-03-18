@@ -1,5 +1,9 @@
 NEWS
 ====
+**Peptides v.2.3**
+
+* An error in tScales and tsScales functions was solved. The error made the return of the function an empty list. Thanks to Fabian Tann (fabian.tann@lse.thm.de) for report the problem.
+
 **Peptides v.2.2**
 
 * The Wimley-White hydrophobicity scales were added thanks to Alexander Komin <akomin1@jhu.edu> suggestion. WW scales can be used as:
