@@ -6,8 +6,8 @@
 #' @return The computed average of ST-scales of all the amino acids in the corresponding peptide sequence.
 #' @examples stScales(seq = "QWGRRCCGWGPGRRYCVRWC")
 #' # [[1]]
-#' #    ST1     ST2     ST3     ST4     ST5     ST6     ST7     ST8 
-#' # -0.6360  0.0795  0.0520  0.0700 -0.2790 -0.8105  0.5820  0.5430 
+#' # ST1      ST2      ST3      ST4      ST5      ST6      ST7      ST8
+#' # -0.63760  0.07965  0.05150  0.07135 -0.27905 -0.80995  0.58020  0.54400
 
 stScales <- function(seq){
   # Split the sequence by amino-acids - Remove spaces and line breaks

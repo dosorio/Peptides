@@ -18,8 +18,8 @@ T-scales are based on 67 common topological descriptors of 135 amino acids. Thes
 \examples{
 tScales(seq = "QWGRRCCGWGPGRRYCVRWC")
 # [[1]]
-#    T1      T2      T3      T4      T5 
-# -3.2700 -0.0035 -0.3855 -0.1475  0.7585 
+# T1      T2      T3      T4      T5
+# -3.2700 -0.0035 -0.3855 -0.1475  0.7585
 }
 \references{
 Tian F, Zhou P, Li Z: T-scale as a novel vector of topological descriptors for amino acids and its application in QSARs of peptides. J Mol Struct. 2007, 830: 106-115. 10.1016/j.molstruc.2006.07.004.

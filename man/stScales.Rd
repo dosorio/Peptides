@@ -18,8 +18,8 @@ ST-scales were proposed by Yang et al, taking 827 properties into account which 
 \examples{
 stScales(seq = "QWGRRCCGWGPGRRYCVRWC")
 # [[1]]
-#    ST1     ST2     ST3     ST4     ST5     ST6     ST7     ST8 
-# -0.6360  0.0795  0.0520  0.0700 -0.2790 -0.8105  0.5820  0.5430 
+# ST1      ST2      ST3      ST4      ST5      ST6      ST7      ST8
+# -0.63760  0.07965  0.05150  0.07135 -0.27905 -0.80995  0.58020  0.54400
 }
 \references{
 Yang, L., Shu, M., Ma, K., Mei, H., Jiang, Y., & Li, Z. (2010). ST-scale as a novel amino acid descriptor and its application in QSAM of peptides and analogues. Amino acids, 38(3), 805-816.

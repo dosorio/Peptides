@@ -6,8 +6,8 @@
 #' @return The computed average of T-scales of all the amino acids in the corresponding peptide sequence.
 #' @examples tScales(seq = "QWGRRCCGWGPGRRYCVRWC")
 #' # [[1]]
-#' #    T1      T2      T3      T4      T5 
-#' # -3.2700 -0.0035 -0.3855 -0.1475  0.7585 
+#' # T1      T2      T3      T4      T5
+#' # -3.2700 -0.0035 -0.3855 -0.1475  0.7585
 
 tScales <- function(seq){
   # Split the sequence by amino-acids - Remove spaces and line breaks
