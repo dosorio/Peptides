@@ -2,7 +2,7 @@ NEWS
 ====
 **Peptides v.2.3**
 
-* aaComp function now accepts character lists as input. Thanks to Hemílio Xafranski from their suggestion.
+* aaComp function now accepts character lists as input. Thanks to Hemílio Xafranski for their suggestion.
 
 **Peptides v.2.3**
 
