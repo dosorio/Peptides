@@ -53,7 +53,7 @@ readXVG <- function(file) {
   content <- as.data.frame(
     t(sapply(
       content, 
-      (function(x) {unlist(strsplit(x, "\\s+"))}), 
+      (function(x) {unlist(strsplit(trimws(x, "b"), "\\s+"))}), 
       USE.NAMES = FALSE)
       ), stringsAsFactors = FALSE)
 
