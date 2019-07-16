@@ -49,7 +49,7 @@ readXVG <- function(file) {
   title <- unquote(perlgsub("^@ \\s+title ", header))
 
   # Extracting the data
-  content <- perlgsub('^\\s+', content)
+  content <- perlgsub('^(?![@#])', content)
   content <- as.data.frame(
     t(sapply(
       content, 
