@@ -3,7 +3,7 @@ Version: 2.4.1
 Date: 2019-08-14
 Title: Calculate Indices and Theoretical Physicochemical Properties of
         Protein Sequences
-Authors@R: c(person("Daniel","Osorio",email="dcosorioh@unal.edu.co",role=c("aut","cre")),
+Authors@R: c(person("Daniel","Osorio",email="dcosorioh@tamu.edu",role=c("aut","cre")),
              person("Paola","Rondon-Villarreal",role=c("aut","ths")),
              person("Rodrigo","Torres",role=c("aut","ths")),
              person("J. Sebastian","Paez",email="jpaezpae@purdue.edu",role=c("ctb"))
