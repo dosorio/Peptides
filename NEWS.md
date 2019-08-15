@@ -1,6 +1,11 @@
 NEWS
 ====
-**Peptides v.2.3**
+**Peptides v.2.1**
+
+* Hidden objects in data files were removed following a CRAN maintainers suggestion
+* A bug related with the spaces management in the readXVG function was solved. Thanks to @hongbo-zhu-cn.
+
+**Peptides v.2.4**
 
 * aaComp function now accepts character lists as input. Thanks to Hemílio Xafranski for their suggestion.
 
