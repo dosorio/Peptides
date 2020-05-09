@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/dosorio/Peptides.svg?branch=master)](https://travis-ci.org/dosorio/Peptides)
 Peptides
 ========
 R package to calculate several physicochemical properties and indices for amino-acid sequences as well as to read and plot 'XVG' output files from the 'GROMACS' molecular dynamics package
