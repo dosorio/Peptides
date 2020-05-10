@@ -23,6 +23,7 @@ Available functions
 -------------------
 | Code        | Function |
 | :------------- |:-------------|
+|aaList|	Return a vector with the 20 standard aminoacids in upper case|
 |aaComp  |  Compute the amino-acid composition of a protein sequence|
 |aaDescriptors|Compute 66 descriptors for each amino acid of a protein sequence|
 |aIndex  |	Compute the aliphatic index of a protein sequence |
@@ -61,5 +62,3 @@ Available datasets
 Citation
 --------
 Osorio, D., Rondon-Villarreal, P. & Torres, R. **Peptides: A package for data mining of antimicrobial peptides.** The R Journal. 7(1), 4–14 (2015).
-
-D. Osorio, P. Rondón-Villarreal and R. Torres. **Peptides: Calculate indices and theoretical physicochemical properties of peptides and protein sequences.**, 2014. URL: http: //CRAN.R-project.org/package=Peptides. R Package Version 2.2.

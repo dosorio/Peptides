@@ -1,4 +1,4 @@
-#include <Rcpp.h>
+# include <Rcpp.h>
 # include <iostream>
 # include <cmath>
 using namespace Rcpp;

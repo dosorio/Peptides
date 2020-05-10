@@ -5,6 +5,7 @@
 #' @param seq An amino-acids sequence
 #' @param pH A pH value
 #' @param pKscale A character string specifying the pKa scale to be used; must be one of \code{"Bjellqvist"}, \code{"Dawson"}, \code{"EMBOSS"}, \code{"Lehninger"}, \code{"Murray"}, \code{"Rodwell"}, \code{"Sillero"}, \code{"Solomon"} or \code{"Stryer"}
+#' @author Original by Daniel Osorio <dcosorioh@tamu.edu>, C++ code optimized by Luis Pedro Coelho <luis@luispedro.org>
 #' @references
 #' Kiraga, J. (2008) Analysis and computer simulations of variability of isoelectric point of proteins in the proteomes. PhD thesis, University of Wroclaw, Poland.
 #'
