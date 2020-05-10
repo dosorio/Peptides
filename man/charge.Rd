@@ -79,3 +79,6 @@ Solomon, T.W.G. (1998) Fundamentals of Organic Chemistry, 5th edition. Published
 
 Stryer L. (1999) Biochemia. czwarta edycja. Wydawnictwo Naukowe PWN.
 }
+\author{
+Original by Daniel Osorio <dcosorioh@tamu.edu>, C++ code optimized by Luis Pedro Coelho <luis@luispedro.org>
+}
