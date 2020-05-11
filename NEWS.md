@@ -1,5 +1,11 @@
 NEWS
 ====
+**Peptides v.2.4.2**
+
+* C++ code of Charge function was optimized by Luis Pedro Coelho <luis@luispedro.org>
+
+* aaList function was added by Richel Bilderbeek <richel@richelbilderbeek.nl>
+
 **Peptides v.2.1**
 
 * Hidden objects in data files were removed following a CRAN maintainers suggestion

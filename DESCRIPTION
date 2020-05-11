@@ -1,12 +1,13 @@
 Package: Peptides
-Version: 2.4.1
-Date: 2019-08-14
+Version: 2.4.2
 Title: Calculate Indices and Theoretical Physicochemical Properties of
         Protein Sequences
 Authors@R: c(person("Daniel","Osorio",email="dcosorioh@tamu.edu",role=c("aut","cre")),
              person("Paola","Rondon-Villarreal",role=c("aut","ths")),
              person("Rodrigo","Torres",role=c("aut","ths")),
-             person("J. Sebastian","Paez",email="jpaezpae@purdue.edu",role=c("ctb"))
+             person("J. Sebastian","Paez",email="jpaezpae@purdue.edu",role=c("ctb")),
+			 person("Luis Pedro", "Coelho", email="luis@luispedro.org", role = c("ctb")),
+			 person("Richel", "Bilderbeek", email="richel@richelbilderbeek.nl", role=c("ctb"))
              )
 URL: https://github.com/dosorio/Peptides/
 Suggests: testthat
@@ -14,4 +15,4 @@ Description: Includes functions to calculate several physicochemical properties 
 License: GPL-2
 LinkingTo: Rcpp
 Imports: Rcpp
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
