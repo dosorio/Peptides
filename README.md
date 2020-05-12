@@ -1,5 +1,6 @@
-[![Build Status](https://travis-ci.org/dosorio/Peptides.svg?branch=master)](https://travis-ci.org/dosorio/Peptides)
-Peptides
+Peptides 
+![Build Status](https://travis-ci.org/dosorio/Peptides.svg?branch=master)
+![CRAN\_Download\_Badge](http://cranlogs.r-pkg.org/badges/grand-total/Peptides?color=green)
 ========
 R package to calculate several physicochemical properties and indices for amino-acid sequences as well as to read and plot 'XVG' output files from the 'GROMACS' molecular dynamics package
 
