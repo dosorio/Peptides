@@ -15,4 +15,5 @@ Description: Includes functions to calculate several physicochemical properties 
 License: GPL-2
 LinkingTo: Rcpp
 Imports: Rcpp
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
+Encoding: UTF-8
