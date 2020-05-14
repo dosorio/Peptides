@@ -34,7 +34,7 @@ readXVG(XVGfile)
 Pronk, S., Pall, S., Schulz, R., Larsson, P., Bjelkmar, P., Apostolov, R., ... & Lindahl, E. (2013). GROMACS 4.5: a high-throughput and highly parallel open source molecular simulation toolkit. Bioinformatics, 29 (7), 845-854.
 }
 \author{
-Latest: J. Sebastian Paez <jpaezpae@purdue.edu>
+Latest: J. Sebastian Paez <jpaezpae@purdue.edu> and hongbo-zhu-cn <@github>
 
 Original: Daniel Osorio <dcosorioh@unal.edu.co>
 }
