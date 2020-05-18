@@ -16,7 +16,7 @@ namespace Peptides {
             require("Peptides", Rcpp::Named("quietly") = true);
             typedef int(*Ptr_validate)(const char*);
             static Ptr_validate p_validate = (Ptr_validate)
-                R_GetCCallable("Peptides", "Peptides_RcppExport_validate");
+                R_GetCCallable("Peptides", "_Peptides_RcppExport_validate");
             if (!p_validate(sig)) {
                 throw Rcpp::function_not_exported(
                     "C++ function with signature '" + std::string(sig) + "' not found in Peptides");
@@ -29,17 +29,19 @@ namespace Peptides {
         static Ptr_chargeList p_chargeList = NULL;
         if (p_chargeList == NULL) {
             validateSignature("Rcpp::List(*chargeList)(std::vector< std::string >,NumericVector,std::string)");
-            p_chargeList = (Ptr_chargeList)R_GetCCallable("Peptides", "Peptides_chargeList");
+            p_chargeList = (Ptr_chargeList)R_GetCCallable("Peptides", "_Peptides_chargeList");
         }
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_chargeList(Rcpp::wrap(seq), Rcpp::wrap(pH), Rcpp::wrap(pKscale));
+            rcpp_result_gen = p_chargeList(Shield<SEXP>(Rcpp::wrap(seq)), Shield<SEXP>(Rcpp::wrap(pH)), Shield<SEXP>(Rcpp::wrap(pKscale)));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
         if (rcpp_result_gen.inherits("try-error"))
-            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
         return Rcpp::as<Rcpp::List >(rcpp_result_gen);
     }
 
@@ -48,17 +50,19 @@ namespace Peptides {
         static Ptr_absoluteCharge p_absoluteCharge = NULL;
         if (p_absoluteCharge == NULL) {
             validateSignature("double(*absoluteCharge)(std::string,double,std::string)");
-            p_absoluteCharge = (Ptr_absoluteCharge)R_GetCCallable("Peptides", "Peptides_absoluteCharge");
+            p_absoluteCharge = (Ptr_absoluteCharge)R_GetCCallable("Peptides", "_Peptides_absoluteCharge");
         }
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_absoluteCharge(Rcpp::wrap(seq), Rcpp::wrap(pH), Rcpp::wrap(pKscale));
+            rcpp_result_gen = p_absoluteCharge(Shield<SEXP>(Rcpp::wrap(seq)), Shield<SEXP>(Rcpp::wrap(pH)), Shield<SEXP>(Rcpp::wrap(pKscale)));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
         if (rcpp_result_gen.inherits("try-error"))
-            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
         return Rcpp::as<double >(rcpp_result_gen);
     }
 
