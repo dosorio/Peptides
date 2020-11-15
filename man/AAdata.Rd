@@ -4,7 +4,8 @@
 \name{AAdata}
 \alias{AAdata}
 \title{Properties, scales and indices for the 20 naturally occurring amino acids from various sources}
-\format{A list as follows: \itemize{
+\format{
+A list as follows: \itemize{
 \item{Hydrophobicity} The hydrophobicity is an important stabilization force in protein folding; this force changes depending on the solvent in which the protein is found. \itemize{
 \item{Aboderin:} Aboderin, A. A. (1971). An empirical hydrophobicity scale for alpha-amino-acids and some of its applications. International Journal of Biochemistry, 2(11), 537-544.
 \item{AbrahamLeo:} Abraham D.J., Leo A.J. Hydrophobicity (delta G1/2 cal). Proteins: Structure, Function and Genetics 2:130-152(1987).
@@ -99,7 +100,8 @@
 \item{VHSE3 and VHSE4:} Steric properties
 \item{VHSE5 to VHSE8:} Electronic properties
 }
-}}
+}
+}
 \source{
 \itemize{
 \item{Hydrophobicity}\itemize{

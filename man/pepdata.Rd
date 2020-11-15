@@ -4,7 +4,8 @@
 \name{pepdata}
 \alias{pepdata}
 \title{Physicochemical properties and indices from 100 amino acid sequences}
-\format{A data frame with 100 observations on the following 23 variables. 
+\format{
+A data frame with 100 observations on the following 23 variables. 
 \describe{ 
 \item{\code{sequence}}{a character vector with the sequences of 100 peptides (50 antimicrobial and 50 non-antimicrobial)}
 \item{\code{group}}{Integrer vector with the group code \code{"0"} for non antimicrobial and \code{"1"} for antimicrobial}
@@ -29,7 +30,8 @@
 \item{\code{transmembrane}}{A numeric vector with the fraction of Transmembrane windows of 11 amino acids that make up the sequence}
 \item{\code{surface}}{A numeric vector with the fraction of Surface windows of 11 amino acids that make up the sequence}
 \item{\code{globular}}{A numeric vector with the fraction of Globular windows of 11 amino acids that make up the sequence}
-}}
+}
+}
 \usage{
 data(pepdata)
 }

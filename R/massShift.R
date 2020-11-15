@@ -20,11 +20,7 @@
 #'    \href{http://www.unimod.org/modifications_view.php?editid1=996}{Unimod 996} and 
 #'    \href{http://www.unimod.org/modifications_view.php?editid1=897}{Unimod 897}
 #'  }
-#'  \item{c57}{
-#'    \href{http://www.unimod.org/modifications_view.php?editid1=4}{Unimod 4}
-#'  }
 #' }
-#' @details 
 #' @examples 
 #' massShift("EGVNDNECEGFFSAR", label = "silac_13c")
 #' massShift("EGVNDNECEGFFSAR", aaShift = c(K = 6.020129, R = 6.020129))
