@@ -22,7 +22,7 @@ mz <-
     mass <- mw(seq=seq, label=label, aaShift=aaShift, monoisotopic = TRUE)
     
     # Add modification at cysteins
-    mass <- mass + stri_count(x, fixed = "C") * cysteins
+    mass <- mass + stri_count(seq, fixed = "C") * cysteins
     
     # Modify for charged peptides.
     if (charge >= 0){
