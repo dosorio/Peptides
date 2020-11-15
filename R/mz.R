@@ -2,7 +2,7 @@
 #' @title Calculate the m/z for peptides.
 #' @description This function calculates the (monoisotopic) mass over charge ratio (m/z) for peptides, as measured in mass spectrometry.
 #' @param seq An amino-acids sequence, in one letter code.
-#' @param label Set a predefined heavy isotope label. Accepts "none", "silac_13c", "silac_13c15n" and "15n". Overwrites input in \code{shift}.
+#' @param label Set a predefined heavy isotope label. Accepts "none", "silac_13c", "silac_13c15n" and "15n". Overwrites input in \code{aaShift}.
 #' @param aaShift Define the mass difference in Dalton of given amino acids as a named vector. Use the amino acid one letter code as names and the mass shift in Dalton as values. 
 #' @param cysteins Define the mass shift in Dalton of blocked cysteins. Defaults to 57.021464, for cysteins blocked by iodoacetamide.
 #' @examples 
