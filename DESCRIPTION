@@ -2,13 +2,13 @@ Package: Peptides
 Version: 2.4.3
 Title: Calculate Indices and Theoretical Physicochemical Properties of
         Protein Sequences
-Authors@R: c(person("Daniel","Osorio",email="dcosorioh@tamu.edu",role=c("aut","cre")),
-             person("Paola","Rondon-Villarreal",role=c("aut","ths")),
-             person("Rodrigo","Torres",role=c("aut","ths")),
-             person("J. Sebastian","Paez",email="jpaezpae@purdue.edu",role=c("ctb")),
-             person("Luis Pedro", "Coelho", email="luis@luispedro.org", role = c("ctb")),
+Authors@R: c(person("Daniel","Osorio", email="dcosorioh@tamu.edu",role=c("aut","cre"), comment = c(ORCID = "0000-0003-4424-8422")),
+             person("Paola","Rondon-Villarreal",role=c("aut","ths"), comment = c(ORCID = "0000-0001-8209-3885")),
+             person("Rodrigo","Torres",role=c("aut","ths"), comment = c(ORCID = "0000-0003-1113-3020")),
+             person("J. Sebastian","Paez",email="jpaezpae@purdue.edu",role=c("ctb"), comment = c(ORCID = "0000-0002-0065-1474")),
+             person("Luis Pedro", "Coelho", email="luis@luispedro.org", role = c("ctb"), comment = c(ORCID = "0000-0002-9280-7885")),
              person("Richèl J.C.", "Bilderbeek", email = "richel@richelbilderbeek.nl", role = c("ctb"), comment = c(ORCID = "0000-0003-1107-7049")),
-             person("Florian C.", "Sigloch",role = c("ctb"))
+             person("Florian C.", "Sigloch",role = c("ctb"), comment = c(ORCID = "0000-0001-8130-6885"))
              )
 URL: https://github.com/dosorio/Peptides/
 Suggests: 
