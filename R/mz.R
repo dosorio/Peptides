@@ -22,6 +22,7 @@ mz <-
     mass <- mw(seq=seq, label=label, aaShift=aaShift, monoisotopic = TRUE)
     
     # Add modification at cysteins
+    # DO modified the call to the str_count function and vectorized it using native R functions. 
     mass <- mass + (unlist(lapply(strsplit(rep('KLKLLLLKLK',10),''), function(X){table(X)['C']})) * cysteins)
     
     # Modify for charged peptides.
