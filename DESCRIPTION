@@ -6,8 +6,9 @@ Authors@R: c(person("Daniel","Osorio",email="dcosorioh@tamu.edu",role=c("aut","c
              person("Paola","Rondon-Villarreal",role=c("aut","ths")),
              person("Rodrigo","Torres",role=c("aut","ths")),
              person("J. Sebastian","Paez",email="jpaezpae@purdue.edu",role=c("ctb")),
-			 person("Luis Pedro", "Coelho", email="luis@luispedro.org", role = c("ctb")),
-			 person("Richèl J.C.", "Bilderbeek", email = "richel@richelbilderbeek.nl", role = c("ctb"), comment = c(ORCID = "0000-0003-1107-7049"))
+             person("Luis Pedro", "Coelho", email="luis@luispedro.org", role = c("ctb")),
+             person("Richèl J.C.", "Bilderbeek", email = "richel@richelbilderbeek.nl", role = c("ctb"), comment = c(ORCID = "0000-0003-1107-7049")),
+             person("Florian C.", "Sigloch",role = c("ctb"))
              )
 URL: https://github.com/dosorio/Peptides/
 Suggests: 
@@ -16,5 +17,5 @@ Description: Includes functions to calculate several physicochemical properties 
 License: GPL-2
 LinkingTo: Rcpp
 Imports: Rcpp
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 Encoding: UTF-8

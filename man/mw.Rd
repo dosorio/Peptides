@@ -7,15 +7,19 @@
 The formula and amino acid scale are the same available on ExPASy Compute pI/Mw tool: http://web.expasy.org/compute_pi/
 }
 \usage{
-mw(seq, monoisotopic = FALSE)
+mw(seq, monoisotopic = FALSE, label = "none", aaShift = NULL)
 }
 \arguments{
 \item{seq}{An amino-acids sequence}
 
 \item{monoisotopic}{A logical value \code{'TRUE'} or \code{'FALSE'} indicating if monoisotopic weights of amino-acids should be used}
+
+\item{label}{Set a predefined heavy isotope label. Accepts "none", "silac_13c", "silac_13c15n" and "15n". Overwrites input in \code{aaShift}.}
+
+\item{aaShift}{Define the mass difference in Dalton of given amino acids as a named vector. Use the amino acid one letter code as names and the mass shift in Dalton as values.}
 }
 \description{
-This function calculates the molecular weight of a protein sequence. It is calculated as the sum of the mass of each amino acid using the scale available on Compute pI/Mw tool.
+This function calculates the molecular weight of a protein sequence. It is calculated as the sum of the mass of each amino acid using the scale available on Compute pI/Mw tool. It also supports mass calculation of proteins with predefined or custom stable isotope mass labels.
 }
 \details{
 The molecular weight is the sum of the masses of each atom constituting a molecule. The molecular weight is directly related to the length of the amino acid sequence and is expressed in units called daltons (Da). In Peptides the function mw computes the molecular weight using the same formulas and weights as ExPASy's "compute pI/mw" tool (Gasteiger et al., 2005).
@@ -31,6 +35,7 @@ mw(seq = "QWGRRCCGWGPGRRYCVRWC",monoisotopic = FALSE)
 
 mw(seq = "QWGRRCCGWGPGRRYCVRWC",monoisotopic = TRUE)
 # [1] 2484.12
+
 }
 \references{
 Gasteiger, E., Hoogland, C., Gattiker, A., Wilkins, M. R., Appel, R. D., & Bairoch, A. (2005). Protein identification and analysis tools on the ExPASy server. In The proteomics protocols handbook (pp. 571-607). Humana Press. Chicago
