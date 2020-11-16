@@ -15,7 +15,7 @@ pI(seq, pKscale = "EMBOSS")
 The isoelectric point (pI), is the pH at which a particular molecule or surface carries no net electrical charge.
 }
 \details{
-The isoelectric point (pI) is the pH at which the net charge of the protein is equal to 0. It is a variable that affects the solubility of the peptides under certain conditions of pH. When the pH of the solvent is equal to the pI of the protein, it tends to precipitate and loose its biological function.
+The isoelectric point (pI) is the pH at which the net charge of the protein is equal to 0. It is a variable that affects the solubility of the peptides under certain conditions of pH. When the pH of the solvent is equal to the pI of the protein, it tends to precipitate and lose its biological function.
 }
 \examples{
 # COMPARED TO ExPASy ProtParam
