@@ -23,7 +23,8 @@ mz <-
     
     # Add modification at cysteins
     # DO modified the call to the str_count function and vectorized it using native R functions. 
-    mass <- mass + (unlist(lapply(strsplit(seq,''), function(X){table(X)['C']})) * cysteins)
+    #mass <- mass + str_count(seq, 'C') * cysteins
+    mass <- mass + unlist(lapply(seq, function(X){table(unlist(strsplit(X,'')))[['C']]})) * cysteins
     
     # Modify for charged peptides.
     if (charge >= 0){
