@@ -7,12 +7,20 @@
 The formula and amino acid scale are the same available on ExPASy Compute pI/Mw tool: http://web.expasy.org/compute_pi/
 }
 \usage{
-mw(seq, monoisotopic = FALSE, label = "none", aaShift = NULL)
+mw(
+  seq,
+  monoisotopic = FALSE,
+  avgScale = "expasy",
+  label = "none",
+  aaShift = NULL
+)
 }
 \arguments{
 \item{seq}{An amino-acids sequence}
 
 \item{monoisotopic}{A logical value \code{'TRUE'} or \code{'FALSE'} indicating if monoisotopic weights of amino-acids should be used}
+
+\item{avgScale}{Set the mass scale to use for average weight only (if 'monoisotopic == FALSE'). Accepts "expasy" (default) or "mascot".}
 
 \item{label}{Set a predefined heavy isotope label. Accepts "none", "silac_13c", "silac_13c15n" and "15n". Overwrites input in \code{aaShift}.}
 
@@ -22,7 +30,7 @@ mw(seq, monoisotopic = FALSE, label = "none", aaShift = NULL)
 This function calculates the molecular weight of a protein sequence. It is calculated as the sum of the mass of each amino acid using the scale available on Compute pI/Mw tool. It also supports mass calculation of proteins with predefined or custom stable isotope mass labels.
 }
 \details{
-The molecular weight is the sum of the masses of each atom constituting a molecule. The molecular weight is directly related to the length of the amino acid sequence and is expressed in units called daltons (Da). In Peptides the function mw computes the molecular weight using the same formulas and weights as ExPASy's "compute pI/mw" tool (Gasteiger et al., 2005).
+The molecular weight is the sum of the masses of each atom constituting a molecule. The molecular weight is directly related to the length of the amino acid sequence and is expressed in units called daltons (Da). In Peptides the function mw computes the molecular weight using the same formulas and weights as ExPASy's "compute pI/mw" tool (Gasteiger et al., 2005). For average weight, the ExPASy tools use the following mass scale: https://web.expasy.org/findmod/findmod_masses.html#AA , while UniMod and Mascot use a slightly different one: http://www.matrixscience.com/help/aa_help.html .
 }
 \examples{
 # COMPARED TO ExPASy Compute pI/Mw tool

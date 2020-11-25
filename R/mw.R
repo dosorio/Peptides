@@ -3,11 +3,12 @@
 #' @description This function calculates the molecular weight of a protein sequence. It is calculated as the sum of the mass of each amino acid using the scale available on Compute pI/Mw tool. It also supports mass calculation of proteins with predefined or custom stable isotope mass labels.
 #' @param seq An amino-acids sequence
 #' @param monoisotopic A logical value \code{'TRUE'} or \code{'FALSE'} indicating if monoisotopic weights of amino-acids should be used
+#' @param avgScale Set the mass scale to use for average weight only (if 'monoisotopic == FALSE'). Accepts "expasy" (default) or "mascot".
 #' @param label Set a predefined heavy isotope label. Accepts "none", "silac_13c", "silac_13c15n" and "15n". Overwrites input in \code{aaShift}.
 #' @param aaShift Define the mass difference in Dalton of given amino acids as a named vector. Use the amino acid one letter code as names and the mass shift in Dalton as values. 
 #' @source The formula and amino acid scale are the same available on ExPASy Compute pI/Mw tool: http://web.expasy.org/compute_pi/
 #' @references Gasteiger, E., Hoogland, C., Gattiker, A., Wilkins, M. R., Appel, R. D., & Bairoch, A. (2005). Protein identification and analysis tools on the ExPASy server. In The proteomics protocols handbook (pp. 571-607). Humana Press. Chicago
-#' @details The molecular weight is the sum of the masses of each atom constituting a molecule. The molecular weight is directly related to the length of the amino acid sequence and is expressed in units called daltons (Da). In Peptides the function mw computes the molecular weight using the same formulas and weights as ExPASy's "compute pI/mw" tool (Gasteiger et al., 2005).
+#' @details The molecular weight is the sum of the masses of each atom constituting a molecule. The molecular weight is directly related to the length of the amino acid sequence and is expressed in units called daltons (Da). In Peptides the function mw computes the molecular weight using the same formulas and weights as ExPASy's "compute pI/mw" tool (Gasteiger et al., 2005). For average weight, the ExPASy tools use the following mass scale: https://web.expasy.org/findmod/findmod_masses.html#AA , while UniMod and Mascot use a slightly different one: http://www.matrixscience.com/help/aa_help.html . 
 #' @examples # COMPARED TO ExPASy Compute pI/Mw tool
 #' # http://web.expasy.org/compute_pi/
 #' # SEQUENCE: QWGRRCCGWGPGRRYCVRWC 
@@ -16,10 +17,13 @@
 #' mw(seq = "QWGRRCCGWGPGRRYCVRWC",monoisotopic = FALSE)
 #' # [1] 2485.911
 #' 
+#' mw(seq = "QWGRRCCGWGPGRRYCVRWC",monoisotopic = FALSE, avgScale = "mascot")
+#' # [1] 2485.899
+#' 
 #' mw(seq = "QWGRRCCGWGPGRRYCVRWC",monoisotopic = TRUE)
 #' # [1] 2484.12
 #' 
-mw <- function(seq, monoisotopic = FALSE, label = "none", aaShift = NULL) {
+mw <- function(seq, monoisotopic = FALSE, avgScale = "expasy", label = "none", aaShift = NULL) {
   # Split sequence by amino acids
   seq <- aaCheck(seq)
   
@@ -51,7 +55,7 @@ mw <- function(seq, monoisotopic = FALSE, label = "none", aaShift = NULL) {
         O = 237.14772,
         H2O = 18.01056
       )
-  } else {
+  } else if (avgScale == "expasy"){
     weight <-
       c(
         A = 71.0788,
@@ -77,6 +81,33 @@ mw <- function(seq, monoisotopic = FALSE, label = "none", aaShift = NULL) {
         U = 150.0388,
         O = 237.3018,
         H2O = 18.01524
+      )
+  } else if (avgScale == "mascot"){
+    weight <-
+      c(
+        A = 71.0779,
+        R = 156.1857,
+        N = 114.1026,
+        D = 115.0874,
+        C = 103.1429,
+        E = 129.114,
+        Q = 128.1292,
+        G = 57.0513,
+        H = 137.1393,
+        I = 113.1576,
+        L = 113.1576,
+        K = 128.1723,
+        M = 131.1961,
+        F = 147.1739,
+        P = 97.1152,
+        S = 87.0773,
+        T = 101.1039,
+        W = 186.2099,
+        Y = 163.1733,
+        V = 99.1311,
+        U = 150.0379,
+        O = 237.2982,
+        H2O = 18.01528
       )
   }
   
