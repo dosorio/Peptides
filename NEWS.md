@@ -1,5 +1,9 @@
 NEWS
 ====
+**Peptides v.2.4.4**
+
+* An error in the mz function related with the aminoacid composition of the peptides used as input was solved
+
 **Peptides v.2.4.2**
 
 * C++ code of Charge function was optimized by Luis Pedro Coelho <luis@luispedro.org>
