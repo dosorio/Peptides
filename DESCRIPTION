@@ -1,8 +1,8 @@
 Package: Peptides
-Version: 2.4.3
+Version: 2.4.4
 Title: Calculate Indices and Theoretical Physicochemical Properties of
         Protein Sequences
-Authors@R: c(person("Daniel","Osorio", email="dcosorioh@tamu.edu",role=c("aut","cre"), comment = c(ORCID = "0000-0003-4424-8422")),
+Authors@R: c(person("Daniel","Osorio", email="daniecos@uio.no",role=c("aut","cre"), comment = c(ORCID = "0000-0003-4424-8422")),
              person("Paola","Rondon-Villarreal",role=c("aut","ths"), comment = c(ORCID = "0000-0001-8209-3885")),
              person("Rodrigo","Torres",role=c("aut","ths"), comment = c(ORCID = "0000-0003-1113-3020")),
              person("J. Sebastian","Paez",email="jpaezpae@purdue.edu",role=c("ctb"), comment = c(ORCID = "0000-0002-0065-1474")),
