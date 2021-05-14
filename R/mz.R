@@ -29,6 +29,7 @@ mz <-
       newSeq <- unlist(strsplit(X,''))
       nCist <- ifelse(test = 'C' %in% newSeq, yes = table(newSeq)[['C']], no = 0)
     }))
+    
     mass <- mass + nCist * cysteins
     
     # Modify for charged peptides.
