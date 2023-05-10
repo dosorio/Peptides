@@ -2,6 +2,10 @@ NEWS
 ====
 **Peptides v.2.4.4**
 
+* Proper prototype of the C++ code added
+
+**Peptides v.2.4.4**
+
 * An error in the mz function related with the aminoacid composition of the peptides used as input was solved
 
 **Peptides v.2.4.2**

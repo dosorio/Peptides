@@ -10,7 +10,7 @@
 /* .Call calls */
 extern SEXP _Peptides_absoluteCharge(SEXP, SEXP, SEXP);
 extern SEXP _Peptides_chargeList(SEXP, SEXP, SEXP);
-extern SEXP _Peptides_RcppExport_registerCCallable();
+extern SEXP _Peptides_RcppExport_registerCCallable(void);
 
 static const R_CallMethodDef CallEntries[] = {
   {"_Peptides_absoluteCharge",               (DL_FUNC) &_Peptides_absoluteCharge,               3},
