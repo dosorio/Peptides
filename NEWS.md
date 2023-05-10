@@ -1,6 +1,6 @@
 NEWS
 ====
-**Peptides v.2.4.4**
+**Peptides v.2.4.5**
 
 * Proper prototype of the C++ code added
 
