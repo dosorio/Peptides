@@ -6,17 +6,17 @@
 #' Some amino acids possess side chains with specific properties that allow grouping them in different ways. 
 #' The \code{aaComp} function classifies amino acids based on their size, side chains, hydrophobicity, charge and their response to pH 7.
 #' @param seq An amino-acid sequence
-#' @return  The output is a matrix with the number and percentage of amino acids of a particular class
+#' @return  The output is a matrix with the number and percentage of amino acids of a particular class:
 #' \itemize{
-#' \item{Tiny }{(A + C + G + S + T)}
-#' \item{Small }{(A + B + C + D + G + N + P + S + T + V)}
-#' \item{Aliphatic }{(A + I + L + V)}
-#' \item{Aromatic }{(F + H + W + Y)}
-#' \item{Non-polar }{(A + C + F + G + I + L + M + P + V + W + Y)}
-#' \item{Polar }{(D + E + H + K + N + Q + R + S + T + Z)}
-#' \item{Charged }{(B + D + E + H + K + R + Z)}
-#' \item{Basic }{(H + K + R)}
-#' \item{Acidic }{(B + D + E + Z)}
+#' \item Tiny (A + C + G + S + T)
+#' \item Small (A + B + C + D + G + N + P + S + T + V)
+#' \item Aliphatic (A + I + L + V)
+#' \item Aromatic (F + H + W + Y)
+#' \item Non-polar (A + C + F + G + I + L + M + P + V + W + Y)
+#' \item Polar (D + E + H + K + N + Q + R + S + T + Z)
+#' \item Charged (B + D + E + H + K + R + Z)
+#' \item Basic (H + K + R)
+#' \item Acidic (B + D + E + Z)
 #' }
 #' @note This function was originally written by Alan Bleasby (ajb@ebi.ac.uk) for the EMBOSS package. 
 #' Further information: http://emboss.sourceforge.net/apps/cvs/emboss/apps/pepstats.html

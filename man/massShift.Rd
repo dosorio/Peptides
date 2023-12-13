@@ -5,20 +5,21 @@
 \title{Calculate the mass difference of modified peptides.}
 \source{
 For the predefined heavy isotope labels, compare:
+
 \itemize{
- \item{silac_13c}{
+ \item silac_13c 
    \href{http://www.unimod.org/modifications_view.php?editid1=188}{Unimod 188}
- }
- \item{silac_13c15n}{
+ 
+ \item silac_13c15n
    \href{http://www.unimod.org/modifications_view.php?editid1=259}{Unimod 259} and
    \href{http://www.unimod.org/modifications_view.php?editid1=267}{Unimod 267}
- }
- \item{15n}{
+ 
+ \item 15n
    \href{http://www.unimod.org/modifications_view.php?editid1=994}{Unimod 994}, 
    \href{http://www.unimod.org/modifications_view.php?editid1=995}{Unimod 995}, 
    \href{http://www.unimod.org/modifications_view.php?editid1=996}{Unimod 996} and 
    \href{http://www.unimod.org/modifications_view.php?editid1=897}{Unimod 897}
- }
+ 
 }
 }
 \usage{

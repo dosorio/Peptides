@@ -8,6 +8,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // chargeList
 Rcpp::List chargeList(std::vector< std::string > seq, NumericVector pH, std::string pKscale);
 static SEXP _Peptides_chargeList_try(SEXP seqSEXP, SEXP pHSEXP, SEXP pKscaleSEXP) {
@@ -39,7 +44,7 @@ RcppExport SEXP _Peptides_chargeList(SEXP seqSEXP, SEXP pHSEXP, SEXP pKscaleSEXP
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
         UNPROTECT(1);
-        Rf_error(CHAR(rcpp_msgSEXP_gen));
+        Rf_error("%s",CHAR(rcpp_msgSEXP_gen));
     }
     UNPROTECT(1);
     return rcpp_result_gen;
@@ -75,7 +80,7 @@ RcppExport SEXP _Peptides_absoluteCharge(SEXP seqSEXP, SEXP pHSEXP, SEXP pKscale
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
         UNPROTECT(1);
-        Rf_error(CHAR(rcpp_msgSEXP_gen));
+        Rf_error("%s",CHAR(rcpp_msgSEXP_gen));
     }
     UNPROTECT(1);
     return rcpp_result_gen;

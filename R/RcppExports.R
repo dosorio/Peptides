@@ -11,5 +11,5 @@ absoluteCharge <- function(seq, pH = 7, pKscale = "Lehninger") {
 
 # Register entry points for exported C++ functions
 methods::setLoadAction(function(ns) {
-    .Call('_Peptides_RcppExport_registerCCallable', PACKAGE = 'Peptides')
+    .Call(`_Peptides_RcppExport_registerCCallable`)
 })

@@ -41,6 +41,9 @@ The molecular weight is the sum of the masses of each atom constituting a molecu
 mw(seq = "QWGRRCCGWGPGRRYCVRWC",monoisotopic = FALSE)
 # [1] 2485.911
 
+mw(seq = "QWGRRCCGWGPGRRYCVRWC",monoisotopic = FALSE, avgScale = "mascot")
+# [1] 2485.899
+
 mw(seq = "QWGRRCCGWGPGRRYCVRWC",monoisotopic = TRUE)
 # [1] 2484.12
 
