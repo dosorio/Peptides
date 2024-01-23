@@ -11,17 +11,17 @@
 #' 
 #' \itemize{
 #'  \item silac_13c 
-#'    \href{http://www.unimod.org/modifications_view.php?editid1=188}{Unimod 188}
+#'    \href{https://www.unimod.org/modifications_view.php?editid1=188}{Unimod 188}
 #'  
 #'  \item silac_13c15n
-#'    \href{http://www.unimod.org/modifications_view.php?editid1=259}{Unimod 259} and
-#'    \href{http://www.unimod.org/modifications_view.php?editid1=267}{Unimod 267}
+#'    \href{https://www.unimod.org/modifications_view.php?editid1=259}{Unimod 259} and
+#'    \href{https://www.unimod.org/modifications_view.php?editid1=267}{Unimod 267}
 #'  
 #'  \item 15n
-#'    \href{http://www.unimod.org/modifications_view.php?editid1=994}{Unimod 994}, 
-#'    \href{http://www.unimod.org/modifications_view.php?editid1=995}{Unimod 995}, 
-#'    \href{http://www.unimod.org/modifications_view.php?editid1=996}{Unimod 996} and 
-#'    \href{http://www.unimod.org/modifications_view.php?editid1=897}{Unimod 897}
+#'    \href{https://www.unimod.org/modifications_view.php?editid1=994}{Unimod 994}, 
+#'    \href{https://www.unimod.org/modifications_view.php?editid1=995}{Unimod 995}, 
+#'    \href{https://www.unimod.org/modifications_view.php?editid1=996}{Unimod 996} and 
+#'    \href{https://www.unimod.org/modifications_view.php?editid1=897}{Unimod 897}
 #'  
 #' }
 #' @examples 
@@ -34,8 +34,8 @@ function(seq, label = "none", aaShift = NULL, monoisotopic = TRUE){
 
   # Check inputs
   label <- tolower(label) # Renders case-insensitive input string.
-  if(!(label %in% c("none", "silac_13c", "silac_13c15n", "15n"))){
-    stop("Given label type unknown. Please use one of 'none', '15N', 'Silac_13C15N', or 'Silac_13C' (case-insensitive).")
+  if(!(label %in% c("none", "silac_13c", "silac_13c15n", "15n", "13c", "13c15n"))){
+    stop("Given label type unknown. Please use one of 'none', '15N', '13C', '13C15N', 'Silac_13C15N', or 'Silac_13C' (case-insensitive).")
   }
   if(!is.null(aaShift) & is.null(names(aaShift))){
     stop("'aaShift' must be given as a named vector, e.g. 'aaShift = c(K = 6.020129)'.")
@@ -74,7 +74,57 @@ function(seq, label = "none", aaShift = NULL, monoisotopic = TRUE){
       W = 2,
       Y = 1,
       V = 1
-    ) * 0.997035 -0.003635*!monoisotopic # 0.997035 equals the mass shift from 14N to 15N. 0.9934 equals the average mass shift.
+    ) * (0.997035 -0.003635*!monoisotopic) # 0.997035 equals the mass shift from 14N to 15N. 0.9934 equals the mass shift from average N to 15N.
+  } else if(label == "13c"){
+    aaShift <- c(
+      #      U = ,
+      #      O = ,
+      A = 3,
+      R = 6,
+      N = 4,
+      D = 4,
+      C = 3,
+      E = 5,
+      Q = 5,
+      G = 2,
+      H = 6,
+      I = 6,
+      L = 6,
+      K = 6,
+      M = 5,
+      F = 9,
+      P = 5,
+      S = 3,
+      T = 4,
+      W = 11,
+      Y = 9,
+      V = 5
+    ) * (1.003355 -0.010705*!monoisotopic) # 1.003355 equals the mass shift from 12C to 13C. 0.99265 equals the mass shift from average C to 13C.
+  } else if(label == "13c15n"){
+    n <- 0.997035 -0.003635*!monoisotopic
+    c <- 1.003355 -0.010705*!monoisotopic
+    aaShift <- c(
+      A = 1*n + 3*c,
+      R = 4*n + 6*c,
+      N = 2*n + 4*c,
+      D = 1*n + 4*c,
+      C = 1*n + 3*c,
+      E = 1*n + 5*c,
+      Q = 2*n + 5*c,
+      G = 1*n + 2*c,
+      H = 3*n + 6*c,
+      I = 1*n + 6*c,
+      L = 1*n + 6*c,
+      K = 2*n + 6*c,
+      M = 1*n + 5*c,
+      F = 1*n + 9*c,
+      P = 1*n + 5*c,
+      S = 1*n + 3*c,
+      T = 1*n + 4*c,
+      W = 2*n + 11*c,
+      Y = 1*n + 9*c,
+      V = 1*n + 5*c
+    )   
   }
   
   # Split sequence by amino acids
