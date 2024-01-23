@@ -44,15 +44,12 @@ function(seq, label = "none", aaShift = NULL, monoisotopic = TRUE){
   if(!is.null(aaShift) & !all(names(aaShift) %in% allowed)){
     stop(paste("Unknown amino acids defined in 'aaShift'. Only the following names are allowed:", paste(allowed, collapse = ", ")))
   }
-  if(label != "none" & !monoisotopic){
-    stop("Only monoisotopic masses can be calculated for labelled peptides.")
-  }
   
   # Predefined labels
   if (label == "silac_13c"){
-    aaShift <- c("K" = 6.020129, "R" = 6.020129)
+    aaShift <- c("K" = 6.020129 - 0.064229*!monoisotopic, "R" = 6.020129- 0.064229*!monoisotopic)
   } else if(label == "silac_13c15n"){
-    aaShift <- c("K" = 8.014199, "R" = 10.008269)
+    aaShift <- c("K" = 8.014199 -0.071499*!monoisotopic, "R" = 10.008269-0.078669*!monoisotopic)
   } else if(label == "15n"){
     aaShift <- c(
 #      U = 1,
@@ -77,7 +74,7 @@ function(seq, label = "none", aaShift = NULL, monoisotopic = TRUE){
       W = 2,
       Y = 1,
       V = 1
-    ) * 0.997035 # 0.997035 equals the mass shift from 14N to 15N. 0.9934 equals the average mass shift.
+    ) * (0.997035 -0.003635*!monoisotopic) # 0.997035 equals the mass shift from 14N to 15N. 0.9934 equals the mass shift from average N to 15N.
   } else if(label == "13c"){
     aaShift <- c(
       #      U = ,
@@ -102,10 +99,10 @@ function(seq, label = "none", aaShift = NULL, monoisotopic = TRUE){
       W = 11,
       Y = 9,
       V = 5
-    ) * 1.003355 # 1.003355 equals the mass shift from 12C to 13C.
+    ) * (1.003355 -0.010705*!monoisotopic) # 1.003355 equals the mass shift from 12C to 13C. 0.99265 equals the mass shift from average C to 13C.
   } else if(label == "13c15n"){
-    n <- 0.997035
-    c <- 1.003355
+    n <- 0.997035 -0.003635*!monoisotopic
+    c <- 1.003355 -0.010705*!monoisotopic
     aaShift <- c(
       A = 1*n + 3*c,
       R = 4*n + 6*c,

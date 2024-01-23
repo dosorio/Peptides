@@ -18,6 +18,12 @@ test_that("massShift function: the computed value is wrong",{
 test_that("massShift function: the computed value is wrong",{
   expect_equal(object = massShift(seq = "AGEPKLDAGVR", label = "15n"), expected = 14.95552, tolerance = 0.001)
 })
+test_that("massShift function: the computed value is wrong",{
+  expect_equal(object = massShift(seq = "AGEPKLDAGVR", label = "13c"), expected = 47.15769, tolerance = 0.001)
+})
+test_that("massShift function: the computed value is wrong",{
+  expect_equal(object = massShift(seq = "AGEPKLDAGVR", label = "13c15n"), expected = 62.11321, tolerance = 0.001)
+})
 
 # CHECK SHIFT VALUE - PREDEFINED LABELS - AVERAGE
 test_that("massShift function: the computed value is wrong",{
@@ -27,7 +33,13 @@ test_that("massShift function: the computed value is wrong",{
   expect_equal(object = massShift(seq = "AGEPKLDAGVR", label = "silac_13c15n", monoisotopic = F), expected = 17.8723, tolerance = 0.001)
 })
 test_that("massShift function: the computed value is wrong",{
-  expect_equal(object = massShift(seq = "AGEPKLDAGVR", label = "15n", monoisotopic = F), expected = 14.91554, tolerance = 0.001)
+  expect_equal(object = massShift(seq = "AGEPKLDAGVR", label = "15n", monoisotopic = F), expected = 14.901, tolerance = 0.001)
+})
+test_that("massShift function: the computed value is wrong",{
+  expect_equal(object = massShift(seq = "AGEPKLDAGVR", label = "13c", monoisotopic = F), expected = 46.65455, tolerance = 0.001)
+})
+test_that("massShift function: the computed value is wrong",{
+  expect_equal(object = massShift(seq = "AGEPKLDAGVR", label = "13c15n", monoisotopic = F), expected = 61.55555, tolerance = 0.001)
 })
 
 # CHECK OUTPUT CLASS
